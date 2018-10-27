@@ -25,6 +25,14 @@ public:
 		Rinv = Eigen::MatrixXd::Zero(channels, channels);
 		Wmat = Eigen::MatrixXd::Zero(channels, channels);
 		U = Eigen::MatrixXd::Zero(channels, channels);
+
+		Rinv_vector.resize( NPoints );
+		for ( int k = 0; k < NPoints; ++k )
+			Rinv_vector[k] = Eigen::MatrixXd::Zero( channels, channels );
+
+		Winv_vector.resize( NPoints );
+		for ( int k = 0; k < NPoints; ++k )
+			Winv_vector[k] = Eigen::MatrixXd::Zero( channels, channels );
     }
 
 	void setAngularMomentum( const int J, const int M )
@@ -93,27 +101,36 @@ public:
 
 	Eigen::MatrixXd get_V( ) { return V; }
 	
-    void propagateForward( const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm ) 
+    void propagateForward( const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save = false ) 
 	{
 		double hh12 = h * h / 12.0;
 		double x = a + h;
 
 		Rinv = Eigen::MatrixXd::Zero( channels, channels );
 
-		for ( int i = 1; i < i_match; i++, x += h )
+		for ( int i = 1; i <= i_match; i++, x += h )
 		{
+			//std::cout << "(propagateForward) i: " << i << "; x: " << x << std::endl; 
 			fill_V( x );
 
 			Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
 			U = 12.0 * Wmat.inverse() - 10.0 * I;
 			R = U - Rinv;
 			Rinv = R.inverse();
-		}	
+
+			//std::cout << "(propagateForward) Rinv: " << std::endl << Rinv << std::endl;
+
+			if ( save )
+			{
+				Rinv_vector[i] = Rinv;
+				Winv_vector[i] = Wmat.inverse();
+			}	
+		}
 	
 		resRm = R;
 	}
-	
-	void propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1 ) 
+
+	void propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save = false ) 
 	// resRmp1 = R_{m + 1}
 	{
 		double hh12 = h * h / 12.0;
@@ -121,15 +138,24 @@ public:
 		
 		Rinv = Eigen::MatrixXd::Zero( channels, channels );
 
-		for ( int i = NPoints - 1; i > i_match; i--, x -= h )
+		for ( int i = NPoints - 2; i > i_match; i--, x -= h )
 		{
+			//std::cout << "(propagateBackward) i: " << i << "; x: " << x << std::endl;
 			fill_V( x );
-
+			
 			Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
 			U = 12.0 * Wmat.inverse() - 10.0 * I;
 			R = U - Rinv;
 			Rinv = R.inverse();
-		}
+
+			//std::cout << "(propagateBackward) Rinv: " << std::endl << Rinv << std::endl;
+
+			if ( save )
+			{
+				Rinv_vector[i] = Rinv;
+				Winv_vector[i] = Wmat.inverse();
+			}
+		}	
 
 		resRmp1 = R;	
 	}
@@ -195,35 +221,74 @@ public:
 		return (Rm - Rmp1.inverse()).determinant();
 	}
 
-    void calculate_eigenfunction( const double a, const double b, const double h, const int i_match, const double E1, const double E2 )
-    {
+	double precise_eigenvalue_calculation( const double a, const double b, const double h, const int i_match, const double E1, const double E2 )
+	{
         std::function<double(double)> __D__ = [=]( const double E ) { return D(a, b, h, i_match, E); };
-        double eig = brent( __D__, E1, E2 ); 
+        return brent( __D__, E1, E2 ); 
+	}
+
+	std::vector<Eigen::VectorXd> calculate_eigenfunction( const double E, const double a, const double b, const double h, int i_match  )
+    {
+		//i_match = 3;
+		//std::cout << "i_match: " << i_match << std::endl;
+
         std::cout << std::fixed << std::setprecision(14);
-        std::cout << "brent eigenvalue: " << eig << std::endl;   
-        std::cout << "Det: " << __D__(eig) << std::endl;
+        std::cerr << std::fixed << std::setprecision(14);
+		std::cerr << "(calculate_eigenfunction) Eigenvalue: " << E << std::endl;   
 
         Eigen::MatrixXd Rm, Rmp1;
-        propagateForward( eig, a, h, i_match, Rm );
-        propagateBackward( eig, b, h, i_match, Rmp1 );
-        Eigen::MatrixXd diff = Rm - Rmp1.inverse();
-        std::cout << "diff: " << std::endl << diff << std::endl;
+        propagateForward( E, a, h, i_match, Rm, true );
+        propagateBackward( E, b, h, i_match, Rmp1, true );
+		Eigen::MatrixXd diff = Rm - Rmp1.inverse();
+		
+		//std::cout << "diff: " << std::endl << diff << std::endl << std::endl;
 
         Eigen::FullPivLU<Eigen::MatrixXd> lu( diff );
-        lu.setThreshold( 1.0e-8 );
+        lu = lu.setThreshold( 1.0e-5 );
 
         Eigen::MatrixXd ker = lu.kernel();
-        std::cout << "kernel: " << std::endl << ker << std::endl;
+		//std::cout << "kernel: " << std::endl << ker << std::endl;
+		
+		std::vector<Eigen::VectorXd> eigfunc(NPoints);
+		for ( int k = 0; k < NPoints; ++k )
+			eigfunc[k] = Eigen::VectorXd::Zero(channels);
 
-        //std::cout << "E1 = " << E1 << "; matrix: " << std::endl << diff1 << std::endl;
+		Eigen::VectorXd fn_prev, fn, fn_next, psin;
+		Eigen::VectorXd fn_matching_point;
 
-        //propagateForward( E2, a, h, i_match, Rm );
-        //propagateBackward( E2, b, h, i_match, Rmp1 );
+		fn_matching_point = ker;
+		fn_next = fn_matching_point;
+		fn_prev = fn_matching_point;
 
-        //diff2 = Rm - Rmp1.inverse();
-        //std::cout << "E2 = " << E2 << "; matrix: " << std::endl << diff2 << std::endl;
-    
-        //std::cout << "difference between matrices: " << std::endl << diff1 - diff2 << std::endl;
+		//std::cout << "---------------------------------------------" << std::endl << std::endl;
+		//std::cout << "(calculate_eigenfunction)" << std::endl;
+
+		for ( int k = i_match - 1;  k > 0; --k, fn_next = fn )
+		{
+			//std::cout << "k: " << k << "; Rinv: " << std::endl << Rinv_vector[k] << std::endl;
+			fn = Rinv_vector[k] * fn_next;
+			psin = Winv_vector[k] * fn;
+			eigfunc[k] = psin;	
+
+			//std::cout << "eigfunc[" << k << "]: " << std::endl << eigfunc[k] << std::endl;	
+		}	
+
+		for ( int k = i_match + 1; k < NPoints - 1; ++k, fn_prev = fn )
+		{
+			//std::cout << "k: " << k << "; Rinv: " << std::endl << Rinv_vector[k] << std::endl;
+			fn = Rinv_vector[k] * fn_prev;
+			psin = Winv_vector[k] * fn;
+			eigfunc[k] = psin;	
+			
+			//std::cout << "eigfunc[" << k << "]: " << std::endl << eigfunc[k] << std::endl;	
+		}
+		
+		psin = Winv_vector[i_match] * fn_matching_point;
+		eigfunc[i_match] = psin;
+
+		//std::cout << "eigfunc[" << i_match << "]: " << std::endl << eigfunc[i_match] << std::endl;
+
+		return eigfunc;	
     }
 
 private:
@@ -247,12 +312,15 @@ private:
 
 	Eigen::MatrixXd Wmat, U, R, Rinv;
 	Eigen::MatrixXd	I;
+
+	std::vector<Eigen::MatrixXd> Rinv_vector;
+	std::vector<Eigen::MatrixXd> Winv_vector;
 };
 
 int main()
 {
     int channels = 4;
-    int NPoints = 5000;
+    int NPoints = 500;
 
     const double a = 6.0;
     const double b = 14.0;
@@ -263,16 +331,24 @@ int main()
     int M = 0;
     solver.setAngularMomentum( J, M );
 
-    //double E1 = -0.000541;
-    //double E2 = -0.000540;
-    //double E1 = -0.0001618283108;
-    //double E2 = -0.0001618283100;
-    double E1 = -0.00009708673;
-    double E2 = -0.00009708672;
-    
-    //std::cout << std::fixed << std::setprecision(13);
-    //std::cout << "(D) E1 = " << E1 << "; D = " << solver.D(a, b, h, i_match, E1) << std::endl;
-    //std::cout << "(D) E2 = " << E2 << "; D = " << solver.D(a, b, h, i_match, E2) << std::endl;
+	// first eigenvalue: 0 nodes
+	//double E1 = -0.000541;
+	//double E2 = -0.000540;
+	// second eigenvalue: 1 node
+	//double E1 = -0.000405;
+	//double E2 = -0.000404;
+	// third eigenvalue: 0 nodes
+	//double E1 = -0.00032;
+	//double E2 = -0.00031;
+	// fourth eigenvalue: 
+	//double E1 = -0.000291;
+	//double E2 = -0.000290;
+   	// fifth eigenvalue:
+	//double E1 = -0.0002182;
+	//double E2 = -0.0002181;
+	// 6th eigenvalue
+	double E1 = -0.000200;
+	double E2 = -0.000199;
 
     double D1, D2;
     int i_match;
@@ -280,19 +356,25 @@ int main()
     for ( int k = 0; k < parts; ++k )
     {
         i_match = NPoints / parts * k;
-        std::cout << "i_match: " << i_match << std::endl;
+		//std::cout << "i_match: " << i_match << std::endl;
         
         D1 = solver.D(a, b, h, i_match, E1);
         D2 = solver.D(a, b, h, i_match, E2);
 
         if ( D1 * D2 < 0.0 )
         {
-            std::cout << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
+			std::cerr << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
             break;
         }
     }
 
-    solver.calculate_eigenfunction( a, b, h, i_match, E1, E2 );
+	double eig = solver.precise_eigenvalue_calculation( a, b, h, i_match, E1, E2 );
+	//double eig = -0.00009708672407; 
+	std::vector<Eigen::VectorXd> eigfunc = solver.calculate_eigenfunction( eig, a, b, h, i_match );
+
+	double x = a;
+	for ( int k = 0; k < NPoints; ++k, x += h )
+		std::cout << x << " " <<  eigfunc[k](0) << " " << eigfunc[k](1) << " " << eigfunc[k](2) << " " << eigfunc[k](3) << std::endl;
 
     return 0;
 }
