@@ -217,9 +217,16 @@ public:
 
 		propagateForward( E, a, h, i_match, Rm );
 		propagateBackward( E, b, h, i_match, Rmp1 );
-		
-		return (Rm - Rmp1.inverse()).determinant();
-	}
+	
+        std::cout << std::setprecision(14) << std::fixed;
+        std::cout << "(D) E: " << E << std::endl;
+        std::cout << "(D) Rm: " << std::endl << Rm << std::endl;
+            
+		double v = (Rm - Rmp1.inverse()).determinant();
+	    std::cout << "(D) value: " << v << std::endl;
+
+        return v;
+    }
 
 	double precise_eigenvalue_calculation( const double a, const double b, const double h, const int i_match, const double E1, const double E2 )
 	{
@@ -332,8 +339,8 @@ int main()
     solver.setAngularMomentum( J, M );
 
 	// first eigenvalue: 0 nodes
-	//double E1 = -0.000541;
-	//double E2 = -0.000540;
+    double E1 = -0.000541;
+    double E2 = -0.000540;
 	// second eigenvalue: 1 node
 	//double E1 = -0.000405;
 	//double E2 = -0.000404;
@@ -347,8 +354,8 @@ int main()
 	//double E1 = -0.0002182;
 	//double E2 = -0.0002181;
 	// 6th eigenvalue
-	double E1 = -0.000200;
-	double E2 = -0.000199;
+	//double E1 = -0.000200;
+	//double E2 = -0.000199;
 
     double D1, D2;
     int i_match;

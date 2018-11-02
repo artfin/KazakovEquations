@@ -26,7 +26,10 @@ public:
     void propagateDetR( const double Energy, const double a, const double b, const double h, std::vector<double> & nodesPos );
     void propagateForward( const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save = false );
     void propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save = false ); 
-    
+
+    int countEigenvalues( const double Energy, const double a, const double b, const double h );  
+    int countNegativeDiagonalElements( );
+
     std::vector<Eigen::MatrixXd> Rinv_vector;
     std::vector<Eigen::MatrixXd> Winv_vector;
 
@@ -42,6 +45,9 @@ private:
 	int J;
 
 	std::vector<double> W;
+
+    Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> es;
+    Eigen::VectorXd eigenvalues;
 
 	Eigen::MatrixXd V;
 	Eigen::MatrixXd I;

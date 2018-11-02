@@ -169,3 +169,39 @@ void Equations::propagateBackward( const double Energy, const double b, const do
     resRmp1 = R;	
 }
 
+int Equations::countEigenvalues( const double Energy, const double a, const double b, const double h )
+{
+    Rinv = Eigen::MatrixXd::Zero( channels, channels );
+
+    double hh12 = h * h / 12.0;
+
+    int n = 0;
+    double x = a + h;
+    for ( int i = 1; i < NPoints - 1; i++, x += h )
+    {
+        fill_V( x );
+
+        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
+        U = 12.0 * Wmat.inverse() - 10.0 * I;
+        R = U - Rinv;
+        Rinv = R.inverse();
+
+        n += countNegativeDiagonalElements();
+    }
+
+    return n;
+} 
+
+int Equations::countNegativeDiagonalElements()
+{
+    es.compute( R ); 
+    eigenvalues = es.eigenvalues();
+
+    int counter = 0;
+    for ( int k = 0; k < channels; ++k )
+        if ( eigenvalues(k) < 0.0 )
+            ++counter;
+
+    return counter;
+}
+
