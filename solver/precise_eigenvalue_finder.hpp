@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <map>
 #include <functional>
 
 #include <Eigen/Dense>
@@ -11,20 +12,23 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_roots.h>
 
+#include "./parity.hpp"
 #include "./equations.hpp"
 
 class PreciseEigenvalueFinder
 {
 public:
-    PreciseEigenvalueFinder( Equations * equations, int NPoints ) : equations(equations), NPoints(NPoints) { }
+    PreciseEigenvalueFinder( Equations * equations, std::map<double, std::pair<double, double>> const & energy_dict, Parity parity ) : 
+        equations(equations), energy_dict(energy_dict), parity(parity) { }
         
     double brent( std::function<double(double)> f, double xb1, double xb2 );
     double D( const double a, const double b, const double h, const int i_match, const double E );
-    double precise_eigenvalue_calculation( const double a, const double b, const double h, const int i_match, const double E1, const double E2 );
+    double precise_eigenvalue_calculation( const int i_match, const double E1, const double E2 );
     
-    int find_i_match( const double a, const double b, const double h, const double E1, const double E2, const int parts = 10 );
+    int find_i_match( const double E1, const double E2, const int NPoints, const int parts = 10 );
 
 private:
     Equations * equations;
-    int NPoints;    
+    std::map<double, std::pair<double, double>> energy_dict;
+    Parity parity;
 };

@@ -1,8 +1,9 @@
 #include "./equations.hpp"
 
-Equations::Equations( int channels, int NPoints ) : channels(channels), NPoints(NPoints)
+Equations::Equations( int channels_, int NPoints ) : channels(channels_ / 2), NPoints(NPoints) 
 {
-	W.resize( 6 );
+    std::cout << "(equations constructor) Effective number of channels: " << 2 * channels << "; real size of matrices: " << channels << std::endl;
+    W.resize( 6 );
 
 	V = Eigen::MatrixXd::Zero( channels, channels );
     I = Eigen::MatrixXd::Identity( channels, channels );
@@ -10,7 +11,7 @@ Equations::Equations( int channels, int NPoints ) : channels(channels), NPoints(
     Rinv = Eigen::MatrixXd::Zero(channels, channels);
     Wmat = Eigen::MatrixXd::Zero(channels, channels);
     U = Eigen::MatrixXd::Zero(channels, channels);
-    
+   
     Rinv_vector.resize( NPoints );
     for ( int k = 0; k < NPoints; ++k )
         Rinv_vector[k] = Eigen::MatrixXd::Zero( channels, channels );
@@ -73,18 +74,46 @@ double Equations::compute_W_sum( const int P, const int Lprime)
 	return result;
 }
 
-void Equations::fill_V( const double r )
+void Equations::fill_V( const double r, const Parity parity )
 {
+    assert( J >= 0 && "Please, set angular momentum using setAngularMomentum method!" );
+
 	// заполняем элементы вектора W
 	fill_W_elements( r );
 
-	for ( int P = 0; P < V.rows(); ++P )
-		for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
-		//V(P, Lprime) = compute_W_sum( 2*P, 2*Lprime ) + delta( 2*P, 2*Lprime ) * (hbar*hbar*2.0*P*(2.0*P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + 2.0*P*(2.0*P+1.0)));
-			V(P, Lprime) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
+    if ( parity == Parity::ODD )
+    {
+        for ( int P = 0; P < V.rows(); ++P )
+        {
+            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            {
+                V(P, Lprime) = compute_W_sum(2*P+1, 2*Lprime+1) + delta(2*P+1, 2*Lprime+1) * (hbar*hbar*(2.0*P+1.0)*(2.0*P+2.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + (2.0*P+1.0)*(2.0*P+2.0)));
+            }
+        }
+    }
+    else if ( parity == Parity::EVEN )
+    {
+        for ( int P = 0; P < V.rows(); ++P )
+        {
+            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            {
+                V(P, Lprime) = compute_W_sum(2*P, 2*Lprime) + delta(2*P, 2*Lprime) * (hbar*hbar*2.0*P*(2.0*P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + 2.0*P*(2.0*P+1.0)));
+            }
+        }
+    }
+    else
+    {
+        for ( int P = 0; P < V.rows(); ++P )
+        {
+            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            {
+                V(P, Lprime) = compute_W_sum( P, Lprime ); // + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
+            }
+        }
+    }
 }
 
-void Equations::propagateDetR( const double Energy, const double a, const double b, const double h, std::vector<double> & nodesPos )
+void Equations::propagateDetR( const Parity parity, const double Energy, const double a, const double b, const double h, std::vector<double> & nodesPos )
 {   
     // clearing nodes vector!
     nodesPos.clear();
@@ -97,7 +126,7 @@ void Equations::propagateDetR( const double Energy, const double a, const double
 	
     for ( int i = 1; i < NPoints - 1; i++, x += h )
 	{
-		fill_V( x );
+		fill_V( x, parity );
 
 		Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
 		U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -110,7 +139,7 @@ void Equations::propagateDetR( const double Energy, const double a, const double
 	}
 }
 
-void Equations::propagateForward( const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save ) 
+void Equations::propagateForward( const Parity parity, const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save ) 
 {
     double hh12 = h * h / 12.0;
     double x = a + h;
@@ -120,7 +149,7 @@ void Equations::propagateForward( const double Energy, const double a, const dou
     for ( int i = 1; i <= i_match; i++, x += h )
     {
         //std::cout << "(propagateForward) i: " << i << "; x: " << x << std::endl; 
-        fill_V( x );
+        fill_V( x, parity );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -139,7 +168,7 @@ void Equations::propagateForward( const double Energy, const double a, const dou
     resRm = R;
 }
 
-void Equations::propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save ) 
+void Equations::propagateBackward( Parity parity, const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save ) 
 // resRmp1 = R_{m + 1}
 {
     double hh12 = h * h / 12.0;
@@ -150,7 +179,7 @@ void Equations::propagateBackward( const double Energy, const double b, const do
     for ( int i = NPoints - 2; i > i_match; i--, x -= h )
     {
         //std::cout << "(propagateBackward) i: " << i << "; x: " << x << std::endl;
-        fill_V( x );
+        fill_V( x, parity );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -169,7 +198,7 @@ void Equations::propagateBackward( const double Energy, const double b, const do
     resRmp1 = R;	
 }
 
-int Equations::countEigenvalues( const double Energy, const double a, const double b, const double h )
+int Equations::countEigenvalues( const Parity parity, const double Energy, const double a, const double b, const double h )
 {
     Rinv = Eigen::MatrixXd::Zero( channels, channels );
 
@@ -179,11 +208,12 @@ int Equations::countEigenvalues( const double Energy, const double a, const doub
     double x = a + h;
     for ( int i = 1; i < NPoints - 1; i++, x += h )
     {
-        fill_V( x );
+        fill_V( x, parity );
 
-        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
+        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar;
         U = 12.0 * Wmat.inverse() - 10.0 * I;
         R = U - Rinv;
+
         Rinv = R.inverse();
 
         n += countNegativeDiagonalElements();
@@ -204,4 +234,274 @@ int Equations::countNegativeDiagonalElements()
 
     return counter;
 }
+
+double Equations::brent( std::function<double(double)> f, double xb1, double xb2, const double eps )
+{
+    int status;
+    int iter = 0, max_iter = 100;
+
+    const gsl_root_fsolver_type * T;
+    T = gsl_root_fsolver_brent;
+
+    gsl_root_fsolver * s;
+    s = gsl_root_fsolver_alloc( T );
+
+    gsl_function F = 
+    {
+        [](double d, void * vf) -> double {
+            auto& f = *static_cast<std::function<double(double)>*>(vf);
+            return f(d);
+        },
+        &f
+    };
+
+    gsl_root_fsolver_set( s, &F, xb1, xb2 );
+
+    double x_lo, x_hi, r = 0;
+
+    do
+    {
+        iter++;
+
+        status = gsl_root_fsolver_iterate( s );
+        r = gsl_root_fsolver_root( s );
+
+        x_lo = gsl_root_fsolver_x_lower( s );
+        x_hi = gsl_root_fsolver_x_upper( s );
+        status = gsl_root_test_interval( x_lo, x_hi, eps, eps );
+
+        //if ( status == GSL_SUCCESS )
+        //printf( "Converged:\n");
+
+        //printf( "%5d [%.12f, %.12f] %.12f %.12f\n",
+        //iter, x_lo, x_hi, r, x_hi - x_lo );	
+    }
+    while ( status == GSL_CONTINUE && iter < max_iter );	
+
+    gsl_root_fsolver_free( s );
+
+    return r;
+}
+
+double Equations::adiabatic_potential_component( const Parity parity, const double r, const int k )
+{
+    fill_V( r, parity );
+    es.compute( V );
+
+    return es.eigenvalues()(k); 
+}
+
+std::pair<double, double> Equations::find_classical_turning_points( const Parity parity, const double Energy, double x_lb, double x_rb, const double eps )
+{
+    double dx = 0.5;
+
+    Eigen::VectorXd Veig;
+    Eigen::VectorXd Veig_prev = Eigen::VectorXd::Zero(channels);
+
+    std::function<double(double)> tmp;
+
+    double tp;
+    // left and right turning points for different channels
+    std::vector<double> left_tps(channels);
+    std::vector<double> right_tps(channels); 
+
+    for ( double x = x_lb; x < x_rb; x += dx, Veig_prev = Veig )
+    {
+        fill_V( x, parity );
+        es.compute( V );
+        Veig = es.eigenvalues();
+
+        for ( int k = 0; k < channels; ++k )
+        {
+            if ( (Veig(k) - Energy) * (Veig_prev(k) - Energy) < 0 )
+            {
+                //std::cout << "Localized zero of " << k << " channel. Interval: " << x - dx << ", " << x << std::endl;
+
+                if ( Veig(k) - Energy < 0 )
+                {
+                    //std::cout << "Left turning point. Calling brent " << std::endl;
+                    tmp = [=]( const double r ) { return adiabatic_potential_component( parity, r, k ) - Energy; }; 
+
+                    tp = brent( tmp, x - dx, x, eps );
+                    //std::cout << "Turning point: " << tp << std::endl;
+
+                    left_tps[k] = tp;
+                }
+
+                else if ( Veig(k) - Energy > 0 )
+                {
+                    //std::cout << "Right turning point. Calling brent " << std::endl;
+                    tmp = [=]( const double r ) { return adiabatic_potential_component( parity, r, k ) - Energy; };
+
+                    tp = brent( tmp, x - dx, x, eps );
+                    //std::cout << "Turning point: " << tp << std::endl;
+
+                    right_tps[k] = tp;
+                }
+            }
+        }
+    }
+
+    // removing zero values for some channesl
+    left_tps.erase(
+        std::remove( left_tps.begin(), left_tps.end(), 0.0 ),
+        left_tps.end()
+    );
+
+    right_tps.erase(
+        std::remove( right_tps.begin(), right_tps.end(), 0.0),
+        right_tps.end()
+    );
+
+
+    double left_tp = *std::min_element( left_tps.begin(), left_tps.end() );
+    double right_tp = *std::max_element( right_tps.begin(), right_tps.end() );
+
+    return std::make_pair( left_tp, right_tp );
+}
+
+std::map<double, std::pair<double, double>> Equations::create_energy_dict( const Parity parity, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const double eps )
+// x_lb, x_rb -- задают интервал, в котором будут искаться поворотные точки
+// eps -- погрешность нахождения поворотной точки
+{
+    double lg_E_min = std::log10( -E_min );
+    double lg_E_max = std::log10( -E_max );
+    double energy_step = (lg_E_min - lg_E_max) / (energy_intervals - 1); 
+
+    std::pair<double, double> tp;
+    std::map<double, std::pair<double, double>> energy_dict;  
+
+    std::vector<double> zero_tps;
+
+    double lge = lg_E_max;
+    for ( int counter = 0; counter < energy_intervals; lge += energy_step, counter++ )
+    {
+        double e = -std::pow(10.0, lge);
+        tp = find_classical_turning_points( parity, e, x_lb, x_rb, eps );
+        energy_dict[e] = tp;
+
+        if ( (tp.first == 0) || (tp.second == 0) )
+            zero_tps.push_back( e );
+    } 
+    
+    //for ( auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    //std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
+
+    // может быть такая ситуация, что при некоторой низкой энергии поворотных точек нет
+    // в таком случае find_classical_turning_points(...) вернет пару (0.0, 0.0).
+    // Однако в таком случае при какой-то последующей энергии у нас будут ненулевые поворотные точки
+    // Предлагаю использовать их в в качестве поворотных и для этой энергии 
+    // 
+    // 1) Сначала надо найти первую снизу энергию, для которой поворотные точки ненулевые:
+    double Elb_reference;
+    std::pair<double, double> plb;
+    for ( auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    {
+        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
+        {   
+            plb = it->second;
+            Elb_reference = it->first;
+            break;
+        }
+    }
+  
+    // 2) Находим последнюю энергию, для которой поворотные точки ненулевые:
+    double Eub_reference;
+    std::pair<double, double> pub; 
+    for ( auto it = energy_dict.rbegin(); it != energy_dict.rend(); ++it )
+    {
+        if ( (it->second.first != 0.0) && (it ->second.second != 0.0) )
+        {
+            pub = it->second;
+            Eub_reference = it->first;
+            break;
+        }
+    }
+
+    // 3) Обходим те энергии, которые содержат нулевые пары и присваиваем им ненулевые 
+    //    значения поворотных точек
+    for ( size_t k = 0; k < zero_tps.size(); ++k )
+    {
+        if ( zero_tps[k] < Elb_reference )
+        {
+            auto it = energy_dict.find( zero_tps[k] );
+            it->second = plb;
+        }
+        else if ( zero_tps[k] > Eub_reference )
+        {
+            auto it = energy_dict.find( zero_tps[k] );
+            it->second = pub; 
+        }
+        else
+        {
+            std::cerr << "Problems with filling energy dict!" << std::endl;
+            exit( 1 );
+        }
+    } 
+
+    return energy_dict;
+} 
+
+std::pair<double, double> Equations::interpolate( const double e, const std::map<double, std::pair<double, double>> & energy_dict )
+{
+    double lower_bound = 0.0;
+    double upper_bound = 0.0;
+    const double eps = 1.0e-9;
+
+    for(  auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    {
+        if ( std::abs(it->first - e) < eps )
+        {
+            return it->second; 
+        }
+
+        if ( it->first > e )
+        {
+            upper_bound = it->first;
+            break;
+        }
+    }
+
+    for ( auto it = energy_dict.rbegin(); it != energy_dict.rend(); ++it )
+    {
+        if ( it->first < e )
+        {
+            lower_bound = it->first;
+            break;
+        }
+    }
+
+    if ( (lower_bound == 0.0) || (upper_bound == 0.0) )
+    {
+        std::cout << "Energy: " << e << std::endl;
+        std::cerr << "Interpolation is not possible!" << std::endl;
+        exit( 1 );
+    }
+
+    double lge = std::log10( -e );
+    double lglb = std::log10( -lower_bound ); 
+    double lgub = std::log10( -upper_bound );
+
+    std::pair<double, double> tp1 = energy_dict.find(lower_bound)->second;
+    std::pair<double, double> tp2 = energy_dict.find(upper_bound)->second;
+
+    double tp1lb = tp1.first;
+    double tp1ub = tp2.first;
+    double tp2lb = tp1.second;
+    double tp2ub = tp2.second;
+       
+    std::pair<double, double> res; 
+    res.first = tp1lb + (lglb - lge) * (tp1lb - tp1ub) / (lgub - lglb);
+    res.second = tp2lb + (lglb - lge) * (tp2lb - tp2ub) / (lgub - lglb); 
+
+    return res;
+} 
+
+void Equations::calculate_boundaries( std::pair<double, double> const & tp, double * a, double * b, double * h )
+{
+    *a = tp.first - 1.5; 
+    *b = tp.second + 5.0; 
+    *h = ( *b - *a ) / (NPoints - 1);
+    //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;
+} 
 

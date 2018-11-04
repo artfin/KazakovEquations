@@ -55,22 +55,33 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
 {
     Eigen::MatrixXd Rm, Rmp1;
 
-    equations->propagateForward( E, a, h, i_match, Rm );
-    equations->propagateBackward( E, b, h, i_match, Rmp1 );
+    equations->propagateForward( parity, E, a, h, i_match, Rm );
+    equations->propagateBackward( parity, E, b, h, i_match, Rmp1 );
 
     return (Rm - Rmp1.inverse()).determinant();
 }
 
-double PreciseEigenvalueFinder::precise_eigenvalue_calculation( const double a, const double b, const double h, const int i_match, const double E1, const double E2 )
+double PreciseEigenvalueFinder::precise_eigenvalue_calculation( const int i_match, const double E1, const double E2 )
 {
+    std::pair<double, double> tp = equations->interpolate( E2, energy_dict );  
+    
+    double a, b, h;
+    equations->calculate_boundaries( tp, &a, &b, &h );
+    // энергии E1, E2 уже достаточно близки, нет никакого смысла пересчитывать a, b, h для дальнейших шагов
+
     std::function<double(double)> __D__ = [=]( const double E ) { return D(a, b, h, i_match, E); };
     return brent( __D__, E1, E2 ); 
 }
 
-int PreciseEigenvalueFinder::find_i_match( const double a, const double b, const double h, const double E1, const double E2, const int parts )
+int PreciseEigenvalueFinder::find_i_match( const double E1, const double E2, const int NPoints, const int parts )
 {
     int i_match;
     double D1, D2;
+
+    std::pair<double, double> tp = equations->interpolate( E2, energy_dict );
+    
+    double a, b, h;
+    equations->calculate_boundaries( tp, &a, &b, &h );
 
     for ( int k = 1; k < parts; ++k )
     {
@@ -82,11 +93,12 @@ int PreciseEigenvalueFinder::find_i_match( const double a, const double b, const
 
         if ( D1 * D2 < 0.0 )
         {
-			std::cerr << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
+            //std::cerr << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
             return i_match;
         }
     }
 
-    std::cerr << "i_match is not found!" << std::endl;
-    exit( 1 );
+    return -1;
+    //std::cerr << "i_match is not found!" << std::endl;
+    //exit( 1 );
 }
