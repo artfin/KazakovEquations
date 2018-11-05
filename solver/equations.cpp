@@ -283,6 +283,13 @@ double Equations::brent( std::function<double(double)> f, double xb1, double xb2
     return r;
 }
 
+Eigen::VectorXd Equations::adiabatic_potential_vector( const Parity parity, const double r )
+{
+    fill_V( r, parity );
+    es.compute( V );
+    return es.eigenvalues();
+}
+
 double Equations::adiabatic_potential_component( const Parity parity, const double r, const int k )
 {
     fill_V( r, parity );
@@ -342,7 +349,7 @@ std::pair<double, double> Equations::find_classical_turning_points( const Parity
         }
     }
 
-    // removing zero values for some channesl
+    // removing zero values for some channels
     left_tps.erase(
         std::remove( left_tps.begin(), left_tps.end(), 0.0 ),
         left_tps.end()
@@ -439,6 +446,25 @@ std::map<double, std::pair<double, double>> Equations::create_energy_dict( const
         }
     } 
 
+    // 4) Проверяем, что правые поворотные точки идут в порядке возрастания
+    auto it = energy_dict.begin();
+    double prev = it->second.second;
+    double next;
+
+    it++;
+    for ( ; it != energy_dict.end(); it++ )
+    {
+        next = it->second.second;
+
+        if ( prev > next )
+        {
+            std::cerr << "Problems with energy dict! Turning points are not in strict increasing order!" << std::endl;
+            exit( 1 );
+        }
+
+        prev = next;
+    }
+
     return energy_dict;
 } 
 
@@ -478,6 +504,8 @@ std::pair<double, double> Equations::interpolate( const double e, const std::map
         exit( 1 );
     }
 
+    //std::cout << "(interpolate) lower_bound: " << lower_bound << "; upper_bound: " << upper_bound << std::endl;
+
     double lge = std::log10( -e );
     double lglb = std::log10( -lower_bound ); 
     double lgub = std::log10( -upper_bound );
@@ -500,8 +528,8 @@ std::pair<double, double> Equations::interpolate( const double e, const std::map
 void Equations::calculate_boundaries( std::pair<double, double> const & tp, double * a, double * b, double * h )
 {
     *a = tp.first - 1.5; 
-    *b = tp.second + 5.0; 
+    *b = tp.second + 6.0; 
     *h = ( *b - *a ) / (NPoints - 1);
-    //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;
+   //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;
 } 
 

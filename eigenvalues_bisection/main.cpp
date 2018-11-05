@@ -586,7 +586,7 @@ public:
         std::cout << std::fixed << std::setprecision(13);
         std::vector<Eigenvalue> eigs;
 
-		double E_step = 1.0e-4;
+		double E_step = 1.0e-6;
 		//double E_step = 3.0e-6;
 		//double E_step = 7.0e-7;
 
@@ -595,8 +595,8 @@ public:
 
 		// нужно пересчитывать a, b раз в некоторое время!
 		// пока что просто зададим их какими-то большими, чтобы точно хватило
-		double a = 6.0;
-		double b = 17.0;
+		double a = 5.0;
+		double b = 16.0;
 		double h = (b - a) / (NPoints - 1);
 
 		std::vector<double> nodesPos;
@@ -611,7 +611,7 @@ public:
         std::cout << "(findEigenvalues_detR) E_min: " << E_min << "; nodes (nodes_prev): " << nodes_prev << std::endl;
 
 		int counter = 0;
-		for ( double E = E_min; E < E_max; E += E_step, nodes_prev = nodes_current, ++counter )
+		for ( double E = E_min; E <= E_max; E += E_step, nodes_prev = nodes_current, ++counter )
 		{
 			propagateDetR( E, a, b, h, nodesPos );
 			nodes_current = nodesPos.size(); 
@@ -764,8 +764,7 @@ private:
 int main()
 {
     int channels = 4;
-    int NPoints = 10000;
-	//int NPoints = 50000;
+    int NPoints = 50000;
 
 	int M = 0;
 	int J = 7;
@@ -773,21 +772,29 @@ int main()
 	Solver solver( channels, NPoints );
 	solver.setAngularMomentum( J, M );
 
-	std::cout << "Eigen threads: " << Eigen::nbThreads() << std::endl;
-
 	//double Energy = -1.0e-10;
 	//std::pair<double, double> tp = solver.find_classical_turning_points( Energy, 6.0, 22.0 );
 	//std::cout << "TP: " << tp.first << " " << tp.second << std::endl;
 
-	int reduce_step = 10;
+    //int reduce_step = 10;
 	//double E_min = -5.3125e-5; // 2.0e-3
 	//double E_max = -5.0e-7;
 	//double E_min = -6.625e-6;
 	//double E_max = -5.0e-7;
-	double E_min = -5.5e-4;
-    double E_max = -1.5e-4;
-    solver.findEigenvalues_detR( E_min, E_max, reduce_step );	
-	
+	//double E_min = -5.5e-4;
+    //double E_max = -5.39e-4;
+    //solver.findEigenvalues_detR( E_min, E_max, reduce_step );	
+
+
+    double Energy = -0.000000055; 
+    double a = 4.5;
+    double b = 30.0;
+    double h = (b - a) / (NPoints - 1);
+    std::vector<double> nodesPos;
+    solver.propagateDetR( Energy, a, b, h, nodesPos ); 
+
+    std::cout << "nodesPos.size(): " << nodesPos.size() << std::endl;
+
 	// ----------------------------------------------------------------
 	//double E_min = -5.5e-4;
 	//double E_max = -5.3e-4;

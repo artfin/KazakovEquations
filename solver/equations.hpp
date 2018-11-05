@@ -44,6 +44,7 @@ public:
     int countNegativeDiagonalElements( );
 
     double brent( std::function<double(double)> f, double xb1, double xb2, const double eps );
+    Eigen::VectorXd adiabatic_potential_vector( const Parity parity, const double r );
     double adiabatic_potential_component( const Parity parity, const double r, const int k );
     std::pair<double, double> find_classical_turning_points( const Parity parity, const double Energy, double x_lb, double x_rb, const double eps );
     std::map<double, std::pair<double, double>> create_energy_dict( const Parity parity, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const double eps );
