@@ -19,7 +19,7 @@
 // 
 // 2) automatic update of interval bounds in PreliminaryEigenvalueFinder::findEigenvalues():  -- done
 //      a = a(E), b = b(E)
-// 2a) turning points depend on parity     ?! 
+// 2a) turning points depend on parity     
 //
 // 3) database to save eigenvalue into -- done 
 // 3a) add J, M fields to eigenvalue structure -- done; set them throughout calculation
@@ -33,12 +33,12 @@ int main()
 {
     std::cout << std::fixed << std::setprecision(13);
 	
-    const int NPoints = 1000;
-    const int J = 7;
+    const int NPoints = 5000;
+    const int J = 3;
     const int M = 0;
     
-    //const int channels = J - std::abs(M) + 1;
-    int channels = 4;
+    const int channels = J - std::abs(M) + 1;
+    //int channels = 4;
 
     Equations equations( channels, NPoints );
     equations.setAngularMomentum( J, M );		
@@ -53,7 +53,7 @@ int main()
     double eig;
 
     double x_lb = 5.0;
-    double x_rb = 24.0;
+    double x_rb = 20.0;
 
     int energy_intervals = 10; // number of energy intervals [lg(-E_min), lg(-E_max)] to be divided into
     std::map<double, std::pair<double, double>> even_energy_dict = equations.create_energy_dict( Parity::EVEN, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
@@ -76,7 +76,6 @@ int main()
     std::cout << "Odd energy_dict: " << std::endl;
     for ( auto it = odd_energy_dict.begin(); it != odd_energy_dict.end(); ++it )
         std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl; 
-
 
     // --------------------------------------------------------------------------------------------------------------
     parity = Parity::EVEN; 

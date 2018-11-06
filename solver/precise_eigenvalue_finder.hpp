@@ -25,7 +25,7 @@ public:
     double D( const double a, const double b, const double h, const int i_match, const double E );
     double precise_eigenvalue_calculation( const int i_match, const double E1, const double E2 );
     
-    int find_i_match( const double E1, const double E2, const int NPoints, const int parts = 10 );
+    int find_i_match( const double E1, const double E2, const int NPoints, const int parts = 100 );
 
 private:
     Equations * equations;

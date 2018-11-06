@@ -767,7 +767,7 @@ int main()
     int NPoints = 50000;
 
 	int M = 0;
-	int J = 7;
+	int J = 3;
 
 	Solver solver( channels, NPoints );
 	solver.setAngularMomentum( J, M );
@@ -786,9 +786,9 @@ int main()
     //solver.findEigenvalues_detR( E_min, E_max, reduce_step );	
 
 
-    double Energy = -0.000000055; 
-    double a = 4.5;
-    double b = 30.0;
+    double Energy = -1.0e-10;
+    double a = 5.0;
+    double b = 45.0;
     double h = (b - a) / (NPoints - 1);
     std::vector<double> nodesPos;
     solver.propagateDetR( Energy, a, b, h, nodesPos ); 

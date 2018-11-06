@@ -458,11 +458,15 @@ std::map<double, std::pair<double, double>> Equations::create_energy_dict( const
 
         if ( prev > next )
         {
-            std::cerr << "Problems with energy dict! Turning points are not in strict increasing order!" << std::endl;
-            exit( 1 );
-        }
+            it->second.second = prev;
 
-        prev = next;
+            std::cerr << "Problems with energy dict! Turning points are not in strict increasing order!" << std::endl;
+            //exit( 1 );
+        }
+        else
+        {
+            prev = next;
+        }
     }
 
     return energy_dict;
