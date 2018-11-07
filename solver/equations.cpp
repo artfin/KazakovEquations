@@ -139,6 +139,61 @@ void Equations::propagateDetR( const Parity parity, const double Energy, const d
 	}
 }
 
+void Equations::propagateForwardFull( const Parity parity, const double Energy, const double a, const double h, std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
+{
+    double hh12 = h * h / 12.0;
+    double x = a + h;
+
+    Rinv = Eigen::MatrixXd::Zero( channels, channels );
+
+    int counter = 0;
+    for ( int i = 1; i < NPoints - 1; i++, x += h )
+    {
+        fill_V( x, parity );
+
+		Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
+		U = 12.0 * Wmat.inverse() - 10.0 * I;
+		R = U - Rinv;
+		Rinv = R.inverse();
+    
+        if ( (i % step == 0) && (i != 0) )
+        {
+            //std::cout << "(propagateForwardFull) i: " << i << std::endl;
+            Rm_vector[counter] = R;
+            ++counter;
+        } 
+    } 
+} 
+
+void Equations::propagateBackwardFull( const Parity parity, const double Energy, const double b, const double h, std::vector<Eigen::MatrixXd> & Rmp1_vector, const int step )
+{
+    //std::cout << "(propagateBackwardFull) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
+    
+    double hh12 = h * h / 12.0;
+    double x = b - h;
+
+    Rinv = Eigen::MatrixXd::Zero( channels, channels );
+
+    size_t size_ = Rmp1_vector.size() - 1;
+    int counter = 0; 
+    for ( int i = NPoints - 2; i > 0; i--, x -= h )
+    {
+        fill_V( x, parity );
+
+        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
+        U = 12.0 * Wmat.inverse() - 10.0 * I;
+        R = U - Rinv;
+        Rinv = R.inverse();
+        
+        if ( ((i - 1) % step == 0) && (i - 1 != 0) ) 
+        {
+            //std::cout << "(propagateBackwardFull) i: " << i << std::endl;
+            Rmp1_vector[size_ - counter] = Rinv;
+            ++counter;
+        }
+    }	
+}
+
 void Equations::propagateForward( const Parity parity, const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save ) 
 {
     double hh12 = h * h / 12.0;
@@ -168,9 +223,12 @@ void Equations::propagateForward( const Parity parity, const double Energy, cons
     resRm = R;
 }
 
+
 void Equations::propagateBackward( Parity parity, const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save ) 
 // resRmp1 = R_{m + 1}
 {
+    //std::cout << "(propagateBackward) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
+
     double hh12 = h * h / 12.0;
     double x = b - h;
 
@@ -185,8 +243,6 @@ void Equations::propagateBackward( Parity parity, const double Energy, const dou
         U = 12.0 * Wmat.inverse() - 10.0 * I;
         R = U - Rinv;
         Rinv = R.inverse();
-
-        //std::cout << "(propagateBackward) Rinv: " << std::endl << Rinv << std::endl;
 
         if ( save )
         {

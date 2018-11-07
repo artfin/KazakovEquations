@@ -58,6 +58,8 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
     equations->propagateForward( parity, E, a, h, i_match, Rm );
     equations->propagateBackward( parity, E, b, h, i_match, Rmp1 );
 
+    //std::cout << "(D) i_match: " << i_match << "; Rm: " << std::endl << Rm << std::endl << "; Rmp1_inv: " << std::endl << Rmp1.inverse() << std::endl;
+
     return (Rm - Rmp1.inverse()).determinant();
 }
 
@@ -71,6 +73,41 @@ double PreciseEigenvalueFinder::precise_eigenvalue_calculation( const int i_matc
 
     std::function<double(double)> __D__ = [=]( const double E ) { return D(a, b, h, i_match, E); };
     return brent( __D__, E1, E2 ); 
+}
+
+int PreciseEigenvalueFinder::effecient_i_match( const double E1, const double E2, const int NPoints, const int parts )
+{
+    int len = parts - 1; // only internal dots 
+
+    // энергии очень близки, достаточно одного набора поворотных точек
+    double a, b, h;
+    std::pair<double, double> tp = equations->interpolate( E2, energy_dict );
+    equations->calculate_boundaries( tp, &a, &b, &h );
+
+    int step = NPoints / parts;
+
+    // ENERGY = E1!
+    equations->propagateForwardFull( parity, E1, a, h, Rm_vector1, step );
+    equations->propagateBackwardFull( parity, E1, b, h, Rmp1_vector1, step );
+
+    // ENERGY = E2!
+    equations->propagateForwardFull( parity, E2, a, h, Rm_vector2, step );
+    equations->propagateBackwardFull( parity, E2, b, h, Rmp1_vector2, step );
+
+    double D1, D2;
+    int i_match = step;
+    for ( int k = 0; k < len; ++k, i_match += step )
+    {
+        D1 = (Rm_vector1[k] - Rmp1_vector1[k]).determinant();
+        D2 = (Rm_vector2[k] - Rmp1_vector2[k]).determinant();
+
+        //std::cout << "(effecient_i_match) i_match: " << i_match << "; D1: " << D1 << "; D2: " << D2 << std::endl;
+        if ( D1 * D2 < 0.0 )
+            return i_match;
+    }
+
+    // если подходящая точка сшивки не найдена, то возвращаем -1.
+    return -1;
 }
 
 int PreciseEigenvalueFinder::find_i_match( const double E1, const double E2, const int NPoints, const int parts )
@@ -102,3 +139,16 @@ int PreciseEigenvalueFinder::find_i_match( const double E1, const double E2, con
     //std::cerr << "i_match is not found!" << std::endl;
     //exit( 1 );
 }
+
+
+void PreciseEigenvalueFinder::reserve_space_for_search( const int parts )
+{
+    int len = parts - 1; 
+    
+    Rm_vector1.resize( len );
+    Rmp1_vector1.resize( len );
+   
+    Rm_vector2.resize( len );
+    Rmp1_vector2.resize( len );
+}
+

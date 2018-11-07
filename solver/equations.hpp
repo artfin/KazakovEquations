@@ -38,7 +38,9 @@ public:
 
     void propagateDetR( const Parity parity, const double Energy, const double a, const double b, const double h, std::vector<double> & nodesPos );
     void propagateForward( const Parity parity, const double Energy, const double a, const double h, const int i_match, Eigen::MatrixXd & resRm, bool save = false );
+    void propagateForwardFull( const Parity parity, const double Energy, const double a, const double h, std::vector<Eigen::MatrixXd> & Rm_vector, const int step );
     void propagateBackward( const Parity parity, const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save = false ); 
+    void propagateBackwardFull( const Parity parity, const double Energy, const double b, const double h, std::vector<Eigen::MatrixXd> & Rmp1_vector, const int step ); 
 
     int countEigenvalues( const Parity parity, const double Energy, const double a, const double b, const double h );  
     int countNegativeDiagonalElements( );
