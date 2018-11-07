@@ -29,151 +29,74 @@
 
 void fixNodeCount( std::vector<Eigenvalue> & eigs );
 
+std::string parityToString( const Parity parity ); 
+
+std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const int NPoints, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const int i_match_intervals, const double eps, const double eps_tp );
+
 int main()
 {
     std::cout << std::fixed << std::setprecision(13);
 	
     const int NPoints = 5000;
-    const int J = 7;
-    const int M = 0;
+    const int J = 8;
+    const int M = 5;
     
-    //const int channels = J - std::abs(M) + 1;
-    int channels = 4;
+    const int channels = J - std::abs(M) + 1;
 
-    Equations equations( channels, NPoints );
-    equations.setAngularMomentum( J, M );		
+    int odd_channels = 0;
+    int even_channels = 0;
+    for ( int L = M; L <= J; ++L )
+    {
+        if ( L % 2 == 0 )
+            even_channels++;
+        else
+            odd_channels++;
+    }
+    std::cout << "Number of even channels: " << even_channels << std::endl;
+    std::cout << "Number of odd channels: " << odd_channels << std::endl;
 
-    double E_min = -3.0e-3;
-    double E_max = -1.0e-10;
-    double eps = 1.0e-1; // relative precision of preliminary eigenvalue
+    // energy interval to search eigenvalues in
+    const double E_min = -3.0e-3; 
+    const double E_max = -1.0e-10;
+    const double eps = 1.0e-1; // relative precision of preliminary eigenvalue
+       
+    // interval to search turning points in  
+    const double x_lb = 5.0;
+    const double x_rb = 20.0;
     const double eps_tp = 1.0e-3; // absolute precision of turning point
-        
-    Parity parity;
-    int i_match;
-    double eig;
-
-    double x_lb = 5.0;
-    double x_rb = 20.0;
     
-    bool all_tp_zero;
     int energy_intervals = 10; // number of energy intervals [lg(-E_min), lg(-E_max)] to be divided into
-    int i_match_intervals = 100; // number of dots condisered to be i_match
-    
-    // --------------------------------------------------------------------------------------------------------------
-    std::vector<Eigenvalue> even_preigs;
-    
-    std::map<double, std::pair<double, double>> even_energy_dict = equations.create_energy_dict( Parity::EVEN, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
-    std::cout << "Even energy_dict: " << std::endl;
-    
-    all_tp_zero = true;
-    for ( auto it = even_energy_dict.begin(); it != even_energy_dict.end(); ++it )
+    int i_match_intervals = 20; // number of dots condisered to be i_match
+
+    std::vector<Eigenvalue> tmp, preigs;   
+        
+    if ( even_channels != 0 )
     {
-        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
-        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
-        {
-           all_tp_zero = false;
-        }
+        Equations equations( even_channels, NPoints );
+        equations.setAngularMomentum( J, M );		
+
+        tmp = calculate_eigenvalues( Parity::EVEN, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+        if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
+        { 
+            std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
+            exit( 1 );
+        } 
+        preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
     }
-    if ( !all_tp_zero )
+
+    if ( odd_channels != 0 )
     {
-        parity = Parity::EVEN; 
-        PreliminaryEigenvalueFinder even_pef( &equations, even_energy_dict, parity );
+        Equations equations( odd_channels, NPoints );
+        equations.setAngularMomentum( J, M );
 
-        std::vector<Eigenvalue> even_eigs = even_pef.findEigenvalues( E_min, E_max );
-        std::cout << "Preliminary even eigenvalues: " << std::endl;
-        for ( size_t k = 0; k < even_eigs.size(); ++k )
-        {
-            even_eigs[k] = even_pef.convergeToEigenvalue( even_eigs[k], std::abs(even_eigs[k].get_value()) * eps );
-            std::cout << even_eigs[k] << std::endl;
-        }
-
-        PreciseEigenvalueFinder even_pref( &equations, even_energy_dict, parity );
-        even_pref.reserve_space_for_search( i_match_intervals );
-
-        std::cout << "Precise even eigenvalues: " << std::endl;
-        for ( size_t k = 0; k < even_eigs.size(); ++k )
-        {
-            i_match = even_pref.effecient_i_match( even_eigs[k].get_min(), even_eigs[k].get_max(), NPoints, i_match_intervals );
-            std::cout << "(main) i_match: " << i_match << std::endl;
-            if ( i_match < 0 )
-                continue;
-
-            eig = even_pref.precise_eigenvalue_calculation( i_match, even_eigs[k].get_min(), even_eigs[k].get_max() );
-
-            even_preigs.push_back( even_eigs[k] );
-            even_preigs.back().set_value( eig );
-
-            std::cout << even_preigs.back() << std::endl; 
-        }
+        tmp = calculate_eigenvalues( Parity::ODD, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+        if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
+        { 
+            std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
+            exit( 1 );
+        } 
+        preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
     }
-    else
-    { 
-        std::cerr << "All turning points are zero! There are no bound levels of EVEN parity! Check channels." << std::endl;
-    }
-    // --------------------------------------------------------------------------------------------------------------
-
-    // --------------------------------------------------------------------------------------------------------------
-    std::vector<Eigenvalue> odd_preigs;
-    
-    std::map<double, std::pair<double, double>> odd_energy_dict = equations.create_energy_dict( Parity::ODD, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
-    all_tp_zero = true;
-    std::cout << "Odd energy_dict: " << std::endl;
-    for ( auto it = odd_energy_dict.begin(); it != odd_energy_dict.end(); ++it )
-    {
-        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl; 
-        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
-        {
-           all_tp_zero = false;
-        }
-    }
-    
-    if ( !all_tp_zero )
-    {
-        parity = Parity::ODD;
-        PreliminaryEigenvalueFinder odd_pef( &equations, odd_energy_dict, parity );
-
-        std::vector<Eigenvalue> odd_eigs = odd_pef.findEigenvalues( E_min, E_max );
-        std::cout << "Preliminary odd eiganvalues: " << std::endl;
-        for ( size_t k = 0; k < odd_eigs.size(); ++k )
-        {
-            odd_eigs[k] = odd_pef.convergeToEigenvalue( odd_eigs[k], std::abs(odd_eigs[k].get_value()) * eps );
-            std::cout << odd_eigs[k] << std::endl;
-        }
-
-        PreciseEigenvalueFinder odd_pref( &equations, odd_energy_dict, parity );
-        odd_pref.reserve_space_for_search( i_match_intervals );
-
-        std::cout << "Precise odd eigenvalues: " << std::endl;
-        for ( size_t k = 0; k < odd_eigs.size(); ++k )
-        {
-            i_match = odd_pref.effecient_i_match( odd_eigs[k].get_min(), odd_eigs[k].get_max(), NPoints, i_match_intervals );
-            std::cout << "(main) i_match: " << i_match << std::endl;
-            if ( i_match < 0 )
-                continue;
-
-            eig = odd_pref.precise_eigenvalue_calculation( i_match, odd_eigs[k].get_min(), odd_eigs[k].get_max() );
-
-            odd_preigs.push_back( odd_eigs[k] );
-            odd_preigs.back().set_value( eig );
-
-            std::cout << odd_preigs.back() << std::endl;
-        }
-    }
-    else
-    {
-        std::cerr << "All turning points are zero! There are no bound levels of ODD parity! Check channels." << std::endl;
-    } 
-    // --------------------------------------------------------------------------------------------------------------    
-
-    if ( (even_preigs.size() != 0 && even_preigs[0].get_node_count_min() != 0) || (odd_preigs.size() != 0.0 && odd_preigs[0].get_node_count_min() != 0) )
-    {
-        std::cout << "Node count min for first eigenvalue is not zero!" << std::endl << "Exiting without saving to database..." << std::endl;
-        exit( 1 );
-    }
-    
-    std::vector<Eigenvalue> preigs; // full list of eigenvalues
-    preigs.insert( preigs.end(), even_preigs.begin(), even_preigs.end() );
-    preigs.insert( preigs.end(), odd_preigs.begin(), odd_preigs.end() );
     
     // сбросить node count для чисел, чтобы отфильтровать их по значению  
     std::for_each( preigs.begin(), preigs.end(), []( Eigenvalue & e ) { e.dump_node_count(); });
@@ -196,7 +119,7 @@ int main()
 
     EigenDB.insert( preigs );
     EigenDB.write();    
-    
+
 	return 0;
 }
 
@@ -232,4 +155,71 @@ void fixNodeCount( std::vector<Eigenvalue> & eigs )
         eigs[k].set_node_count_max( k + 1 );
     }
 }
+
+std::string parityToString( const Parity parity ) 
+{
+    if ( parity == Parity::EVEN )
+        return "even";
+    else if ( parity == Parity::ODD )
+        return "odd";
+    else
+       return "general"; 
+}
+
+
+std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const int NPoints, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const int i_match_intervals, const double eps, const double eps_tp )
+{
+    std::vector<Eigenvalue> preigs;
+
+    std::map<double, std::pair<double, double>> energy_dict = equations.create_energy_dict( parity, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
+    bool all_tp_zero = true;
+    for ( auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    {
+        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
+        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
+        {
+            all_tp_zero = false;
+        }
+    }
+    if ( !all_tp_zero )
+    {
+        PreliminaryEigenvalueFinder pef( &equations, energy_dict, parity );
+
+        std::vector<Eigenvalue> eigs = pef.findEigenvalues( E_min, E_max );
+
+        std::cout << "Preliminary " + parityToString(parity) + " eigenvalues: " << std::endl;
+        for ( size_t k = 0; k < eigs.size(); ++k )
+        {
+            eigs[k] = pef.convergeToEigenvalue( eigs[k], std::abs(eigs[k].get_value()) * eps );
+            std::cout << eigs[k] << std::endl;
+        }
+
+        //PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
+        //pref.reserve_space_for_search( i_match_intervals );
+
+        //int i_match;
+        //std::cout << "Precise " + parityToString(parity) + " eigenvalues: " << std::endl;
+        //for ( size_t k = 0; k < eigs.size(); ++k )
+        //{
+            //i_match = pref.effecient_i_match( eigs[k].get_min(), eigs[k].get_max(), NPoints, i_match_intervals );
+            //std::cout << "(main) i_match: " << i_match << std::endl;
+            //if ( i_match < 0 )
+                //continue;
+
+            //double eig = pref.precise_eigenvalue_calculation( i_match, eigs[k].get_min(), eigs[k].get_max() );
+
+            //preigs.push_back( eigs[k] );
+            //preigs.back().set_value( eig );
+
+            //std::cout << preigs.back() << std::endl; 
+        //}
+    }
+    else
+    {
+        std::cerr << "All turning points are zero! There are no bound levels of " + parityToString(parity) + " parity! Check channels." << std::endl;
+    } 
+
+    return preigs;
+}
+
 

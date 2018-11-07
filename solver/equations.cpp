@@ -1,10 +1,19 @@
 #include "./equations.hpp"
 
-Equations::Equations( int channels_, int NPoints ) : channels(channels_ / 2), NPoints(NPoints) 
+Equations::Equations( int channels, int NPoints ) : channels(channels), NPoints(NPoints) 
 {
-    std::cout << "(equations constructor) Effective number of channels: " << 2 * channels << "; real size of matrices: " << channels << std::endl;
     W.resize( 6 );
+    init_matrices();
+}
 
+void Equations::reset_channels( const int channels )
+{
+    this->channels = channels;
+    init_matrices();
+}
+
+void Equations::init_matrices( )
+{
 	V = Eigen::MatrixXd::Zero( channels, channels );
     I = Eigen::MatrixXd::Identity( channels, channels );
     R = Eigen::MatrixXd::Zero(channels, channels);
@@ -19,12 +28,13 @@ Equations::Equations( int channels_, int NPoints ) : channels(channels_ / 2), NP
     Winv_vector.resize( NPoints );
     for ( int k = 0; k < NPoints; ++k )
         Winv_vector[k] = Eigen::MatrixXd::Zero( channels, channels );
-}
+} 
 
 void Equations::setAngularMomentum( const int J, const int M )
 {
 	this->J = J;
 	this->M = M;
+    M_abs = std::abs(M);
 }
 
 void Equations::fill_W_elements( const double R )
@@ -83,31 +93,69 @@ void Equations::fill_V( const double r, const Parity parity )
 
     if ( parity == Parity::ODD )
     {
-        for ( int P = 0; P < V.rows(); ++P )
+        int P, Lprime;
+
+        if ( M_abs % 2 == 1 )
         {
-            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            P = M_abs;
+            Lprime = M_abs;
+        }
+        else
+        {
+            P = M_abs + 1;
+            Lprime = M_abs + 1;
+        }
+
+        int Lprime_ini = Lprime;
+
+        for ( int i = 0; i < V.rows(); i++, P += 2 )
+        {
+            Lprime = Lprime_ini;
+            for ( int j = 0; j < V.cols(); j++, Lprime += 2 )
             {
-                V(P, Lprime) = compute_W_sum(2*P+1, 2*Lprime+1) + delta(2*P+1, 2*Lprime+1) * (hbar*hbar*(2.0*P+1.0)*(2.0*P+2.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + (2.0*P+1.0)*(2.0*P+2.0)));
+                //std::cout << "(odd) i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
+                V(i, j) = compute_W_sum(P, Lprime) + delta(P, Lprime) * (hbar*hbar*P*(P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + P*(P+1.0)));
             }
         }
     }
     else if ( parity == Parity::EVEN )
     {
-        for ( int P = 0; P < V.rows(); ++P )
+        int P, Lprime; 
+
+        if ( M_abs % 2 == 0 )
         {
-            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            P = M_abs;
+            Lprime = M_abs;
+        }
+        else
+        {
+            P = M_abs + 1;
+            Lprime = M_abs + 1;
+        }
+        
+        int Lprime_ini = Lprime;
+
+        for ( int i = 0; i < V.rows(); i++, P += 2 )
+        {
+            Lprime = Lprime_ini;
+            for ( int j = 0; j < V.cols(); j++, Lprime += 2 )
             {
-                V(P, Lprime) = compute_W_sum(2*P, 2*Lprime) + delta(2*P, 2*Lprime) * (hbar*hbar*2.0*P*(2.0*P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + 2.0*P*(2.0*P+1.0)));
+                //std::cout << "(even) i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
+                V(i, j) = compute_W_sum(P, Lprime) + delta(P, Lprime) * (hbar*hbar*P*(P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + P*(P+1.0)));
             }
         }
     }
     else
     {
-        for ( int P = 0; P < V.rows(); ++P )
+        int P = M_abs;
+        int Lprime = M_abs; 
+        for ( int i = 0; i < V.rows(); i++, P++ )
         {
-            for ( int Lprime = 0; Lprime < V.cols(); ++Lprime )
+            Lprime = M_abs;
+            for ( int j = 0; j < V.cols(); j++, Lprime++ )
             {
-                V(P, Lprime) = compute_W_sum( P, Lprime ); // + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
+                //std::cout << "i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
+                V(i, j) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
             }
         }
     }

@@ -21,7 +21,9 @@ public:
 	explicit Equations( int channels, int NPoints ); 
 
 	void setAngularMomentum( const int J, const int M );
-	
+    void init_matrices();
+    void reset_channels( const int channels );
+
 	void fill_W_elements( const double R );
 	
 	double angularMatrixElements( const int P, const int l, const int Lprime );
@@ -65,7 +67,8 @@ private:
     int NPoints;
 
 	int M = 0;
-	int J = -1;
+    int M_abs = 0;
+    int J = -1;
 
 	std::vector<double> W;
 
