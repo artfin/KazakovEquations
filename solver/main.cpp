@@ -33,13 +33,25 @@ std::string parityToString( const Parity parity );
 
 std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const int NPoints, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const int i_match_intervals, const double eps, const double eps_tp );
 
-int main()
+int main( int argc, char * argv[] )
 {
+    int J, M;
+    if ( argc < 3 ) 
+    {
+        std::cerr << "Program expects (int) J and (int) M." << std::endl;
+        exit( 1 );
+    }
+    else
+    {
+        J = atoi( argv[1] );
+        M = atoi( argv[2] );
+        
+        std::cout << "(main) accepted arguments. J: " << J << ", M: " << M << std::endl; 
+    }
+
     std::cout << std::fixed << std::setprecision(13);
 	
     const int NPoints = 5000;
-    const int J = 8;
-    const int M = 5;
     
     const int channels = J - std::abs(M) + 1;
 
@@ -194,25 +206,25 @@ std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & 
             std::cout << eigs[k] << std::endl;
         }
 
-        //PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
-        //pref.reserve_space_for_search( i_match_intervals );
+        PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
+        pref.reserve_space_for_search( i_match_intervals );
 
-        //int i_match;
-        //std::cout << "Precise " + parityToString(parity) + " eigenvalues: " << std::endl;
-        //for ( size_t k = 0; k < eigs.size(); ++k )
-        //{
-            //i_match = pref.effecient_i_match( eigs[k].get_min(), eigs[k].get_max(), NPoints, i_match_intervals );
-            //std::cout << "(main) i_match: " << i_match << std::endl;
-            //if ( i_match < 0 )
-                //continue;
+        int i_match;
+        std::cout << "Precise " + parityToString(parity) + " eigenvalues: " << std::endl;
+        for ( size_t k = 0; k < eigs.size(); ++k )
+        {
+            i_match = pref.effecient_i_match( eigs[k].get_min(), eigs[k].get_max(), NPoints, i_match_intervals );
+            std::cout << "(main) i_match: " << i_match << std::endl;
+            if ( i_match < 0 )
+                continue;
 
-            //double eig = pref.precise_eigenvalue_calculation( i_match, eigs[k].get_min(), eigs[k].get_max() );
+            double eig = pref.precise_eigenvalue_calculation( i_match, eigs[k].get_min(), eigs[k].get_max() );
 
-            //preigs.push_back( eigs[k] );
-            //preigs.back().set_value( eig );
+            preigs.push_back( eigs[k] );
+            preigs.back().set_value( eig );
 
-            //std::cout << preigs.back() << std::endl; 
-        //}
+            std::cout << preigs.back() << std::endl; 
+        }
     }
     else
     {
