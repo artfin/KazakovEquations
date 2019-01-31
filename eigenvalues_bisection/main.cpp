@@ -763,11 +763,11 @@ private:
 
 int main()
 {
-    int channels = 4;
-    int NPoints = 50000;
+    int NPoints = 100000;
 
-	int M = 0;
-	int J = 3;
+	int M = 1;
+	int J = 9;
+    int channels = J - M + 1;
 
 	Solver solver( channels, NPoints );
 	solver.setAngularMomentum( J, M );
@@ -787,8 +787,8 @@ int main()
 
 
     double Energy = -1.0e-10;
-    double a = 5.0;
-    double b = 45.0;
+    double a = 4.5;
+    double b = 27.0;
     double h = (b - a) / (NPoints - 1);
     std::vector<double> nodesPos;
     solver.propagateDetR( Energy, a, b, h, nodesPos ); 

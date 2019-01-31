@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{booktabs} % toprule/bottomrule
+
+\usepackage{graphicx}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% blackboar lettering
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\rhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage }}
+
+\begin{document}
+
+\begin{table}[H]
+    \begin{center}
+    \caption{J = 0, M = 0, channels = 5, NPoints = 5.000}
+    \begin{tabular}{cccc}
+    \toprule[1.5pt]
+    n & Julia & reexpanded Hutson & choi[1990] \\[1.5pt]
+    \hline
+        0 & -112.857 & -117.651 & -117.821 \\
+        1 & -88.323 & -93.949 & -94.167 \\
+        2 & -81.108 & -85.277 & -85.394 \\
+        3 & -62.250 & -66.658 & -67.012 \\
+        4 & -55.937 & -59.625 & -59.745 \\
+        5 & -44.204 & -47.965 & -48.970 \\
+        6 & -37.229 & -41.359 & -41.859 \\
+        7 & -34.883 & -37.893 & -38.071 \\
+        8 & -22.260 & -25.236 & -25.910 \\
+        9 & -19.941 & -22.740 & -22.854 \\
+       10 & -12.821 & -16.245 & -17.071 \\
+       11 & -9.713 & -11.658 & -11.810 \\
+       12 & -4.316 &  -7.252 & -7.882 \\
+       13 & -4.237 &  -5.771 & -5.471 \\
+       14 & -1.309 &  -1.856 & -1.893 \\
+       15 & -0.078 &  -0.311 & -0.363 \\
+    \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{center}
+    \caption{J = 0, M = 0, channels = 5, NPoints = 5.000}
+    \begin{tabular}{ccc}
+    \toprule[1.5pt]
+    n & reexpanded Hutson & choi[1990] \\[1.5pt]
+    \hline
+        0 & -117.651 & -117.821 \\
+        1 & -93.949 & -94.167 \\
+        2 &  -85.277 & -85.394 \\
+        3 &  -66.658 & -67.012 \\
+        4 &  -59.625 & -59.745 \\
+        5 &  -47.965 & -48.970 \\
+        6 &  -41.359 & -41.859 \\
+        7 &  -37.893 & -38.071 \\
+        8 &  -25.236 & -25.910 \\
+        9 &  -22.740 & -22.854 \\
+       10 &  -16.245 & -17.071 \\
+       11 &  -11.658 & -11.810 \\
+       12 &   -7.252 & -7.882 \\
+       13 &   -5.771 & -5.471 \\
+       14 &   -1.856 & -1.893 \\
+       15 &   -0.311 & -0.363 \\
+    \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+%\begin{table}[H]
+    %\begin{center}
+        %\begin{tabular}{cc}
+        %\toprule[1.5pt]
+            %A & B \\
+        %\bottomrule
+    %\end{tabular}
+    %\end{center}
+%\end{table}
+
+\newpage
+
+\begin{table}[H]
+    \begin{center}
+    \caption{Anisotropic harmonic oscillator. Omega = 1.5, Channels = 8, NPoints = 1000}
+    \begin{tabular}{cccc}
+    \toprule[1.5pt]
+    n & Calc. energy & degeneracy & Exact energy \\[1.5pt]
+    \hline
+    0 & 1.7499999995742 & 1 & 1.75 \\ 
+    1 & 3.7499999977015 & 1 & 3.75 \\ 
+    2 & 4.7499999974632 & 1 & 4.75 \\
+    3 & 5.7499999939972 & 1 & 5.75 \\
+    4 & 6.7500000036831 & 1 & 6.75 \\
+    5 & 7.7499997370529 & 2 & 7.75 \\
+    6 & 8.7500015720428 & 1 & 8.75 \\
+    7 & 9.7499997370529 & 2 & 9.75 \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\end{document}

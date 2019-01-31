@@ -5,6 +5,8 @@
 #include <functional>
 #include <algorithm>
 #include <map>
+#include "./Ar-HCl_pes_coefs.hpp"
+//#include "./Hutson_Ar_HCl_pes_coefs.hpp"
 
 #include <Eigen/Dense>
 
@@ -13,6 +15,7 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_errno.h>
 
+#include "./constants.hpp"
 #include "./parity.hpp"
 
 class Equations
@@ -25,7 +28,8 @@ public:
     void reset_channels( const int channels );
 
 	void fill_W_elements( const double R );
-	
+    std::vector<double> get_W() const { return W; }     
+
 	double angularMatrixElements( const int P, const int l, const int Lprime );
 	
 	double compute_W_sum( const int P, const int Lprime);
@@ -58,11 +62,33 @@ public:
     std::vector<Eigen::MatrixXd> Rinv_vector;
     std::vector<Eigen::MatrixXd> Winv_vector;
 
+    Eigen::MatrixXd const& get_V() const { return V; }
+
 private:
 	const double hbar = 1.0;
-	const double mu = 38183.0;
-	const double Inten = 14579.0 * std::pow(4.398, 2.0);
-	
+    //const double mu = 38183.0;
+    //const double Inten = 14579.0 * std::pow(4.398, 2.0);
+    
+    const double RAMTOAMU = 1822.888485332;
+    const double H1_RAM = 1.00782503223;
+    const double AR40_RAM = 39.9623831237;
+    const double CL35_RAM = 34.968852682;
+
+    const double HCL_MU = H1_RAM * CL35_RAM / (H1_RAM + CL35_RAM) * RAMTOAMU;
+
+    //const double mu = AR40_RAM * (H1_RAM + CL35_RAM) / (AR40_RAM + H1_RAM + CL35_RAM) * RAMTOAMU;
+    const double mu = 34505.15; 
+
+    // atomic length unit to meters == a0
+    const double ALU = 0.52917721067 * 1E-10;
+
+    const double HCL_LEN = 0.127e-9 / ALU; 
+    //const double Inten = HCL_MU * std::pow(HCL_LEN, 2.0);
+    //
+    const double alpha_inv = 137.035999139;
+    const double B = 10.44019 * 0.529177e-8; // a.l.u
+    const double Inten = 1.0 / (4.0 * M_PI * B * alpha_inv); 
+
 	int channels;
     int NPoints;
 
@@ -81,5 +107,4 @@ private:
 	Eigen::MatrixXd Rinv;
 	Eigen::MatrixXd Wmat;
 	Eigen::MatrixXd U;
-
 };

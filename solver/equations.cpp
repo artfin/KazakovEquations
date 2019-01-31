@@ -2,7 +2,21 @@
 
 Equations::Equations( int channels, int NPoints ) : channels(channels), NPoints(NPoints) 
 {
-    W.resize( 6 );
+    // CO2-Ar
+    //W.resize( 6 );
+    
+    // HCl-Ar; Hutson
+    //W.resize( 9 );
+
+    // HCl-Ar; Dunker & Gordon
+    W.resize( 3 );
+
+    //std::cout << "mu: " << mu << std::endl;
+    //std::cout << "mu_old: " << mu_old << std::endl;
+
+    //std::cout << "Inten: " << Inten << std::endl;
+    //std::cout << "Inten_old: " << Inten_old << std::endl;
+
     init_matrices();
 }
 
@@ -39,32 +53,53 @@ void Equations::setAngularMomentum( const int J, const int M )
 
 void Equations::fill_W_elements( const double R )
 {
-	W[0] = 22.4247 * std::exp(-0.716288*R-0.0869136*R*R);
+    // CO2-Ar potential (PSP)
+	//W[0] = 22.4247 * std::exp(-0.716288*R-0.0869136*R*R);
 	
-	if (R >= 6.32925)
-		W[0] -= 114.5 / std::pow(R, 6) + 2380.0 / std::pow(R, 8);
-	else
-		W[0] += (-0.599056 * std::exp(-0.650479*R-0.0320299*R*R));
+	//if (R >= 6.32925)
+		//W[0] -= 114.5 / std::pow(R, 6) + 2380.0 / std::pow(R, 8);
+	//else
+		//W[0] += (-0.599056 * std::exp(-0.650479*R-0.0320299*R*R));
 			
-	W[1] = 63.5744 * std::exp(-0.811806*R-0.075313*R*R);
+	//W[1] = 63.5744 * std::exp(-0.811806*R-0.075313*R*R);
 
-	if (R < 6.90026)
-		W[1] -= 0.207391 * std::exp(-0.620877*R-0.0310717*R*R);
-	else
-		W[1] -= 26.6 / std::pow(R, 6) + 2080.0 / std::pow(R,8);
+	//if (R < 6.90026)
+		//W[1] -= 0.207391 * std::exp(-0.620877*R-0.0310717*R*R);
+	//else
+		//W[1] -= 26.6 / std::pow(R, 6) + 2080.0 / std::pow(R,8);
 
-	W[2] = 99.1128 * std::exp(-1.17577*R-0.0477138*R*R);
+	//W[2] = 99.1128 * std::exp(-1.17577*R-0.0477138*R*R);
 
-	if (R < 6.96450)
-			W[2] -= 0.0523497 * std::exp(-0.73534*R-0.0296750*R*R);
-	else 
-		W[2] -= 410 / std::pow(R,8);
+	//if (R < 6.96450)
+			//W[2] -= 0.0523497 * std::exp(-0.73534*R-0.0296750*R*R);
+	//else 
+		//W[2] -= 410 / std::pow(R,8);
 
-	W[3] = 318.652 * std::exp(-1.88135*R) - 0.0374994 * std::exp(-1.05547*R-0.0182219*R*R);
+	//W[3] = 318.652 * std::exp(-1.88135*R) - 0.0374994 * std::exp(-1.05547*R-0.0182219*R*R);
 
-	W[4] = 332.826 * std::exp(-2.14596*R) - 0.0137376 * std::exp(-1.03942*R-0.0494781*R*R);
+	//W[4] = 332.826 * std::exp(-2.14596*R) - 0.0137376 * std::exp(-1.03942*R-0.0494781*R*R);
 
-	W[5] = 435.837 * std::exp(-2.44616*R) - 0.108283 * std::exp(-2.04765*R);
+	//W[5] = 435.837 * std::exp(-2.44616*R) - 0.108283 * std::exp(-2.04765*R);
+
+    // Hutson potential: Ar-HCl
+    //W[0] = W0( R ) / constants::HTOCM; 
+    //W[1] = W1( R ) / constants::HTOCM;
+    //W[2] = W2( R ) / constants::HTOCM;
+    //W[3] = W3( R ) / constants::HTOCM;
+    //W[4] = W4( R ) / constants::HTOCM;
+    //W[5] = W5( R ) / constants::HTOCM;
+    //W[6] = W6( R ) / constants::HTOCM;
+    //W[7] = W7( R ) / constants::HTOCM;
+    //W[8] = W8( R ) / constants::HTOCM;
+   
+    // Dunker-Gordon: Ar-HCl potential I  
+    double Rang = R * constants::BOHRTOANG;
+    double mult1 = -dunker::epsilon * dunker::alpha / (dunker::alpha - 6.0) * std::pow(dunker::Rm / Rang, 6.0);
+    double mult2 = dunker::epsilon * 6.0 / (dunker::alpha - 6.0) * std::exp(dunker::alpha * (1.0 - Rang / dunker::Rm));
+
+    W[0] = (mult1 * dunker::P0A + mult2 * dunker::P0R) / constants::HTOCM;
+    W[1] = (mult1 * dunker::Rm / Rang * dunker::P1A + mult2 * dunker::P1R) / constants::HTOCM;
+    W[2] = (mult1 * dunker::P2A + mult2 * dunker::P2R) / constants::HTOCM;
 }
 
 double Equations::angularMatrixElements( const int P, const int l, const int Lprime )
@@ -79,7 +114,9 @@ double Equations::compute_W_sum( const int P, const int Lprime)
 {
 	double result = 0.0;
 	for ( size_t i = 0; i < W.size(); ++i )
-		result += W[i] * angularMatrixElements( P, 2 * i, Lprime );
+		result += W[i] * angularMatrixElements( P, i, Lprime );
+
+    // angularMatrixElements( P, 2 * i, Lprime ) for Ar-CO2 potential! but not for Ar-HCl!
 
 	return result;
 }
@@ -635,8 +672,8 @@ std::pair<double, double> Equations::interpolate( const double e, const std::map
 
 void Equations::calculate_boundaries( std::pair<double, double> const & tp, double * a, double * b, double * h )
 {
-    *a = tp.first - 1.5; 
-    *b = tp.second + 6.0; 
+    *a = tp.first - 1.0; 
+    *b = tp.second + 15.0; 
     *h = ( *b - *a ) / (NPoints - 1);
    //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;
 } 

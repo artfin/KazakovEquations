@@ -34,7 +34,7 @@ void Eigenvalue::setAngularMomentum( int J, int M )
 
 std::ostream& operator<<( std::ostream& ofs, const Eigenvalue & eig )
 {
-    ofs << eig.J << " " << eig.M << " " << eig.node_count_min << " " << eig.node_count_max << " " << " " << eig.value << " " << eig.parity; 
+    ofs << eig.J << " " << eig.M << " " << eig.node_count_min << " " << eig.node_count_max << " " << " " << eig.value * constants::HTOCM << " " << eig.parity; 
     return ofs;
 }
 

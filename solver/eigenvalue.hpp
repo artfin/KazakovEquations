@@ -6,6 +6,7 @@
 #include <string>
 
 #include "./parity.hpp"
+#include "./constants.hpp"
 
 struct Eigenvalue
 {

@@ -9,7 +9,7 @@ LINK_GSL := -lgsl -lgslcblas
 all: main
 
 main: ./main.o
-	$(CCXX) -fopenmp $(CXXFLAGS) $^ -o $@ $(LINK_GSL)
+	$(CCXX) $(CXXFLAGS) $^ -o $@ $(LINK_GSL)
 
 main.o: ./main.cpp
-	$(CCXX) -fopenmp $(CXXFLAGS) -c $< -o $@ $(INCLUDE_EIGEN) $(INCLUDE_GSL) 
+	$(CCXX) $(CXXFLAGS) -c $< -o $@ $(INCLUDE_EIGEN) $(INCLUDE_GSL) 

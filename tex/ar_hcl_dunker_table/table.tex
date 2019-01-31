@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{xcolor}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{booktabs} % toprule/bottomrule
+
+\usepackage{graphicx}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% blackboar lettering
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\rhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage }}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\lsq}{\left[}
+\newcommand{\rsq}{\right]}
+
+\newcommand{\rred}{\color{red}}
+
+\begin{document}
+
+Dunker and Gordon potential [1] can be written in the form
+\begin{gather}
+    V(r, \theta) = V_A(r, \theta) + V_R(r, \theta),
+\end{gather}
+where the attractive and repulsive parts are expanded as
+\begin{gather}
+    V_A(r, \theta) = -\varepsilon \frac{\alpha}{\alpha - 6} \lb \frac{r_m}{r} \rb^6 \lsq 1.00 + 0.32 \lb \frac{r_m}{r} \rb P_1(\cos \theta) + 0.24 P_2 (\cos \theta) \rsq, 
+\end{gather}
+and
+\begin{gather}
+    V_R(r, \theta) = \varepsilon \frac{6}{\alpha - 6} \exp \lsq \alpha \lb 1 - \frac{r}{r_m} \rb \rsq \lsq 1.00 + 0.51 P_1(\cos \theta) + 0.78 P_2(\cos \theta) \rsq .
+\end{gather}
+
+\begin{table}[H]
+    \begin{center}
+    \caption{Physical constants and potential energy parameters used in the calculation of bound states of ${}^{40}$Ar-H${}^{35}$Cl.}
+    \begin{tabular}{c}
+        \toprule[1.5pt]
+            $\mu = 34505.15$ a.u. \\
+            $B_0 = 10.44019$ cm$^{-1}$ \\
+            $\varepsilon = 140.39566$ cm$^{-1}$ \\
+            $\alpha = 13.50$ \\
+            $r_m = 3.930$ {\AA} \\
+        \midrule
+            $1$ a.u. of energy = $219475.797$ cm$^{-1}$ \\
+            $1$ a.u. of length = $0.529177$ {\AA} \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{table}
+
+
+\begin{table}[H]
+    \begin{center}
+        \caption{Ro-vibrational energy levels of Ar-HCl on the Dunker-Gordon potential (in cm$^{-1}$)}
+    \begin{tabular}{cccccc}
+    \toprule[1.5pt]
+    J = 0 [2] & J = 0 (our) & J = 1 [2]  & J = 1 (our) & J = 1 [2]   & J = 1 (our) \\[1pt]
+              &             & odd parity & odd parity  & even parity (M=0)? & even parity(M=1)? \\[1.5pt] 
+    \midrule
+   -132.5012 & -132.5012 & -132.3882 & -132.3881        & & \\ 
+             &           & -113.6419 &                  & -113.6393 & \rred{-113.5213}  \\
+   -111.3839 & -111.3838 & -111.2705 & \rred{-111.2720} & & \\
+    -92.2126 & -92.2125  &  -92.1075 &        -92.1079  & & \\
+    -86.6109 & -86.6108  &  -86.5974 & \rred{-86.5029}  & & \\
+             &           &  -85.4678 &                  & -86.5614 & \rred{-86.4487} \\
+    -67.4835 & -67.4834  &  -67.3864 &       -67.3865   & & \\
+    -62.8488 & -62.8486  &  -62.7528 & \rred{-62.7456}  & & \\
+             &           &  -61.9661 &                  & -61.9721 & \rred{-61.8663} \\
+             &           &  -57.4417 &                  & -57.4282 & \rred{-60.6106} \\
+    -53.9889 & -53.9886  &  -53.8709 & \rred{-53.8841}  & & \\
+    -47.1472 & -47.1471  &  -47.0560 & -47.0566         & & \\
+    -41.6786 & -41.6785  &  -41.5876 & \rred{-41.5829}  & & \\
+             &           &  -40.2178 &                  & -40.2220 & \rred{-40.1237} \\
+    -33.1305 & -33.1303  &  -33.0471 & -33.0458         & & \\
+             &           &  -29.6137 &                  & -29.6063 & \rred{-29.5017} \\
+    -25.5940 & -25.5938  &  -25.4958 & \rred{-25.5026}  & & \\
+    -23.9208 & -23.9207  &  -23.8357 & \rred{-23.8327}  & & \\
+             &           &  -22.1597 &                  & -22.1633 & \rred{-22.0733} \\ 
+    -19.7022 & -19.7021  &  -19.6264 & -19.6267         & & \\
+    -12.1013 & -12.1012  &  -12.0370 & -12.0366         & & \\
+     -9.8526 & -9.8524   &  -9.7773  & \rred{-9.7736}   & & \\
+             &           &  -7.9985  &                  & -7.9998 & \rred{-7.9176} \\
+     -6.6103 & -6.6102   &  -6.5642  & \rred{-6.5545}   & & \\
+             &           &  -6.2461  &                  & -6.2525 & \rred{-6.1558} \\
+     -3.3323 & -3.3322   &  -3.2768  & \rred{-3.2795}   & & \\
+     -1.4769 & -1.4768   &  -1.4303  & \rred{-1.4320}   & & \\
+     -0.4111 & -0.4110   &  -0.3832  & \rred{-0.3836}   & & \\
+             & \rred{-0.0185} & & \rred{-0.0095} & & \\
+    \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+
+Надо бы применить граничные условия по ВКБ для ренормализованного метода Нумерова. Манолополус отмечает их важность для log-derivative метода. Жесткие граничные условия: на -1.0 от левой поворотной точки, на +15.0 от правой поворотной точки. 15 каналов, 5.000 точек.  
+
+\section{Список литературы}
+
+\begin{enumerate}
+    \item Dunker, A. M., & Gordon, R. G. (1976). Calculations on the HCl–Ar van der Waals complex. The Journal of Chemical Physics, 64(1), 354-363.
+    \item D. E. Manolopoulos. Ph. D. Thesis, 1988.
+\end{enumerate}
+
+\end{document}

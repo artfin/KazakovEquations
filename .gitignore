@@ -1,2 +1,11 @@
 *.o
 *.d
+*.swp
+*.cpp.swp
+*.hpp.swp
+*.db
+*.synctex.gz
+*.log
+*.fls
+*.fdb_latexmk
+*.aux

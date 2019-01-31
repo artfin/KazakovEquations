@@ -75,6 +75,15 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::findEigenvalues( const doub
 
 std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const double E_min, const double E_max, const int nodes_min, const int nodes_max )
 {
+    std::vector<Eigenvalue> res, tmp;
+    
+    if ( nodes_max - nodes_min == 1 )
+    {
+        std::cout << "(findEigenvalues) a node is already isolated." << std::endl;
+        res.emplace_back( parity, E_min, E_max, nodes_min, nodes_max );
+        return res; 
+    }
+
     std::cout << "(findEigenvalues) is called with E_min: " << E_min << "; E_max: " << E_max << "; nodes_min: " << nodes_min << "; nodes_max: " << nodes_max << std::endl;
 
     int found_eigenvalues = 0;
@@ -84,7 +93,6 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
     double E_mean;
     int nodes;
 
-    std::vector<Eigenvalue> res, tmp;
 
     std::pair<double, double> tp; // pair of turning points
     double a, b, h;

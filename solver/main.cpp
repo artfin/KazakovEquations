@@ -5,11 +5,15 @@
 #include <algorithm>
 #include <map>
 
+#include "./constants.hpp"
+
 #include "./parity.hpp"
 #include "./equations.hpp"
 #include "./preliminary_eigenvalue_finder.hpp"
 #include "./precise_eigenvalue_finder.hpp"
 //#include "./eigenfunction_finder.hpp"
+
+#include <gsl/gsl_sf_legendre.h>
 
 #include "./eigenvalue_database.hpp"
 
@@ -35,92 +39,111 @@ std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & 
 
 int main( int argc, char * argv[] )
 {
-    int J, M;
-    if ( argc < 3 ) 
+    const int NPoints = 5000;
+    
+    int J, M, channels;
+    if ( argc < 4 ) 
     {
-        std::cerr << "Program expects (int) J and (int) M." << std::endl;
+        std::cerr << "Program expects (int) J, (int) M, (int) channels" << std::endl;
         exit( 1 );
     }
     else
     {
         J = atoi( argv[1] );
         M = atoi( argv[2] );
+        channels = atoi( argv[3] );
         
-        std::cout << "(main) accepted arguments. J: " << J << ", M: " << M << std::endl; 
+        std::cout << "(main) accepted arguments. J: " << J << ", M: " << M << "; channels: " << channels << "; NPoints: " << NPoints << std::endl; 
     }
 
     std::cout << std::fixed << std::setprecision(13);
-	
-    const int NPoints = 5000;
-    
-    const int channels = J - std::abs(M) + 1;
 
-    int odd_channels = 0;
-    int even_channels = 0;
-    for ( int L = M; L <= J; ++L )
-    {
-        if ( L % 2 == 0 )
-            even_channels++;
-        else
-            odd_channels++;
-    }
-    std::cout << "Number of even channels: " << even_channels << std::endl;
-    std::cout << "Number of odd channels: " << odd_channels << std::endl;
+    //int odd_channels = 0;
+    //int even_channels = 0;
+    //for ( int L = M; L < channels; ++L )
+    //{
+        //if ( L % 2 == 0 )
+            //even_channels++;
+        //else
+            //odd_channels++;
+    //}
+    //std::cout << "Number of even channels: " << even_channels << std::endl;
+    //std::cout << "Number of odd channels: " << odd_channels << std::endl;
 
     // energy interval to search eigenvalues in
-    const double E_min = -3.0e-3; 
-    const double E_max = -1.0e-10;
+    const double E_min = -150.0 / constants::HTOCM;
+    const double E_max = -1.0e-3 / constants::HTOCM;
     const double eps = 1.0e-1; // relative precision of preliminary eigenvalue
        
     // interval to search turning points in  
     const double x_lb = 5.0;
-    const double x_rb = 20.0;
+    const double x_rb = 32.0;
     const double eps_tp = 1.0e-3; // absolute precision of turning point
     
     int energy_intervals = 10; // number of energy intervals [lg(-E_min), lg(-E_max)] to be divided into
     int i_match_intervals = 20; // number of dots condisered to be i_match
 
     std::vector<Eigenvalue> tmp, preigs;   
-        
-    if ( even_channels != 0 )
+      
+    Equations equations( channels, NPoints );
+    equations.setAngularMomentum( J, M );
+    
+    equations.fill_V( 18.0, Parity::EMPTY );
+    
+    const double BFCT = 16.857630;
+    const double URED = 18.928832; // ? is it exact value?
+    const double RMLMDA = URED / BFCT;
+    
+    //std::cout << "R: " << 18.0 << "; U: " << std::endl << equations.get_V() << std::endl;
+    
+    tmp = calculate_eigenvalues( Parity::EMPTY, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+    if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )
     {
-        Equations equations( even_channels, NPoints );
-        equations.setAngularMomentum( J, M );		
-
-        tmp = calculate_eigenvalues( Parity::EVEN, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
-        if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
-        { 
-            std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
-            exit( 1 );
-        } 
-        preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
+        std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
+        exit( 1 );
     }
 
-    if ( odd_channels != 0 )
-    {
-        Equations equations( odd_channels, NPoints );
-        equations.setAngularMomentum( J, M );
+    preigs.insert( preigs.end(), tmp.begin(), tmp.end() );
 
-        tmp = calculate_eigenvalues( Parity::ODD, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
-        if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
-        { 
-            std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
-            exit( 1 );
-        } 
-        preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
-    }
+    //if ( even_channels != 0 )
+    //{
+        //Equations equations( even_channels, NPoints );
+        //equations.setAngularMomentum( J, M );		
+
+        //tmp = calculate_eigenvalues( Parity::EVEN, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+        //if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
+        //{ 
+            //std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
+            //exit( 1 );
+        //} 
+        //preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
+    //}
+
+    //if ( odd_channels != 0 )
+    //{
+        //Equations equations( odd_channels, NPoints );
+        //equations.setAngularMomentum( J, M );
+
+        //tmp = calculate_eigenvalues( Parity::ODD, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+        //if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )   
+        //{ 
+            //std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
+            //exit( 1 );
+        //} 
+        //preigs.insert( preigs.end(), tmp.begin(), tmp.end() ); 
+    //}
     
     // сбросить node count для чисел, чтобы отфильтровать их по значению  
-    std::for_each( preigs.begin(), preigs.end(), []( Eigenvalue & e ) { e.dump_node_count(); });
-    std::sort( preigs.begin(), preigs.end() );
+    //std::for_each( preigs.begin(), preigs.end(), []( Eigenvalue & e ) { e.dump_node_count(); });
+    //std::sort( preigs.begin(), preigs.end() );
     // выставить значения node count по возрастанию
-    fixNodeCount( preigs );
+    //fixNodeCount( preigs );
 
     std::cout << "List of sorted eigenvalues: " << std::endl;
     for ( size_t k = 0; k < preigs.size(); ++k )
         std::cout << preigs[k] << std::endl; 
 
-    const std::string database = "./database/J" + std::to_string(J) + "M" + std::to_string(M) + ".db";
+    const std::string database = "./database/dunker_J" + std::to_string(J) + "M" + std::to_string(M) + "_ch" + std::to_string(channels) + ".db";
     std::cout << "Database filename: " << database << std::endl;
 
     EigenvalueDatabase EigenDB( database );    
