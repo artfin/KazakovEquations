@@ -35,7 +35,9 @@ void fixNodeCount( std::vector<Eigenvalue> & eigs );
 
 std::string parityToString( const Parity parity ); 
 
-std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const int NPoints, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const int i_match_intervals, const double eps, const double eps_tp );
+std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const std::map<double, std::pair<double, double>> & energy_dict, const int NPoints, const double E_min, const double E_max, const int i_match_intervals, const double eps );
+
+std::vector<Eigen::VectorXd> calculate_eigenfunction( const Parity parity, Equations & equations, const std::map<double, std::pair<double, double>> & energy_dict, const double E, const int i_match, double & a, double & b, double & h );
 
 int main( int argc, char * argv[] )
 {
@@ -58,6 +60,7 @@ int main( int argc, char * argv[] )
 
     std::cout << std::fixed << std::setprecision(13);
 
+
     //int odd_channels = 0;
     //int even_channels = 0;
     //for ( int L = M; L < channels; ++L )
@@ -71,8 +74,8 @@ int main( int argc, char * argv[] )
     //std::cout << "Number of odd channels: " << odd_channels << std::endl;
 
     // energy interval to search eigenvalues in
-    const double E_min = -150.0 / constants::HTOCM;
-    const double E_max = -1.0e-3 / constants::HTOCM;
+    const double E_min = -135.0 / constants::HTOCM;
+    const double E_max = -130.0 / constants::HTOCM;
     const double eps = 1.0e-1; // relative precision of preliminary eigenvalue
        
     // interval to search turning points in  
@@ -90,13 +93,28 @@ int main( int argc, char * argv[] )
     
     equations.fill_V( 18.0, Parity::EMPTY );
     
-    const double BFCT = 16.857630;
-    const double URED = 18.928832; // ? is it exact value?
-    const double RMLMDA = URED / BFCT;
+    //const double BFCT = 16.857630;
+    //const double URED = 18.928832; // ? is it exact value?
+    //const double RMLMDA = URED / BFCT;
     
-    //std::cout << "R: " << 18.0 << "; U: " << std::endl << equations.get_V() << std::endl;
-    
-    tmp = calculate_eigenvalues( Parity::EMPTY, equations, NPoints, E_min, E_max, energy_intervals, x_lb, x_rb, i_match_intervals, eps, eps_tp );
+    std::map<double, std::pair<double, double>> energy_dict = equations.create_energy_dict( Parity::EMPTY, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
+    // calculating dictionary for boundaries interpolation
+    //  
+    bool all_tp_zero = true;
+    for ( auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    {
+        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
+        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
+            all_tp_zero = false;
+    }
+    if ( all_tp_zero )
+    {
+        std::cerr << "All turning points are zero! There are no bound levels. Check channels." << std::endl;
+        exit( 1 ); 
+    }
+    //// 
+
+    tmp = calculate_eigenvalues( Parity::EMPTY, equations, energy_dict, NPoints, E_min, E_max, i_match_intervals, eps );
     if ( tmp.size() != 0 && tmp[0].get_node_count_min() != 0 )
     {
         std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
@@ -201,60 +219,122 @@ std::string parityToString( const Parity parity )
        return "general"; 
 }
 
-
-std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const int NPoints, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const int i_match_intervals, const double eps, const double eps_tp )
+std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & equations, const std::map<double, std::pair<double, double>> & energy_dict, const int NPoints, const double E_min, const double E_max, const int i_match_intervals, const double eps )
 {
     std::vector<Eigenvalue> preigs;
 
-    std::map<double, std::pair<double, double>> energy_dict = equations.create_energy_dict( parity, E_min, E_max, energy_intervals, x_lb, x_rb, eps_tp );
-    bool all_tp_zero = true;
-    for ( auto it = energy_dict.begin(); it != energy_dict.end(); ++it )
+    PreliminaryEigenvalueFinder pef( &equations, energy_dict, parity );
+
+    std::vector<Eigenvalue> eigs = pef.findEigenvalues( E_min, E_max );
+
+    std::cout << "Preliminary " + parityToString(parity) + " eigenvalues: " << std::endl;
+    for ( size_t k = 0; k < eigs.size(); ++k )
     {
-        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
-        if ( (it->second.first != 0.0) && (it->second.second != 0.0) )
-        {
-            all_tp_zero = false;
-        }
+        eigs[k] = pef.convergeToEigenvalue( eigs[k], std::abs(eigs[k].get_value()) * eps );
+        std::cout << eigs[k] << std::endl;
     }
-    if ( !all_tp_zero )
+
+    PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
+    pref.reserve_space_for_search( i_match_intervals );
+
+    int i_match;
+    std::cout << "Precise " + parityToString(parity) + " eigenvalues: " << std::endl;
+    for ( size_t k = 0; k < eigs.size(); ++k )
     {
-        PreliminaryEigenvalueFinder pef( &equations, energy_dict, parity );
+        i_match = pref.effecient_i_match( eigs[k].get_min(), eigs[k].get_max(), NPoints, i_match_intervals );
+        std::cout << "(main) i_match: " << i_match << std::endl;
+        if ( i_match < 0 )
+            continue;
 
-        std::vector<Eigenvalue> eigs = pef.findEigenvalues( E_min, E_max );
+        double eig = pref.precise_eigenvalue_calculation( i_match, eigs[k].get_min(), eigs[k].get_max() );
 
-        std::cout << "Preliminary " + parityToString(parity) + " eigenvalues: " << std::endl;
-        for ( size_t k = 0; k < eigs.size(); ++k )
+        preigs.push_back( eigs[k] );
+        preigs.back().set_value( eig );
+
+        double a, b, h;
+        std::vector<Eigen::VectorXd> eif = calculate_eigenfunction( parity, equations, energy_dict, eigs[k].get_value(), i_match, a, b, h ); 
+        std::cout << "Calculated eigenfunction" << std::endl;
+            
+        std::ofstream ofs("eif.txt");
+        for ( size_t i = 0; i < eif.size(); ++i )
         {
-            eigs[k] = pef.convergeToEigenvalue( eigs[k], std::abs(eigs[k].get_value()) * eps );
-            std::cout << eigs[k] << std::endl;
-        }
-
-        PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
-        pref.reserve_space_for_search( i_match_intervals );
-
-        int i_match;
-        std::cout << "Precise " + parityToString(parity) + " eigenvalues: " << std::endl;
-        for ( size_t k = 0; k < eigs.size(); ++k )
-        {
-            i_match = pref.effecient_i_match( eigs[k].get_min(), eigs[k].get_max(), NPoints, i_match_intervals );
-            std::cout << "(main) i_match: " << i_match << std::endl;
-            if ( i_match < 0 )
-                continue;
-
-            double eig = pref.precise_eigenvalue_calculation( i_match, eigs[k].get_min(), eigs[k].get_max() );
-
-            preigs.push_back( eigs[k] );
-            preigs.back().set_value( eig );
-
-            std::cout << preigs.back() << std::endl; 
-        }
+            ofs << a + i * h << " ";
+            for ( int j = 0; j < eif[k].size(); ++j )
+            {
+                ofs << eif[i](j) << " ";
+            }
+            ofs << std::endl;
+        } 
+   
+        std::cout << preigs.back() << std::endl; 
     }
-    else
-    {
-        std::cerr << "All turning points are zero! There are no bound levels of " + parityToString(parity) + " parity! Check channels." << std::endl;
-    } 
-
+    
     return preigs;
 }
 
+std::vector<Eigen::VectorXd> calculate_eigenfunction( const Parity parity, Equations & equations, const std::map<double, std::pair<double, double>> & energy_dict, const double E, const int i_match, double & a, double & b, double & h )
+{
+    std::cerr << "(calculate_eigenfunction) Eigenvalue: " << E << std::endl;   
 
+    Eigen::MatrixXd Rm, Rmp1;
+    
+    std::pair<double, double> tp = equations.interpolate( E, energy_dict );
+    equations.calculate_boundaries( tp, &a, &b, &h );
+
+    equations.propagateForward( parity, E, a, h, i_match, Rm, true );
+    equations.propagateBackward( parity, E, b, h, i_match, Rmp1, true );
+    Eigen::MatrixXd diff = Rm - Rmp1.inverse();
+
+    std::cout << "diff: " << std::endl << diff << std::endl << std::endl;
+
+    Eigen::FullPivLU<Eigen::MatrixXd> lu( diff );
+    lu = lu.setThreshold( 1.0e-1 );
+
+    Eigen::MatrixXd ker = lu.kernel();
+    std::cout << "kernel: " << std::endl << ker << std::endl;
+
+    //
+    const int NPoints = 5000; const int channels = 8;
+    //
+    
+    std::vector<Eigen::VectorXd> eigfunc(NPoints);
+    for ( int k = 0; k < NPoints; ++k )
+        eigfunc[k] = Eigen::VectorXd::Zero(channels);
+
+    Eigen::VectorXd fn_prev, fn, fn_next, psin;
+    Eigen::VectorXd fn_matching_point;
+
+    fn_matching_point = ker;
+    fn_next = fn_matching_point;
+    fn_prev = fn_matching_point;
+
+    //std::cout << "---------------------------------------------" << std::endl << std::endl;
+    //std::cout << "(calculate_eigenfunction)" << std::endl;
+
+    for ( int k = i_match - 1;  k > 0; --k, fn_next = fn )
+    {
+        //std::cout << "k: " << k << "; Rinv: " << std::endl << equations.Rinv_vector[k] << std::endl;
+        fn = equations.Rinv_vector[k] * fn_next;
+        psin = equations.Winv_vector[k] * fn;
+        eigfunc[k] = psin;	
+
+        //std::cout << "eigfunc[" << k << "]: " << std::endl << eigfunc[k] << std::endl;	
+    }	
+
+    for ( int k = i_match + 1; k < NPoints - 1; ++k, fn_prev = fn )
+    {
+        //std::cout << "k: " << k << "; Rinv: " << std::endl << Rinv_vector[k] << std::endl;
+        fn = equations.Rinv_vector[k] * fn_prev;
+        psin = equations.Winv_vector[k] * fn;
+        eigfunc[k] = psin;	
+
+        //std::cout << "eigfunc[" << k << "]: " << std::endl << eigfunc[k] << std::endl;	
+    }
+
+    psin = equations.Winv_vector[i_match] * fn_matching_point;
+    eigfunc[i_match] = psin;
+
+    //std::cout << "eigfunc[" << i_match << "]: " << std::endl << eigfunc[i_match] << std::endl;
+
+    return eigfunc;	
+}

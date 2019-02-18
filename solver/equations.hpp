@@ -63,6 +63,7 @@ public:
     std::vector<Eigen::MatrixXd> Winv_vector;
 
     Eigen::MatrixXd const& get_V() const { return V; }
+    
 
 private:
 	const double hbar = 1.0;

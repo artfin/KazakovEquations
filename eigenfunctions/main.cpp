@@ -10,13 +10,16 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_roots.h>
 
+#include "constants.hpp"
+
 class EigenfunctionSolver
 {
 public:
     EigenfunctionSolver( int channels, int NPoints ) :
         channels(channels), NPoints(NPoints)
     {
-        W.resize(6);
+        // HCl-Ar; Dunker & Gordon potential
+        W.resize( 3 );
 
 		I = Eigen::MatrixXd::Identity(channels, channels);
 		
@@ -40,9 +43,10 @@ public:
 		this->J = J;
 		this->M = M;
 	}
-
+    
 	void fill_W_elements( const double R )
 	{
+    /*
 		W[0] = 22.4247 * std::exp(-0.716288*R-0.0869136*R*R);
 		
 		if (R >= 6.32925)
@@ -69,6 +73,16 @@ public:
 		W[4] = 332.826 * std::exp(-2.14596*R) - 0.0137376 * std::exp(-1.03942*R-0.0494781*R*R);
 
 		W[5] = 435.837 * std::exp(-2.44616*R) - 0.108283 * std::exp(-2.04765*R);
+    */
+        
+        // Dunker-Gordon: Ar-HCl potential I  
+        double Rang = R * constants::BOHRTOANG;
+        double mult1 = -dunker::epsilon * dunker::alpha / (dunker::alpha - 6.0) * std::pow(dunker::Rm / Rang, 6.0);
+        double mult2 = dunker::epsilon * 6.0 / (dunker::alpha - 6.0) * std::exp(dunker::alpha * (1.0 - Rang / dunker::Rm));
+
+        W[0] = (mult1 * dunker::P0A + mult2 * dunker::P0R) / constants::HTOCM;
+        W[1] = (mult1 * dunker::Rm / Rang * dunker::P1A + mult2 * dunker::P1R) / constants::HTOCM;
+        W[2] = (mult1 * dunker::P2A + mult2 * dunker::P2R) / constants::HTOCM;
 	}
 	
 	double angularMatrixElements( const int P, const int l, const int Lprime )
@@ -83,7 +97,10 @@ public:
 	{
 		double result = 0.0;
 		for ( size_t i = 0; i < W.size(); ++i )
-			result += W[i] * angularMatrixElements( P, 2 * i, Lprime );
+        {
+            // !!! 'i' for HCl-Ar; '2*i' for CO2-Ar 
+			result += W[i] * angularMatrixElements( P, i, Lprime );
+        }
 		
 		return result;
 	}
@@ -326,57 +343,42 @@ private:
 
 int main()
 {
-    int channels = 4;
-    int NPoints = 500;
+    int channels = 8;
+    int NPoints = 5000;
 
-    const double a = 6.0;
-    const double b = 14.0;
+    const double a = 5.0;
+    const double b = 40.0;
     const double h = (b - a) / (NPoints - 1);
 
     EigenfunctionSolver solver( channels, NPoints ); 
-    int J = 7;
+    int J = 0;
     int M = 0;
     solver.setAngularMomentum( J, M );
 
 	// first eigenvalue: 0 nodes
-    double E1 = -0.000541;
-    double E2 = -0.000540;
-	// second eigenvalue: 1 node
-	//double E1 = -0.000405;
-	//double E2 = -0.000404;
-	// third eigenvalue: 0 nodes
-	//double E1 = -0.00032;
-	//double E2 = -0.00031;
-	// fourth eigenvalue: 
-	//double E1 = -0.000291;
-	//double E2 = -0.000290;
-   	// fifth eigenvalue:
-	//double E1 = -0.0002182;
-	//double E2 = -0.0002181;
-	// 6th eigenvalue
-	//double E1 = -0.000200;
-	//double E2 = -0.000199;
+    double E1 = -134.0 / constants::HTOCM; 
+    double E2 = -131.0 / constants::HTOCM;
 
-    double D1, D2;
-    int i_match;
-    const int parts = 10;
-    for ( int k = 0; k < parts; ++k )
-    {
-        i_match = NPoints / parts * k;
-		//std::cout << "i_match: " << i_match << std::endl;
+    //double D1, D2;
+    int i_match = 500;
+    //const int parts = 10;
+    //for ( int k = 0; k < parts; ++k )
+    //{
+        //i_match = NPoints / parts * k;
+        //std::cout << "i_match: " << i_match << std::endl;
         
-        D1 = solver.D(a, b, h, i_match, E1);
-        D2 = solver.D(a, b, h, i_match, E2);
+        //D1 = solver.D(a, b, h, i_match, E1);
+        //D2 = solver.D(a, b, h, i_match, E2);
 
-        if ( D1 * D2 < 0.0 )
-        {
-			std::cerr << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
-            break;
-        }
-    }
+        //if ( D1 * D2 < 0.0 )
+        //{
+			//std::cerr << "D1 * D2 < 0.0! i_match = " << i_match << " is appropriate!" << std::endl;
+            //break;
+        //}
+    //}
 
 	double eig = solver.precise_eigenvalue_calculation( a, b, h, i_match, E1, E2 );
-	//double eig = -0.00009708672407; 
+    //double eig = -0.00009708672407; 
 	std::vector<Eigen::VectorXd> eigfunc = solver.calculate_eigenfunction( eig, a, b, h, i_match );
 
 	double x = a;
