@@ -15,7 +15,7 @@ def run_process(args):
     logname = "./logs/" + str(args[0]) + "_" + str(args[1]) + ".log"
 
     with open(logname, "w") as outfile:
-        test = subprocess.Popen(["./main", str(args[0]), str(args[1])], stdout=outfile, stderr=outfile)
+        test = subprocess.Popen(["./main", str(args[0]), str(args[1]), str(args[2])], stdout=outfile, stderr=outfile)
         test.communicate()
 
     return '%s run process with arguments = (%s, %s)' % \
@@ -25,13 +25,14 @@ def run_process(args):
 def main():
     NUMBER_OF_PROCESSES = 6 
 
-    Jmin = 1
-    Jmax = 10 
+    Jmin = 0 
+    Jmax = 50
+    nch = 15
 
     TASKS = []
     for J in range(Jmin, Jmax + 1):
         for M in range(0, J + 1):
-            TASKS.append((J, M))
+            TASKS.append((J, M, nch))
 
     # Create queues
     task_queue = Queue()

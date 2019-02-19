@@ -1,0 +1,3 @@
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles/rebuild_cache.dir
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles/edit_cache.dir

@@ -60,16 +60,21 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
 
     //std::cout << "(D) i_match: " << i_match << "; Rm: " << std::endl << Rm << std::endl << "; Rmp1_inv: " << std::endl << Rmp1.inverse() << std::endl;
 
+    std::cout << "(D) i_match: " << i_match << "; a: " << a << "; b: " << b << "; E: " << E * constants::HTOCM  << "; determinant: " << (Rm - Rmp1.inverse()).determinant() << std::endl;
+
     return (Rm - Rmp1.inverse()).determinant();
 }
 
 double PreciseEigenvalueFinder::precise_eigenvalue_calculation( const int i_match, const double E1, const double E2 )
 {
     std::pair<double, double> tp = equations->interpolate( E2, energy_dict );  
-    
+   
     double a, b, h;
     equations->calculate_boundaries( tp, &a, &b, &h );
     // энергии E1, E2 уже достаточно близки, нет никакого смысла пересчитывать a, b, h для дальнейших шагов
+
+    std::cout << "Calculating boundaries at energy: " << E2*constants::HTOCM << std::endl;
+    std::cout << "Boundaries: a = " << a << "; b = " << b << std::endl;
 
     std::function<double(double)> __D__ = [=]( const double E ) { return D(a, b, h, i_match, E); };
     return brent( __D__, E1, E2 ); 
