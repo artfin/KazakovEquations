@@ -84,7 +84,8 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
         return res; 
     }
 
-    std::cout << "(findEigenvalues) is called with E_min: " << E_min << "; E_max: " << E_max << "; nodes_min: " << nodes_min << "; nodes_max: " << nodes_max << std::endl;
+    std::cout << "(findEigenvalues) is called with E_min: " << E_min*constants::HTOCM << " cm-1; E_max: " << E_max*constants::HTOCM << " cm-1; nodes_min: " 
+              << nodes_min << "; nodes_max: " << nodes_max << std::endl;
 
     int found_eigenvalues = 0;
     int eigenvalues_to_find = nodes_max - nodes_min;
@@ -105,7 +106,7 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
 
         nodes = equations->countEigenvalues( parity, E_mean, a, b, h );
 
-        std::cout << "(recursive_find) E_mean: " << E_mean << "; a: " << a << "; b: " << b << "; nodes: " << nodes << std::endl;
+        std::cout << "(recursive_find) E_mean: " << E_mean*constants::HTOCM << " cm-1; a: " << a << "; b: " << b << "; nodes: " << nodes << std::endl;
 
         // если отделили 1 узел с левого края
         if ( nodes == nodes_min + 1 )

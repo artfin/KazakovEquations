@@ -72,7 +72,7 @@ int main( int argc, char * argv[] ) {
     // energy interval to search eigenvalues in
     const double E_min = -140.0 / constants::HTOCM;
     const double E_max = -1.0 / constants::HTOCM;
-    const double eps = 1.0e-1; // relative precision of preliminary eigenvalue
+    const double eps = 1.0e-2; // relative precision of preliminary eigenvalue
 
     // interval to search turning points in  
     const double x_lb = 5.0;
@@ -92,8 +92,9 @@ int main( int argc, char * argv[] ) {
                                                                                            eps_tp);
 
     bool all_tp_zero = true; // suppose turning point cannot be found
-    for (auto it = energy_dict.begin(); it != energy_dict.end(); ++it) {
-        std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
+    for (auto it = energy_dict.begin(); it != energy_dict.end(); ++it) 
+    {
+        //std::cout << it->first << " " << it->second.first << " " << it->second.second << std::endl;
         // check if there exists at least one pair of non-zero turning points
         if ((it->second.first != 0.0) && (it->second.second != 0.0))
             all_tp_zero = false;
@@ -212,7 +213,8 @@ std::vector<Eigenvalue> calculate_eigenvalues( const Parity parity, Equations & 
     for ( size_t k = 0; k < eigs.size(); ++k )
     {
         eigs[k] = pef.convergeToEigenvalue( eigs[k], std::abs(eigs[k].get_value()) * eps );
-        std::cout << eigs[k] << std::endl;
+        std::cout << k << " " << eigs[k].get_value()*constants::HTOCM << " (in interval: " << 
+            eigs[k].get_min()*constants::HTOCM << ", " << eigs[k].get_max()*constants::HTOCM << ")" << std::endl;
     }
 
     PreciseEigenvalueFinder pref( &equations, energy_dict, parity );
@@ -269,7 +271,7 @@ std::vector<Eigen::VectorXd> calculate_eigenfunction( const Parity parity, Equat
     equations.propagateBackward( parity, E, b, h, i_match, Rmp1, true );
     Eigen::MatrixXd diff = Rm - Rmp1.inverse();
 
-    std::cout << "diff: " << std::endl << diff << std::endl << std::endl;
+    //std::cout << "diff: " << std::endl << diff << std::endl << std::endl;
     std::cout << "diff determinant: " << diff.determinant() << std::endl;
 
     Eigen::FullPivLU<Eigen::MatrixXd> lu( diff );

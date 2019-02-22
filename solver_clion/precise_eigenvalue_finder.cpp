@@ -60,7 +60,7 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
 
     //std::cout << "(D) i_match: " << i_match << "; Rm: " << std::endl << Rm << std::endl << "; Rmp1_inv: " << std::endl << Rmp1.inverse() << std::endl;
 
-    //std::cout << std::fixed << std::setprecision(15);
+    std::cout << std::fixed << std::setprecision(16);
     std::cout << "(D) i_match: " << i_match << "; a: " << a << "; b: " << b << "; E: " << E*constants::HTOCM << "; determinant: " << (Rm - Rmp1.inverse()).determinant() << std::endl;
 
     Eigen::MatrixXd D = Rm - Rmp1.inverse();
