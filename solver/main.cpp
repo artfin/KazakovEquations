@@ -74,8 +74,13 @@ int main( int argc, char * argv[] )
     //std::cout << "Number of odd channels: " << odd_channels << std::endl;
 
     // energy interval to search eigenvalues in
+<<<<<<< HEAD
     const double E_min = -135.0 / constants::HTOCM;
     const double E_max = -130.0 / constants::HTOCM;
+=======
+    const double E_min = -150.0 / constants::HTOCM;
+    const double E_max = -100.0 / constants::HTOCM;
+>>>>>>> f4d41e62b3f5761633bb2cf7502873897a057076
     const double eps = 1.0e-1; // relative precision of preliminary eigenvalue
        
     // interval to search turning points in  

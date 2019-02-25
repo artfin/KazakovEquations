@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="solver_clion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/artfin/Desktop/repos/KazakovEquations/solver_clion"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/artfin/Desktop/repos/KazakovEquations/solver_clion"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="solver_clion">
+				<Option output="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/solver_clion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/artfin/Desktop/repos/KazakovEquations/solver_clion"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 solver_clion"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="solver_clion/fast">
+				<Option output="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/solver_clion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/artfin/Desktop/repos/KazakovEquations/solver_clion"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 solver_clion/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/artfin/Desktop/repos/KazakovEquations/solver_clion"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/artfin/Desktop/repos/KazakovEquations/solver_clion/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/constants.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp">
+			<Option target="solver_clion"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

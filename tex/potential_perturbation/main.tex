@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{booktabs} % toprule/bottomrule
+
+\usepackage{graphicx}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% blackboar lettering
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\rhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage }}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\lsq}{\left[}
+\newcommand{\rsq}{\right]}
+
+\newcommand{\rred}{\color{red}}
+
+\begin{document}
+
+\begin{table}[H]
+    \centering
+    \caption{J = 0, M = 0, channels = 8, grid size = 5000, 18 levels total}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $\varepsilon = 0.0$ & $\varepsilon = 10^{-5}$ & $\varepsilon = 10^{-4}$ & $\varepsilon = 10^{-3}$ & $\varepsilon = 10^{-2}$ \\
+        \midrule
+        $E_0$ & $-132.501116196$ & $-132.501116485$ & $-132.501119084$ & $-132.501145072$ & $-132.501405382$ \\
+        $E_0^{(1)}$ & & $-132.501116485$ & $-132.501119083$ & $-132.501145067$ & $-132.501404905$ \\ 
+        $E_0^{(2)}$ & & $-132.501116485$ & $-132.501119084$	& $-132.501145072$ & $-132.501405383$ \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{J = 1, M = 0, channels = 8, grid size = 5000, 18 levels total}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $\varepsilon = 0.0$ & $\varepsilon = 10^{-5}$ & $\varepsilon = 10^{-4}$ & $\varepsilon = 10^{-3}$ & $\varepsilon = 10^{-2}$ \\
+        \midrule
+        $E_0$ & $-132.388015502$ & $-132.388015789$ & $-132.388018370$ & $-132.388044187$ & $-132.388302788$ \\
+        $E_0^{(1)}$ & & $-132.388015789$ & $-132.388018370$ & $-132.388044183$ & $-132.388302311$ \\
+        $E_0^{(2)}$ & & $-132.388015789$ & $-132.388018370$ & $-132.388044187$ & $-132.388302794$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{J = 1, M = 1, channels = 8, grid size = 5000, 9 levels total}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $\varepsilon = 0.0$ & $\varepsilon = 10^{-5}$ & $\varepsilon = 10^{-4}$ & $\varepsilon = 10^{-3}$ & $\varepsilon = 10^{-2}$ \\
+        \midrule
+        $E_0$ & $-113.521263537$ & $-113.521263575$	& $-113.521263920$ & $-113.521267371$ & $-113.521301879$ \\	
+        $E_0^{(1)}$ & & $-113.521263575$ & $-113.521263920$ & $-113.521267371$ & $-113.521301876$ \\
+        $E_0^{(2)}$ & & $-113.521263575$ & $-113.521263920$ & $-113.521267371$ & $-113.521301879$ \\	
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{J = 5, M = 0, channels = 8, grid size = 5000, 17 levels total}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $\varepsilon = 0.0$ & $\varepsilon = 10^{-5}$ & $\varepsilon = 10^{-4}$ & $\varepsilon = 10^{-3}$ & $\varepsilon = 10^{-2}$ \\
+        \midrule
+        $E_0$ & $-130.805634873$ & $-130.805635132$ & $-130.805637475$ & $-130.805660899$ & $-130.805895562$ \\
+        $E_0^{(1)}$ & & $-130.805635133$ & $-130.805637475$ & $-130.805660894$ & $-130.805895084$ \\
+        $E_0^{(2)}$ & & $-130.805635133$ & $-130.805637475$ & $-130.805660899$ & $-130.805895563$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{J = 20, M = 0, channels = 8, grid size = 5000, 13 levels total}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $\varepsilon = 0.0$ & $\varepsilon = 10^{-5}$ & $\varepsilon = 10^{-4}$ & $\varepsilon = 10^{-3}$ & $\varepsilon = 10^{-2}$ \\
+        \midrule
+        $E_0$ & $-108.964385321$ & $-108.964385213$ & $-108.964384238$ & $-108.964374489$ & $-108.964277444$ \\
+        $E_0^{(1)}$ & & $-108.964385213$ & $-108.964384238$ & $-108.964374484$ & $-108.964276943$ \\
+        $E_0^{(2)}$ & & $-108.964385213$ & $-108.964384238$	& $-108.964374489$ & $-108.964277445$ \\	
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\end{document}
+

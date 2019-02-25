@@ -1,0 +1,3 @@
+/home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles/normalize.dir
+/home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles/edit_cache.dir
