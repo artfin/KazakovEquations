@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/solver_clion.dir/main.cpp.o"
   "CMakeFiles/solver_clion.dir/equations.cpp.o"
-  "CMakeFiles/solver_clion.dir/parity.cpp.o"
   "CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
   "CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
   "CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"

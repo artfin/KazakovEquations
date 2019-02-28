@@ -14,8 +14,8 @@ double PreciseEigenvalueFinder::brent( std::function<double(double)> f, double x
     gsl_function F = 
     {
         [](double d, void * vf) -> double {
-            auto& f = *static_cast<std::function<double(double)>*>(vf);
-            return f(d);
+            auto& fn = *static_cast<std::function<double(double)>*>(vf);
+            return fn(d);
         },
         &f
     };
@@ -55,8 +55,8 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
 {
     Eigen::MatrixXd Rm, Rmp1;
 
-    equations->propagateForward( parity, E, a, h, i_match, Rm );
-    equations->propagateBackward( parity, E, b, h, i_match, Rmp1 );
+    equations->propagateForward( E, a, h, i_match, Rm );
+    equations->propagateBackward( E, b, h, i_match, Rmp1 );
 
     //std::cout << "(D) i_match: " << i_match << "; Rm: " << std::endl << Rm << std::endl << "; Rmp1_inv: " << std::endl << Rmp1.inverse() << std::endl;
 
@@ -90,12 +90,12 @@ int PreciseEigenvalueFinder::effecient_i_match( const double E1, const double E2
     int step = NPoints / parts;
 
     // ENERGY = E1!
-    equations->propagateForwardFull( parity, E1, a, h, Rm_vector1, step );
-    equations->propagateBackwardFull( parity, E1, b, h, Rmp1_vector1, step );
+    equations->propagateForwardFull( E1, a, h, Rm_vector1, step );
+    equations->propagateBackwardFull( E1, b, h, Rmp1_vector1, step );
 
     // ENERGY = E2!
-    equations->propagateForwardFull( parity, E2, a, h, Rm_vector2, step );
-    equations->propagateBackwardFull( parity, E2, b, h, Rmp1_vector2, step );
+    equations->propagateForwardFull( E2, a, h, Rm_vector2, step );
+    equations->propagateBackwardFull( E2, b, h, Rmp1_vector2, step );
 
     double D1, D2;
     int i_match = step;
@@ -139,8 +139,6 @@ int PreciseEigenvalueFinder::find_i_match( const double E1, const double E2, con
     }
 
     return -1;
-    //std::cerr << "i_match is not found!" << std::endl;
-    //exit( 1 );
 }
 
 

@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
   "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/equations.cpp.o"
   "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/main.cpp.o"
-  "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/parity.cpp.o"
   "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
   "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp" "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
   )

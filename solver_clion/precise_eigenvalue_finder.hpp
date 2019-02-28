@@ -12,29 +12,27 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_roots.h>
 
-#include "./parity.hpp"
 #include "./equations.hpp"
 
 class PreciseEigenvalueFinder
 {
 public:
-    PreciseEigenvalueFinder( Equations * equations, std::map<double, std::pair<double, double>> const & energy_dict, Parity parity ) : 
-        equations(equations), energy_dict(energy_dict), parity(parity) { }
+    PreciseEigenvalueFinder( Equations * equations, std::map<double, std::pair<double, double>> const& energy_dict ) :
+        equations(equations), energy_dict(energy_dict) { }
         
     double brent( std::function<double(double)> f, double xb1, double xb2 );
-    double D( const double a, const double b, const double h, const int i_match, const double E );
-    double precise_eigenvalue_calculation( const int i_match, const double E1, const double E2, double & a, double & b, double & h );
+    double D( double a, double b, double h, int i_match, double E );
+    double precise_eigenvalue_calculation( int i_match, double E1, double E2, double & a, double & b, double & h );
     
-    int find_i_match( const double E1, const double E2, const int NPoints, const int parts = 100 );
+    int find_i_match( double E1, double E2, int NPoints, int parts = 100 );
 
-    int effecient_i_match( const double E1, const double E2, const int NPoints, const int parts );
+    int effecient_i_match( double E1, double E2, int NPoints, int parts );
 
-    void reserve_space_for_search( const int parts );
+    void reserve_space_for_search( int parts );
 
 private:
     Equations * equations;
-    std::map<double, std::pair<double, double>> energy_dict;
-    Parity parity;
+    const std::map<double, std::pair<double, double>> & energy_dict;
 
     std::vector<Eigen::MatrixXd> Rm_vector1;
     std::vector<Eigen::MatrixXd> Rmp1_vector1;

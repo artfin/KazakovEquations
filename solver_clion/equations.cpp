@@ -95,7 +95,8 @@ double Equations::angularMatrixElements( const int P, const int l, const int Lpr
 // gsl_sf_coupling_3j принимает удвоенные значения спинов и проекций спинов
 // возвращает значение матричного элемента <PM|P_l|L'M>
 {
-	return std::pow(-1.0, M) * std::sqrt( (2.0*P+1.0) * (2.0*Lprime+1.0) ) * gsl_sf_coupling_3j(2*Lprime, 2*l, 2*P, 0, 0, 0 ) * gsl_sf_coupling_3j(2*Lprime, 2*l, 2*P, 2*M, 0, -2*M );
+	return std::pow(-1.0, M) * std::sqrt( (2.0*P+1.0) * (2.0*Lprime+1.0) ) * \
+	       gsl_sf_coupling_3j(2*Lprime, 2*l, 2*P, 0, 0, 0 ) * gsl_sf_coupling_3j(2*Lprime, 2*l, 2*P, 2*M, 0, -2*M );
 }
 	
 double Equations::compute_W_sum( const int P, const int Lprime)
@@ -110,84 +111,59 @@ double Equations::compute_W_sum( const int P, const int Lprime)
 	return result;
 }
 
-void Equations::fill_V( const double r, const Parity parity )
+void Equations::fill_V( const double r )
 {
-    assert( J >= 0 && "Please, set angular momentum using setAngularMomentum method!" );
-
 	// заполняем элементы вектора W
 	fill_W_elements( r );
 
-    if ( parity == Parity::ODD )
+    int P = M_abs;
+    int Lprime = M_abs;
+
+    for ( int i = 0; i < V.rows(); i++, P++ )
     {
-        int P, Lprime;
-
-        if ( M_abs % 2 == 1 )
+        Lprime = M_abs;
+        for ( int j = 0; j < V.cols(); j++, Lprime++ )
         {
-            P = M_abs;
-            Lprime = M_abs;
-        }
-        else
-        {
-            P = M_abs + 1;
-            Lprime = M_abs + 1;
-        }
-
-        int Lprime_ini = Lprime;
-
-        for ( int i = 0; i < V.rows(); i++, P += 2 )
-        {
-            Lprime = Lprime_ini;
-            for ( int j = 0; j < V.cols(); j++, Lprime += 2 )
-            {
-                //std::cout << "(odd) i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
-                V(i, j) = compute_W_sum(P, Lprime) + delta(P, Lprime) * (hbar*hbar*P*(P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + P*(P+1.0)));
-            }
-        }
-    }
-    else if ( parity == Parity::EVEN )
-    {
-        int P, Lprime; 
-
-        if ( M_abs % 2 == 0 )
-        {
-            P = M_abs;
-            Lprime = M_abs;
-        }
-        else
-        {
-            P = M_abs + 1;
-            Lprime = M_abs + 1;
-        }
-        
-        int Lprime_ini = Lprime;
-
-        for ( int i = 0; i < V.rows(); i++, P += 2 )
-        {
-            Lprime = Lprime_ini;
-            for ( int j = 0; j < V.cols(); j++, Lprime += 2 )
-            {
-                //std::cout << "(even) i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
-                V(i, j) = compute_W_sum(P, Lprime) + delta(P, Lprime) * (hbar*hbar*P*(P+1.0)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1.0) + P*(P+1.0)));
-            }
-        }
-    }
-    else
-    {
-        int P = M_abs;
-        int Lprime = M_abs; 
-        for ( int i = 0; i < V.rows(); i++, P++ )
-        {
-            Lprime = M_abs;
-            for ( int j = 0; j < V.cols(); j++, Lprime++ )
-            {
-                //std::cout << "i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
-                V(i, j) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
-            }
+            //std::cout << "i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
+            V(i, j) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
         }
     }
 }
 
-void Equations::propagateForwardFull( const Parity parity, const double Energy, const double a, const double h,
+void Equations::propagation_step( const double Energy, const double x, const double hh12 )
+{
+    fill_V( x );
+    Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar;
+    U = 12.0 * Wmat.inverse() - 10.0 * I;
+    R = U - Rinv;
+    Rinv = R.inverse();
+}
+
+void Equations::propagateForwardFull( const double Energy, const double a, const double h,
+                                      std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
+{
+    std::cout << "(propagateForwardFull) Energy: " << Energy*constants::HTOCM << std::endl;
+    double hh12 = h * h / 12.0;
+    double x = a + h;
+
+    Rinv = Eigen::MatrixXd::Zero(channels, channels);
+
+    int counter = 0;
+    for ( unsigned int i = 1; i < NPoints - 1; ++i )
+    {
+        propagation_step(Energy, x, hh12);
+        x += h;
+
+        if ((i % step == 0) && (i != 0))
+        {
+            Rm_vector[counter] = R;
+            ++counter;
+        }
+    }
+}
+
+/*
+void Equations::propagateForwardFull( const double Energy, const double a, const double h,
         std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
 {
     double hh12 = h * h / 12.0;
@@ -198,7 +174,7 @@ void Equations::propagateForwardFull( const Parity parity, const double Energy, 
     int counter = 0;
     for ( unsigned int i = 1; i < NPoints - 1; i++ )
     {
-        fill_V( x, parity );
+        fill_V( x );
 
 		Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
 		U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -215,8 +191,9 @@ void Equations::propagateForwardFull( const Parity parity, const double Energy, 
         x += h;
     } 
 } 
+*/
 
-void Equations::propagateBackwardFull( const Parity parity, const double Energy, const double b, const double h,
+void Equations::propagateBackwardFull( const double Energy, const double b, const double h,
         std::vector<Eigen::MatrixXd> & Rmp1_vector, const int step )
 {
     //std::cout << "(propagateBackwardFull) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
@@ -230,7 +207,7 @@ void Equations::propagateBackwardFull( const Parity parity, const double Energy,
     int counter = 0; 
     for ( int i = NPoints - 2; i > 0; i-- )
     {
-        fill_V( x, parity );
+        fill_V( x );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -248,7 +225,7 @@ void Equations::propagateBackwardFull( const Parity parity, const double Energy,
     }	
 }
 
-void Equations::propagateForward( const Parity parity, const double Energy, const double a, const double h, const int i_match,
+void Equations::propagateForward( const double Energy, const double a, const double h, const int i_match,
         Eigen::MatrixXd & resRm, bool save )
 {
     double hh12 = h * h / 12.0;
@@ -259,7 +236,7 @@ void Equations::propagateForward( const Parity parity, const double Energy, cons
     for ( int i = 1; i <= i_match; i++ )
     {
         //std::cout << "(propagateForward) i: " << i << "; x: " << x << std::endl; 
-        fill_V( x, parity );
+        fill_V( x );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -281,7 +258,7 @@ void Equations::propagateForward( const Parity parity, const double Energy, cons
 }
 
 
-void Equations::propagateBackward( Parity parity, const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save )
+void Equations::propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save )
 // resRmp1 = R_{m + 1}
 {
     //std::cout << "(propagateBackward) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
@@ -294,7 +271,7 @@ void Equations::propagateBackward( Parity parity, const double Energy, const dou
     for ( int i = NPoints - 2; i > i_match; i-- )
     {
         //std::cout << "(propagateBackward) i: " << i << "; x: " << x << std::endl;
-        fill_V( x, parity );
+        fill_V( x );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -313,7 +290,7 @@ void Equations::propagateBackward( Parity parity, const double Energy, const dou
     resRmp1 = R;	
 }
 
-int Equations::countEigenvalues( const Parity parity, const double Energy, const double a, const double b, const double h )
+int Equations::countEigenvalues( const double Energy, const double a, const double b, const double h )
 {
     (void)(b);
     Rinv = Eigen::MatrixXd::Zero( channels, channels );
@@ -324,7 +301,7 @@ int Equations::countEigenvalues( const Parity parity, const double Energy, const
     double x = a + h;
     for ( unsigned int i = 1; i < NPoints - 1; i++ )
     {
-        fill_V( x, parity );
+        fill_V( x );
 
         Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar;
         U = 12.0 * Wmat.inverse() - 10.0 * I;
@@ -337,7 +314,7 @@ int Equations::countEigenvalues( const Parity parity, const double Energy, const
     }
 
     return n;
-} 
+}
 
 int Equations::countNegativeDiagonalElements()
 {
@@ -400,15 +377,15 @@ double Equations::brent( std::function<double(double)> f, double xb1, double xb2
     return r;
 }
 
-double Equations::adiabatic_potential_component( const Parity parity, const double r, const int k )
+double Equations::adiabatic_potential_component( const double r, const int k )
 {
-    fill_V( r, parity );
+    fill_V( r );
     es.compute( V );
 
     return es.eigenvalues()(k); 
 }
 
-std::pair<double, double> Equations::find_classical_turning_points( const Parity parity, const double Energy, double x_lb, double x_rb, const double eps )
+std::pair<double, double> Equations::find_classical_turning_points( const double Energy, double x_lb, double x_rb, const double eps )
 {
     double dx = 0.5;
 
@@ -424,7 +401,7 @@ std::pair<double, double> Equations::find_classical_turning_points( const Parity
 
     for ( double x = x_lb; x < x_rb; x += dx, Veig_prev = Veig )
     {
-        fill_V( x, parity );
+        fill_V( x );
         es.compute( V );
         Veig = es.eigenvalues();
 
@@ -437,7 +414,7 @@ std::pair<double, double> Equations::find_classical_turning_points( const Parity
                 if ( Veig(k) - Energy < 0 )
                 {
                     //std::cout << "Left turning point. Calling brent " << std::endl;
-                    tmp = [=]( const double r ) { return adiabatic_potential_component( parity, r, k ) - Energy; };
+                    tmp = [=]( const double r ) { return adiabatic_potential_component( r, k ) - Energy; };
 
                     tp = brent( tmp, x - dx, x, eps );
                     //std::cout << "Turning point: " << tp << std::endl;
@@ -448,7 +425,7 @@ std::pair<double, double> Equations::find_classical_turning_points( const Parity
                 else if ( Veig(k) - Energy > 0 )
                 {
                     //std::cout << "Right turning point. Calling brent " << std::endl;
-                    tmp = [=]( const double r ) { return adiabatic_potential_component( parity, r, k ) - Energy; };
+                    tmp = [=]( const double r ) { return adiabatic_potential_component( r, k ) - Energy; };
 
                     tp = brent( tmp, x - dx, x, eps );
                     //std::cout << "Turning point: " << tp << std::endl;
@@ -477,7 +454,8 @@ std::pair<double, double> Equations::find_classical_turning_points( const Parity
     return std::make_pair( left_tp, right_tp );
 }
 
-std::map<double, std::pair<double, double>> Equations::create_energy_dict( const Parity parity, const double E_min, const double E_max, const int energy_intervals, const double x_lb, const double x_rb, const double eps )
+std::map<double, std::pair<double, double>> Equations::create_energy_dict( const double E_min, const double E_max,
+        const int energy_intervals, const double x_lb, const double x_rb, const double eps )
 // x_lb, x_rb -- задают интервал, в котором будут искаться поворотные точки
 // eps -- погрешность нахождения поворотной точки
 {
@@ -494,7 +472,7 @@ std::map<double, std::pair<double, double>> Equations::create_energy_dict( const
     for ( int counter = 0; counter < energy_intervals; lge += energy_step, counter++ )
     {
         double e = -std::pow(10.0, lge);
-        tp = find_classical_turning_points( parity, e, x_lb, x_rb, eps );
+        tp = find_classical_turning_points( e, x_lb, x_rb, eps );
         energy_dict[e] = tp;
 
         if ( (tp.first == 0) || (tp.second == 0) )

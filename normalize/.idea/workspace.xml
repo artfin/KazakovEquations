@@ -12,132 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="379c7c13-b127-44a1-a13e-1d32a4556f03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/channel.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/channel.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wavefunction.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wavefunction.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/database/database_w_diagcor.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/database_wout_dcor/database.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/dunkerJ1M0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/dunkerJ1M1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/dunker_10_bound.gen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver/dunker_11_bound.gen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/dictionaries/artfin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/solver_clion.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CompilerIdC/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/3.10.2/CompilerIdCXX/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/feature_tests.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeFiles/solver_clion.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/FindEigen3.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/CMakeFiles/solver_clion.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc17.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/eifuncs/eifunc9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake-build-debug/solver_clion.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/constants.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/eigenvalue.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/eigenvalue.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/equations.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/equations.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/parity.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/parity.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/precise_eigenvalue_finder.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/precise_eigenvalue_finder.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/preliminary_eigenvalue_finder.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/preliminary_eigenvalue_finder.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../solver_clion/solver_clion" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eigenfunctions/main" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eigenvalues_bisection/main" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenvalues_bisection/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/.equations.cpp.swp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/.equations.cpp.swp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/database/first_database.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/equations.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/main" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/database/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/database/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/decomposition/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/decomposition/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/eigen_linear_system/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/eigen_linear_system/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/parity/parity" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/parity/parity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/normalize" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/normalize" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/solver_clion" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/solver_clion" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="127" column="4" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+            <state relative-caret-position="322">
+              <caret line="219" selection-start-line="219" selection-end-line="219" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -246,18 +126,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="normalize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="normalize" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,17 +170,20 @@
       <workItem from="1550922027880" duration="244000" />
       <workItem from="1550922981150" duration="33000" />
       <workItem from="1551091931837" duration="14845000" />
+      <workItem from="1551208583260" duration="5230000" />
+      <workItem from="1551363205490" duration="71000" />
+      <workItem from="1551363290450" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25001000" />
+    <option name="totallyTimeSpent" value="30333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1213" height="999" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27249357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27249357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -365,23 +238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/channel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/channel.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wavefunction.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -402,10 +258,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/channel.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/channel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="127" column="4" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+        <state relative-caret-position="322">
+          <caret line="219" selection-start-line="219" selection-end-line="219" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

@@ -6,6 +6,44 @@
 
 #IncludeRegexTransform: 
 
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./././constants.hpp
+
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././eigenvalue.hpp
+iostream
+-
+iomanip
+-
+fstream
+-
+string
+-
+./constants.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./././constants.hpp
+
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././equations.hpp
+iostream
+-
+vector
+-
+functional
+-
+algorithm
+-
+map
+-
+Eigen/Dense
+-
+gsl/gsl_sf_coupling.h
+-
+gsl/gsl_roots.h
+-
+gsl/gsl_math.h
+-
+gsl/gsl_errno.h
+-
+./constants.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./././constants.hpp
+
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/./constants.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/./eigenvalue.hpp
@@ -17,8 +55,6 @@ fstream
 -
 string
 -
-./parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././parity.hpp
 ./constants.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/././constants.hpp
 
@@ -45,20 +81,54 @@ gsl/gsl_errno.h
 -
 ./constants.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/././constants.hpp
-./parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././parity.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./parity.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./precise_eigenvalue_finder.hpp
 iostream
 -
-fstream
+vector
+-
+iomanip
+-
+map
+-
+functional
+-
+Eigen/Dense
+-
+gsl/gsl_errno.h
+-
+gsl/gsl_math.h
+-
+gsl/gsl_roots.h
+-
+./equations.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././equations.hpp
+
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./preliminary_eigenvalue_finder.hpp
+iostream
+-
+iomanip
+-
+vector
+-
+limits
 -
 string
 -
-sstream
+map
 -
+Eigen/Dense
+-
+./eigenvalue.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././eigenvalue.hpp
+./equations.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././equations.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/constants.hpp
+
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp
+equations.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp
 iostream
@@ -83,8 +153,6 @@ gsl/gsl_errno.h
 -
 ./constants.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/./constants.hpp
-./parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./parity.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp
 iostream
@@ -103,8 +171,6 @@ gsl/gsl_sf_legendre.h
 -
 constants.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/constants.hpp
-parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.hpp
 equations.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp
 preliminary_eigenvalue_finder.hpp
@@ -112,15 +178,9 @@ preliminary_eigenvalue_finder.hpp
 precise_eigenvalue_finder.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.hpp
-iostream
--
-fstream
--
-string
--
-sstream
--
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp
+./precise_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./precise_eigenvalue_finder.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
 iostream
@@ -141,10 +201,12 @@ gsl/gsl_math.h
 -
 gsl/gsl_roots.h
 -
-./parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./parity.hpp
 ./equations.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/./equations.hpp
+
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp
+./preliminary_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./preliminary_eigenvalue_finder.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp
 iostream
@@ -161,8 +223,6 @@ map
 -
 Eigen/Dense
 -
-./parity.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./parity.hpp
 ./eigenvalue.hpp
 /home/artfin/Desktop/repos/KazakovEquations/solver_clion/./eigenvalue.hpp
 ./equations.hpp

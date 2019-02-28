@@ -8,6 +8,8 @@ namespace constants
     // bohr to angstrom
     //const double BOHRTOANG = 0.52917721067;
 
+    const double RAMTOAMU = 1822.888485332;
+
     // Hartree to inverse cm
     const double HTOCM = 219475.797;
 

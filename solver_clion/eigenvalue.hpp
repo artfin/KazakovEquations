@@ -5,21 +5,17 @@
 #include <fstream>
 #include <string>
 
-#include "./parity.hpp"
 #include "./constants.hpp"
 
 struct Eigenvalue
 {
 	Eigenvalue();
     
-    Eigenvalue( Parity parity, double value, double min, double max, int node_count_min, int node_count_max  ); 
-	Eigenvalue( Parity parity, double min, double max, int node_count_min, int node_count_max ); 
-    Eigenvalue( Parity parity, double value, int node_count_min, int node_count_max );
+    Eigenvalue( double value, double min, double max, int node_count_min, int node_count_max );
+	Eigenvalue( double min, double max, int node_count_min, int node_count_max );
+    Eigenvalue( double value, int node_count_min, int node_count_max );
 
     void setAngularMomentum( int J, int M );
-
-    friend std::ostream& operator<< (std::ostream &o, const Eigenvalue & eig);
-    friend std::ifstream& operator>>( std::ifstream & ifs, Eigenvalue & eig );
 
     bool operator<( const Eigenvalue & other ) const
     {
@@ -29,11 +25,6 @@ struct Eigenvalue
               ((this->J == other.get_J()) && (this->M == other.get_M()) && (this->node_count_min == other.get_node_count_min()) && (this->value < other.get_value())); 
     }
 
-    //bool operator<( const Eigenvalue & other ) const
-    //{
-        //return value < other.value;
-    //}
-
     void set_J( int J ) { this->J = J; }
     void set_M( int M ) { this->M = M; }
     void set_min( double min ) { this->min = min; }
@@ -41,7 +32,6 @@ struct Eigenvalue
     void set_node_count_min( int node_count_min ) { this->node_count_min = node_count_min; }
     void set_node_count_max( int node_count_max ) { this->node_count_max = node_count_max; }
     void set_value( double value ) { this->value = value; } 
-    void set_parity( Parity parity ) { this->parity = parity; }
 
     void update_value( ) { value = 0.5 * (min + max); }
     void dump_node_count() { node_count_min = 0; node_count_max = 0; } 
@@ -56,7 +46,6 @@ struct Eigenvalue
     double get_max() const { return max; }
 
 private:
-    Parity parity;
     double value;
 
     int J, M;

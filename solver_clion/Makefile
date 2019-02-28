@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -204,33 +204,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/solver_clion.dir/build.make CMakeFiles/solver_clion.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-parity.o: parity.cpp.o
-
-.PHONY : parity.o
-
-# target to build an object file
-parity.cpp.o:
-	$(MAKE) -f CMakeFiles/solver_clion.dir/build.make CMakeFiles/solver_clion.dir/parity.cpp.o
-.PHONY : parity.cpp.o
-
-parity.i: parity.cpp.i
-
-.PHONY : parity.i
-
-# target to preprocess a source file
-parity.cpp.i:
-	$(MAKE) -f CMakeFiles/solver_clion.dir/build.make CMakeFiles/solver_clion.dir/parity.cpp.i
-.PHONY : parity.cpp.i
-
-parity.s: parity.cpp.s
-
-.PHONY : parity.s
-
-# target to generate assembly for a file
-parity.cpp.s:
-	$(MAKE) -f CMakeFiles/solver_clion.dir/build.make CMakeFiles/solver_clion.dir/parity.cpp.s
-.PHONY : parity.cpp.s
-
 precise_eigenvalue_finder.o: precise_eigenvalue_finder.cpp.o
 
 .PHONY : precise_eigenvalue_finder.o
@@ -303,9 +276,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... parity.o"
-	@echo "... parity.i"
-	@echo "... parity.s"
 	@echo "... precise_eigenvalue_finder.o"
 	@echo "... precise_eigenvalue_finder.i"
 	@echo "... precise_eigenvalue_finder.s"

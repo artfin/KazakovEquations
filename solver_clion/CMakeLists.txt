@@ -16,8 +16,6 @@ add_executable(solver_clion
         main.cpp
         equations.cpp
         equations.hpp
-        parity.cpp
-        parity.hpp
         constants.hpp
         eigenvalue.cpp
         eigenvalue.hpp

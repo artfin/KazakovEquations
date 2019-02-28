@@ -9,7 +9,7 @@ void PreliminaryEigenvalueFinder::show_vector( std::string const & name, std::ve
     std::cout << "---- size: " << v.size() << std::endl;
 }
 
-Eigenvalue PreliminaryEigenvalueFinder::convergeToEigenvalue( Eigenvalue const & e, const double eps )
+Eigenvalue PreliminaryEigenvalueFinder::convergeToEigenvalue( Eigenvalue const& e, const double eps )
 // function assumes that eigenvalue is already isolated,
 // meaning that node_count_max = node_count_min + 1
 // function returns reduced energy interval for eigenvalue,
@@ -34,7 +34,7 @@ Eigenvalue PreliminaryEigenvalueFinder::convergeToEigenvalue( Eigenvalue const &
     while ( max - min > eps )
     {
         Energy = 0.5 * (min + max);
-        nodes = equations->countEigenvalues( parity, Energy, a, b, h );
+        nodes = equations->countEigenvalues( Energy, a, b, h );
 
         if ( nodes == nc_min )
             min = Energy;
@@ -58,12 +58,12 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::findEigenvalues( const doub
     double a, b, h;
     equations->calculate_boundaries( tp, &a, &b, &h );
     
-    int nodes_min = equations->countEigenvalues( parity, E_min, a, b, h );
+    int nodes_min = equations->countEigenvalues( E_min, a, b, h );
 
     tp = equations->interpolate( E_max, energy_dict );
     equations->calculate_boundaries( tp, &a, &b, &h );
     
-    int nodes_max = equations->countEigenvalues( parity, E_max, a, b, h );
+    int nodes_max = equations->countEigenvalues( E_max, a, b, h );
 
     std::vector<Eigenvalue> res = recursive_find( E_min, E_max, nodes_min, nodes_max );
 
@@ -80,12 +80,12 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
     if ( nodes_max - nodes_min == 1 )
     {
         std::cout << "(findEigenvalues) a node is already isolated." << std::endl;
-        res.emplace_back( parity, E_min, E_max, nodes_min, nodes_max );
+        res.emplace_back( E_min, E_max, nodes_min, nodes_max );
         return res; 
     }
 
-    std::cout << "(findEigenvalues) is called with E_min: " << E_min*constants::HTOCM << " cm-1; E_max: " << E_max*constants::HTOCM << " cm-1; nodes_min: " 
-              << nodes_min << "; nodes_max: " << nodes_max << std::endl;
+    std::cout << "(findEigenvalues) is called with E_min: " << E_min*constants::HTOCM << " cm-1; E_max: " << E_max*constants::HTOCM <<
+                 " cm-1; nodes_min: " << nodes_min << "; nodes_max: " << nodes_max << std::endl;
 
     int found_eigenvalues = 0;
     int eigenvalues_to_find = nodes_max - nodes_min;
@@ -104,20 +104,20 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
         tp = equations->interpolate( E_mean, energy_dict );  
         equations->calculate_boundaries( tp, &a, &b, &h );
 
-        nodes = equations->countEigenvalues( parity, E_mean, a, b, h );
+        nodes = equations->countEigenvalues( E_mean, a, b, h );
 
         std::cout << "(recursive_find) E_mean: " << E_mean*constants::HTOCM << " cm-1; a: " << a << "; b: " << b << "; nodes: " << nodes << std::endl;
 
         // если отделили 1 узел с левого края
         if ( nodes == nodes_min + 1 )
         {
-            res.emplace_back( parity, E_min, E_mean, nodes_min, nodes );
+            res.emplace_back( E_min, E_mean, nodes_min, nodes );
             //std::cout << "(findEigenvalues) 1 eigenvalue isolated on (" <<  E_min << ", " << E_mean << ")" << std::endl;
             ++found_eigenvalues;
 
             if ( eigenvalues_to_find == 2 )
             {
-                res.emplace_back( parity, E_mean, E_max, nodes, nodes_max );
+                res.emplace_back( E_mean, E_max, nodes, nodes_max );
                 //std::cout << "(findEigenvalues) 1 eigenvalue isolated on (" << E_mean << ", " << E_max << ")" << std::endl;
                 ++found_eigenvalues;
             }

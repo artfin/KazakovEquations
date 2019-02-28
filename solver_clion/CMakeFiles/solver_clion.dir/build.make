@@ -83,22 +83,9 @@ CMakeFiles/solver_clion.dir/equations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/equations.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp -o CMakeFiles/solver_clion.dir/equations.cpp.s
 
-CMakeFiles/solver_clion.dir/parity.cpp.o: CMakeFiles/solver_clion.dir/flags.make
-CMakeFiles/solver_clion.dir/parity.cpp.o: parity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solver_clion.dir/parity.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/parity.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp
-
-CMakeFiles/solver_clion.dir/parity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/parity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp > CMakeFiles/solver_clion.dir/parity.cpp.i
-
-CMakeFiles/solver_clion.dir/parity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/parity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp -o CMakeFiles/solver_clion.dir/parity.cpp.s
-
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.o: eigenvalue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/eigenvalue.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp
 
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/solver_clion.dir/eigenvalue.cpp.s: cmake_force
 
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o: precise_eigenvalue_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp
 
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.s: cmake_force
 
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o: preliminary_eigenvalue_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp
 
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.i: cmake_force
@@ -139,7 +126,6 @@ CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.s: cmake_force
 solver_clion_OBJECTS = \
 "CMakeFiles/solver_clion.dir/main.cpp.o" \
 "CMakeFiles/solver_clion.dir/equations.cpp.o" \
-"CMakeFiles/solver_clion.dir/parity.cpp.o" \
 "CMakeFiles/solver_clion.dir/eigenvalue.cpp.o" \
 "CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o" \
 "CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
@@ -149,7 +135,6 @@ solver_clion_EXTERNAL_OBJECTS =
 
 solver_clion: CMakeFiles/solver_clion.dir/main.cpp.o
 solver_clion: CMakeFiles/solver_clion.dir/equations.cpp.o
-solver_clion: CMakeFiles/solver_clion.dir/parity.cpp.o
 solver_clion: CMakeFiles/solver_clion.dir/eigenvalue.cpp.o
 solver_clion: CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o
 solver_clion: CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o
@@ -157,7 +142,7 @@ solver_clion: CMakeFiles/solver_clion.dir/build.make
 solver_clion: /usr/lib/x86_64-linux-gnu/libgsl.so
 solver_clion: /usr/lib/x86_64-linux-gnu/libgslcblas.so
 solver_clion: CMakeFiles/solver_clion.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable solver_clion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable solver_clion"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solver_clion.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
