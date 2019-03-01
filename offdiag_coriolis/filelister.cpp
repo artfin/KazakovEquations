@@ -54,9 +54,13 @@ std::vector<std::string> FileLister::listdir( )
         std::string file = std::string(dirp->d_name);
         if ( file == "." || file == ".." ) continue;
 
+        // игнорируем буферные файлы vim'a
         size_t found = file.find(".swp");
         if ( found != std::string::npos ) continue;
 
+        // игнорируем питоновские скрипты
+        found = file.find(".py");
+        if ( found != std::string::npos ) continue;
 
         files.push_back(full_path(file));
     }

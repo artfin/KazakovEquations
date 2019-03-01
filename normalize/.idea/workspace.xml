@@ -14,41 +14,16 @@
     <list default="true" id="379c7c13-b127-44a1-a13e-1d32a4556f03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/normalize.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/channel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/channel.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/channel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/channel.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/normalize" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/normalize.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc8.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc10.txt" beforeDir="false" />
@@ -76,11 +51,14 @@
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc6.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc7.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/energies_j1m0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/energies_j1m1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/constants.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/equations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/equations.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/equations.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/solver_clion" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/solver_clion" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +73,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
+            <state relative-caret-position="456">
               <caret line="221" selection-start-line="221" selection-end-line="221" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -247,7 +225,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32988507" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32988507" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -359,7 +337,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
+        <state relative-caret-position="456">
           <caret line="221" selection-start-line="221" selection-end-line="221" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />

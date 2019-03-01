@@ -78,11 +78,11 @@ private:
     // taken from Manolopoulos Thesis
     const double mu = 34505.15; 
 
-    const double HCL_LEN = 0.127e-9 / constants::ALU;
+    //const double HCL_LEN = 0.127e-9 / constants::ALU;
     //const double Inten = HCL_MU * std::pow(HCL_LEN, 2.0);
 
     const double B = 10.44019 * 0.529177e-8; // a.l.u
-    const double Inten = 1.0 / (4.0 * M_PI * B * constants::alpha_inv);
+    const double Inten = 1.0 / (4.0 * M_PI * B) * constants::fine_structure_constant;
 
 	unsigned int channels;
     unsigned int NPoints;

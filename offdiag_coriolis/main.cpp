@@ -168,7 +168,7 @@ double fourth_order( std::vector<Wavefunction> const& wavefunctions, const int n
             }
         }
 
-        if ( k4 % 5 == 0 ) std::cout << "k4: " << k4 << std::endl;
+        //if ( k4 % 5 == 0 ) std::cout << "k4: " << k4 << std::endl;
     }
 
     double term2 = 0.0;
@@ -220,7 +220,7 @@ int main()
 {
     std::cout << std::fixed << std::setprecision(15);
 
-    std::vector<std::string> dirs = {"../eifuncs_j1m0/", "../eifuncs_j1m1/", "../eifuncs_j1m-1/"};
+    std::vector<std::string> dirs = {"../eifuncs_j1m0_nch12/", "../eifuncs_j1m1_nch12/", "../eifuncs_j1m-1_nch12/"};
     std::vector<std::string> files;
     for ( std::string const& dir : dirs )
     {
@@ -247,6 +247,8 @@ int main()
     std::cout << "Total number of wavefunctions: " << wavefunctions.size() << std::endl;
     std::cout << "-----------------------------------------------------" << std::endl << std::endl;
 
+
+    /*
     int n = 1; // level we are correcting
     double E0 = wavefunctions[n].get_energy();
     std::cout << "Correcting level: " << n << "; E: " << E0 << "; J: " << wavefunctions[n].get_J() <<
@@ -267,11 +269,23 @@ int main()
 
     std::cout << "p1: " << p1 << std::endl;
     std::cout << "p2: " << p2 << std::endl;
-    std::cout << "p3: " << p3 << std::endl;
-    std::cout << "p4: " << p4 << std::endl;
+    //std::cout << "p3: " << p3 << std::endl;
+    //std::cout << "p4: " << p4 << std::endl;
     std::cout << "En(0) = " << E0 << std::endl;
     std::cout << "En(2) = " << E0 + p2 << std::endl;
-    std::cout << "En(4) = " << E0 + p2 + p4 << std::endl;
+    //std::cout << "En(4) = " << E0 + p2 + p4 << std::endl;
+    */
+
+    std::cout << std::setprecision(4);
+    auto nlvl = count(0);
+    for ( int n = 0; n < nlvl; ++n )
+    {
+        double E0 = wavefunctions[n].get_energy();
+        double p2 = second_order(wavefunctions, n);
+        double p4 = fourth_order(wavefunctions, n);
+        std::cout << n << " " << E0 << " " << E0 + p2 << " " << E0 + p2 + p4 << std::endl;
+    }
+
 
     return 0;
 }

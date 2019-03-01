@@ -12,18 +12,15 @@
 #include "precise_eigenvalue_finder.hpp"
 
 #define ENABLE_WAVEFUNCTION_CALCULATION
-#undef ENABLE_WAVEFUNCTION_CALCULATION
+//#undef ENABLE_WAVEFUNCTION_CALCULATION
 
-// TO DO LIST:
-// 1) discern parity of eigenvalues
-
-const int NPoints = 5000;
+const int NPoints = 8000;
 
 void fixNodeCount( std::vector<Eigenvalue> & eigs );
 
 std::vector<Eigenvalue> calculate_eigenvalues( Equations & equations,
         std::map<double, std::pair<double, double>> const & energy_dict,
-        int NPoints, const int channels, double E_min, double E_max,
+        int NPoints, int channels, double E_min, double E_max,
         int i_match_intervals, double eps );
 
 std::vector<Eigen::VectorXd> calculate_eigenfunction( Equations & equations,
@@ -53,7 +50,7 @@ int main( int argc, char * argv[] )
 
     // energy interval to search eigenvalues in
     const double E_min = -150.0 / constants::HTOCM;
-    const double E_max = -130.0 / constants::HTOCM;
+    const double E_max = -0.1 / constants::HTOCM;
     const double eps = 1.0e-2; // relative precision of preliminary eigenvalue
 
     // interval to search turning points in  

@@ -557,7 +557,7 @@ std::pair<double, double> Equations::interpolate( const double e, const std::map
 
 void Equations::calculate_boundaries( std::pair<double, double> const & tp, double * a, double * b, double * h )
 {
-    *a = 5.0; // tp.first - 1.5;
+    *a = 4.0; // tp.first - 1.5;
     *b = 35.0; // tp.second + 15.0;
     *h = ( *b - *a ) / (NPoints - 1);
    //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;

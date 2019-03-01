@@ -14,7 +14,9 @@ namespace constants
     const double HTOCM = 219475.797;
 
     // atomic length unit to meters == a0
-    const double ALU = 0.52917721067 * 1E-10;
+    //const double ALU = 0.52917721067 * 1E-10;
+
+    const double fine_structure_constant = 7.2973525664e-3;
 
     // bohr to angstrom
     const double BOHRTOANG = 0.529177;

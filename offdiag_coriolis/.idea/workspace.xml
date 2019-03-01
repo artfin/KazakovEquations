@@ -14,41 +14,16 @@
     <list default="true" id="379c7c13-b127-44a1-a13e-1d32a4556f03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/normalize.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/channel.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/channel.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/normalize" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/normalize.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/offdiag_coriolis" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/offdiag_coriolis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eifuncs_j1m-1/eifunc8.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m0/eifunc0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m0/eifunc1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m0/eifunc10.txt" beforeDir="false" />
@@ -76,11 +51,14 @@
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m1/eifunc6.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m1/eifunc7.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eifuncs_j1m1/eifunc8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/energies_j1m0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/energies_j1m1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filelister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/filelister.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wavefunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/wavefunction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wavefunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/wavefunction.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/constants.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/equations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/equations.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/equations.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver_clion/solver_clion" beforeDir="false" afterPath="$PROJECT_DIR$/../solver_clion/solver_clion" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -96,11 +74,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-146">
-              <caret line="237" column="33" selection-start-line="237" selection-start-column="33" selection-end-line="237" selection-end-column="33" />
+            <state relative-caret-position="621">
+              <caret line="285" column="63" selection-start-line="285" selection-start-column="63" selection-end-line="285" selection-end-column="63" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filelister.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="920">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -150,6 +137,7 @@
         <option value="$PROJECT_DIR$/channel.hpp" />
         <option value="$PROJECT_DIR$/wavefunction.cpp" />
         <option value="$PROJECT_DIR$/channel.cpp" />
+        <option value="$PROJECT_DIR$/filelister.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -221,12 +209,12 @@
       <workItem from="1550922027880" duration="244000" />
       <workItem from="1550922981150" duration="33000" />
       <workItem from="1551091931837" duration="14845000" />
-      <workItem from="1551438372200" duration="6538000" />
+      <workItem from="1551438372200" duration="14537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31539000" />
+    <option name="totallyTimeSpent" value="39538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1213" height="999" extended-state="6" />
@@ -237,7 +225,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2954023" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.61609197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -254,12 +242,12 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27249357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27249357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2954023" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2954023" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -324,10 +312,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/filelister.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="237" column="33" selection-start-line="237" selection-start-column="33" selection-end-line="237" selection-end-column="33" />
+        <state relative-caret-position="621">
+          <caret line="285" column="63" selection-start-line="285" selection-start-column="63" selection-end-line="285" selection-end-column="63" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
