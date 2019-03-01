@@ -23,7 +23,7 @@ double integrate_trapezoid( const double h, Channel const& ch )
     return sum * h / 2.0;
 }
 
-double integrate_simpson( const double h, Channel const& ch )
+double integrate_simpson( std::vector<double> const& Rgrid, Channel const& ch )
 {
     double sum1 = 0.0; double sum2 = 0.0;
     size_t size_ = ch.get_grid_size();
@@ -32,14 +32,14 @@ double integrate_simpson( const double h, Channel const& ch )
     for ( size_t k = 1; k < size_ - 1; ++k )
     {
         if ( k % 2 == 0 ) {
-            sum1 += y[k];
+            sum1 += y[k]; // / std::pow(Rgrid[k], 2);
         }
         else {
-            sum2 += y[k];
+            sum2 += y[k]; // / std::pow(Rgrid[k], 2);
         }
     }
 
     double res = y[0] + y.back() + 2.0*sum1 + 4.0*sum2;
-    return res * h / 3.0;
+    return res * ch.get_h() / 3.0;
 }
 

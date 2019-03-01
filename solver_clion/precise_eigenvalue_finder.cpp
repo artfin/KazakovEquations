@@ -55,8 +55,8 @@ double PreciseEigenvalueFinder::D( const double a, const double b, const double 
 {
     Eigen::MatrixXd Rm, Rmp1;
 
-    equations->propagateForward( E, a, h, i_match, Rm );
-    equations->propagateBackward( E, b, h, i_match, Rmp1 );
+    equations->propagateForwardToMatch( E, a, h, i_match, Rm );
+    equations->propagateBackwardToMatch( E, b, h, i_match, Rmp1 );
 
     //std::cout << "(D) i_match: " << i_match << "; Rm: " << std::endl << Rm << std::endl << "; Rmp1_inv: " << std::endl << Rmp1.inverse() << std::endl;
 

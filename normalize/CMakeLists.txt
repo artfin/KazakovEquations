@@ -8,7 +8,13 @@ set(EIGEN_DIR "/usr/local/include/eigen3")
 include_directories(${EIGEN_DIR})
 
 
-add_executable(normalize main.cpp channel.cpp channel.hpp wavefunction.cpp wavefunction.hpp)
+add_executable(normalize main.cpp
+                         channel.cpp
+                         channel.hpp
+                         wavefunction.cpp
+                         wavefunction.hpp
+                         filelister.cpp
+                         filelister.hpp)
 
 target_link_libraries(normalize ${EIGEN_DIR})
 

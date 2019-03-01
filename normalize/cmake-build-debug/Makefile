@@ -150,6 +150,33 @@ channel.cpp.s:
 	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/channel.cpp.s
 .PHONY : channel.cpp.s
 
+filelister.o: filelister.cpp.o
+
+.PHONY : filelister.o
+
+# target to build an object file
+filelister.cpp.o:
+	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/filelister.cpp.o
+.PHONY : filelister.cpp.o
+
+filelister.i: filelister.cpp.i
+
+.PHONY : filelister.i
+
+# target to preprocess a source file
+filelister.cpp.i:
+	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/filelister.cpp.i
+.PHONY : filelister.cpp.i
+
+filelister.s: filelister.cpp.s
+
+.PHONY : filelister.s
+
+# target to generate assembly for a file
+filelister.cpp.s:
+	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/filelister.cpp.s
+.PHONY : filelister.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... channel.o"
 	@echo "... channel.i"
 	@echo "... channel.s"
+	@echo "... filelister.o"
+	@echo "... filelister.i"
+	@echo "... filelister.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

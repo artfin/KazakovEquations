@@ -4,7 +4,11 @@
 CMakeFiles/normalize.dir/channel.cpp.o: ../channel.cpp
 CMakeFiles/normalize.dir/channel.cpp.o: ../channel.hpp
 
+CMakeFiles/normalize.dir/filelister.cpp.o: ../filelister.cpp
+CMakeFiles/normalize.dir/filelister.cpp.o: ../filelister.hpp
+
 CMakeFiles/normalize.dir/main.cpp.o: ../channel.hpp
+CMakeFiles/normalize.dir/main.cpp.o: ../filelister.hpp
 CMakeFiles/normalize.dir/main.cpp.o: ../main.cpp
 CMakeFiles/normalize.dir/main.cpp.o: ../wavefunction.hpp
 

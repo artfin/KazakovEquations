@@ -1,17 +1,19 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 #include <vector>
 
 class Channel
 {
 public:
-    Channel( int L, size_t grid_size ) : L(L), grid_size(grid_size)
+    Channel( int L, double h, size_t grid_size ) : L(L), h(h), grid_size(grid_size)
     {
         data.reserve( grid_size );
     }
 
     int get_L() const { return L; }
+    double get_h() const { return h; }
     size_t get_grid_size() const { return grid_size; }
 
     void push_back( double d )
@@ -46,12 +48,13 @@ public:
 
 private:
     int L;
+    double h;
     size_t grid_size;
 
     std::vector<double> data;
 };
 
 Channel operator*( Channel lhs, const Channel & rhs );
-double integrate_simpson( const double h, Channel const& ch );
+double integrate_simpson( std::vector<double> const& Rgrid, Channel const& ch );
 
 

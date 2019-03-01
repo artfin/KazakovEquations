@@ -37,14 +37,14 @@ public:
     int get_channels( ) const { return channels; }
     int get_M() const { return M; }
     int get_J() const { return J; }
+	int get_M_abs() const { return M_abs; }
 
     void propagation_step( double Energy, double x, double hh12 );
-    void propagateForward( double Energy, double a, double h, int i_match, Eigen::MatrixXd & resRm, bool save = false );
+    void propagateForwardToMatch( double Energy, double a, double h, int i_match, Eigen::MatrixXd & resRm, bool save = false );
     void propagateForwardFull( double Energy, double a, double h, std::vector<Eigen::MatrixXd> & Rm_vector, int step );
-    void propagateBackward( double Energy, double b, double h, int i_match, Eigen::MatrixXd & resRmp1, bool save = false );
+    void propagateBackwardToMatch( double Energy, double b, double h, int i_match, Eigen::MatrixXd & resRmp1, bool save = false );
     void propagateBackwardFull( double Energy, double b, double h, std::vector<Eigen::MatrixXd> & Rmp1_vector, int step );
-
-    int countEigenvalues( double Energy, double a, double b, double h );
+	int countEigenvalues( double Energy, double a, double h );
     int countNegativeDiagonalElements( );
 
     double brent( std::function<double(double)> f, double xb1, double xb2, double eps );

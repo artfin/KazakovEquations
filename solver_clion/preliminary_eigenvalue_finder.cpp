@@ -34,7 +34,7 @@ Eigenvalue PreliminaryEigenvalueFinder::convergeToEigenvalue( Eigenvalue const& 
     while ( max - min > eps )
     {
         Energy = 0.5 * (min + max);
-        nodes = equations->countEigenvalues( Energy, a, b, h );
+        nodes = equations->countEigenvalues(Energy, a, h);
 
         if ( nodes == nc_min )
             min = Energy;
@@ -58,12 +58,12 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::findEigenvalues( const doub
     double a, b, h;
     equations->calculate_boundaries( tp, &a, &b, &h );
     
-    int nodes_min = equations->countEigenvalues( E_min, a, b, h );
+    int nodes_min = equations->countEigenvalues( E_min, a, h );
 
     tp = equations->interpolate( E_max, energy_dict );
     equations->calculate_boundaries( tp, &a, &b, &h );
     
-    int nodes_max = equations->countEigenvalues( E_max, a, b, h );
+    int nodes_max = equations->countEigenvalues( E_max, a, h );
 
     std::vector<Eigenvalue> res = recursive_find( E_min, E_max, nodes_min, nodes_max );
 
@@ -104,7 +104,7 @@ std::vector<Eigenvalue> PreliminaryEigenvalueFinder::recursive_find( const doubl
         tp = equations->interpolate( E_mean, energy_dict );  
         equations->calculate_boundaries( tp, &a, &b, &h );
 
-        nodes = equations->countEigenvalues( E_mean, a, b, h );
+        nodes = equations->countEigenvalues( E_mean, a, h );
 
         std::cout << "(recursive_find) E_mean: " << E_mean*constants::HTOCM << " cm-1; a: " << a << "; b: " << b << "; nodes: " << nodes << std::endl;
 

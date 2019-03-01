@@ -92,6 +92,12 @@
 		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/normalize/channel.hpp">
 			<Option target="normalize"/>
 		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/normalize/filelister.cpp">
+			<Option target="normalize"/>
+		</Unit>
+		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/normalize/filelister.hpp">
+			<Option target="normalize"/>
+		</Unit>
 		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/normalize/main.cpp">
 			<Option target="normalize"/>
 		</Unit>

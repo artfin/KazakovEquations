@@ -8,32 +8,15 @@
 #include <cassert>
 
 #include <gsl/gsl_sf_coupling.h>
+
 #include "wavefunction.hpp"
+#include "filelister.hpp"
 
-std::vector<double> read_energies( std::string const& filename )
-{
-    std::ifstream ifs( filename );
-    std::string line;
-
-    std::vector<double> energies;
-    double energy;
-
-    while ( std::getline(ifs, line) )
-    {
-        std::cout << line << std::endl;
-        std::istringstream iss(line);
-        iss >> energy;
-        energies.push_back( energy );
-    }
-
-    return energies;
-}
-
-double channel_matrix_element( Channel const& ch1, Channel const& ch2, const int lambda, const int M, const double h )
+double channel_matrix_element( std::vector<double> const& Rgrid, Channel const& ch1, Channel const& ch2, const int lambda, const int M )
 // gsl_sf_coupling_3j accepts the values of spins and their projections multiplied by two.
 {
     Channel product = ch1 * ch2;
-    double radial_integral = integrate_simpson(h, product);
+    double radial_integral = integrate_simpson(Rgrid, product);
 
     int L = ch1.get_L();
     int Lprime = ch2.get_L();
@@ -43,49 +26,50 @@ double channel_matrix_element( Channel const& ch1, Channel const& ch2, const int
            radial_integral;
 }
 
-double wf_matrix_element( Wavefunction const& wf1, Wavefunction const& wf2, const int lambda, const int M )
+double wf_matrix_element( Wavefunction const& wf1, Wavefunction const& wf2, const int lambda )
 {
     double result = 0.0;
     double h = wf1.get_h();
 
+    int M = wf1.get_M();
+    int Mprime = wf2.get_M();
+    if ( M != Mprime )
+        return 0.0;
+
+    std::vector<double> const& Rgrid = wf1.get_grid();
+
     for ( Channel const& ch1 : wf1.get_channels() )
         for ( Channel const& ch2 : wf2.get_channels() )
-            result += channel_matrix_element(ch1, ch2, lambda, M, h);
+            result += channel_matrix_element(Rgrid, ch1, ch2, lambda, M);
 
     return result;
 }
 
-std::vector<std::string> create_file_list( std::string const& folder, const size_t n )
-{
-    std::vector<std::string> file_list;
-    for ( size_t k = 0; k < n; ++k )
-        file_list.push_back( folder + "eifunc" + std::to_string(k) + ".txt" );
-    return file_list;
-}
-
-double first_order( std::vector<Wavefunction> const& wavefunctions, const int n, const int lambda, const int M )
+double first_order( std::vector<Wavefunction> const& wavefunctions, const int n, const int lambda )
 // first order perturbation correction for the n-th energy level by the lambda-perturbation
 {
-    return wf_matrix_element(wavefunctions[n], wavefunctions[n], lambda, M);
+    int M = wavefunctions[n].get_M();
+    return wf_matrix_element(wavefunctions[n], wavefunctions[n], lambda);
 }
 
-double second_order( std::vector<Wavefunction> const& wavefunctions, std::vector<double> const& energies, const int n, const int lambda, const int M)
+double second_order( std::vector<Wavefunction> const& wavefunctions, const int n, const int lambda )
 // second order perturbation correction for the n-th energy level by the lambda-perturbation
 {
     size_t size_ = wavefunctions.size();
     double matrix_element = 0.0, result = 0.0;
+    double energy_n = wavefunctions[n].get_energy();
 
     for ( size_t k = 0; k < size_; ++k )
     {
         if ( k == n ) continue;
-        matrix_element = wf_matrix_element(wavefunctions[k], wavefunctions[n], lambda, M);
-        //std::cout << "matrix element: " << matrix_element << std::endl;
-        result += matrix_element*matrix_element / (energies[n] - energies[k]);
+        matrix_element = wf_matrix_element(wavefunctions[k], wavefunctions[n], lambda);
+        result += matrix_element*matrix_element / (energy_n - wavefunctions[k].get_energy());
     }
 
     return result;
 }
 
+/*
 double third_order( std::vector<Wavefunction> const& wavefunctions, std::vector<double> const& energies, const int n, const int lambda, const int M)
 // third order perturbation correction for the n-th energy level by the lambda-perturbation
 {
@@ -193,11 +177,13 @@ double fourth_order( std::vector<Wavefunction> const& wavefunctions, std::vector
 
     return term1 - term2 - term3 + term4;
 }
+*/
 
-void print_results( std::vector<double> const& energies, const int n, std::vector<double> const& corrections, std::vector<double> const& eps_vector )
+void print_results( std::vector<Wavefunction> const& wavefunctions, const int n,
+        std::vector<double> const& corrections, std::vector<double> const& eps_vector )
 {
     std::cout << std::fixed << std::setprecision(9);
-    double E0 = energies[n];
+    double E0 = wavefunctions[n].get_energy();
     double E = E0;
 
     std::cout << "Epsilon \t corrections\n";
@@ -216,44 +202,38 @@ void print_results( std::vector<double> const& energies, const int n, std::vecto
     }
 }
 
+
 int main()
 {
     std::cout << std::fixed << std::setprecision(15);
 
-    std::vector<double> energies = read_energies("../energies_j0m0.txt");
-    std::string folder = "../eifuncs_j0m0/";
-    std::vector<std::string> file_list = create_file_list(folder, energies.size());
-    for ( std::string const& filename : file_list )
-        std::cout << filename << std::endl;
-
-    int M = 0;
+    // we consider perturbation of the form P_lambda(cos theta)
     int lambda = 2;
 
-    int Lmax = 8; size_t grid_size = 5000;
+    std::string dir = "../eifuncs_j1m0/";
+    FileLister lister(dir);
+    std::vector<std::string> const& files = lister.get_files();
+
+    std::cout  << "Reading wavefunctions from " << files.size() << " files." << std::endl;
 
     std::vector<Wavefunction> wavefunctions;
-    for ( std::string const& filename : file_list )
+    for ( std::string const& file : files )
     {
-        Wavefunction wf(Lmax, grid_size);
-        wf.read( filename );
-        wf.set_h();
-        wf.normalize();
-        wavefunctions.push_back(wf);
+        Wavefunction wavefunction;
+        wavefunction.read( file );
+        wavefunction.normalize();
+        wavefunctions.push_back(wavefunction);
     }
 
     int n = 0; // the level which we are correcting using PT
-    double p1 = first_order(wavefunctions, n, lambda, M);
-    std::cout << "First order: " << p1 << std::endl;
-    double p2 = second_order(wavefunctions, energies, n, lambda, M);
-    std::cout << "Second order: " << p2 << std::endl;
-    double p3 = third_order(wavefunctions, energies, n, lambda, M);
-    std::cout << "Third order: " << p3 << std::endl;
-    //double p4 = fourth_order(wavefunctions, energies, n, lambda, M);
-    //std::cout << "Fourth order: " << p4 << std::endl;
+    double p1 = first_order(wavefunctions, n, lambda);
+    double p2 = second_order(wavefunctions, n, lambda);
 
-    std::vector<double> corrections{ p1, p2, p3, p4 };
+    double E0 = wavefunctions[n].get_energy();
+
+    std::vector<double> corrections{ p1, p2 };
     std::vector<double> eps_vector = { 1.0e-5, 1.0e-4, 1.0e-3, 1.0e-2, 1.0e-1 };
-    print_results(energies, n, corrections, eps_vector);
+    print_results(wavefunctions, n, corrections, eps_vector);
 
     return 0;
 }

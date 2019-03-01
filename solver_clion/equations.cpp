@@ -139,94 +139,48 @@ void Equations::propagation_step( const double Energy, const double x, const dou
     Rinv = R.inverse();
 }
 
-void Equations::propagateForwardFull( const double Energy, const double a, const double h,
-                                      std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
+int Equations::countEigenvalues( const double Energy, const double a, const double h )
 {
-    std::cout << "(propagateForwardFull) Energy: " << Energy*constants::HTOCM << std::endl;
+    double hh12 = h * h / 12.0;
+    double x = a + h;
+
+    Rinv = Eigen::MatrixXd::Zero(channels, channels);
+
+    int n = 0;
+    for ( unsigned int i = 1; i < NPoints - 1; ++i )
+    {
+        propagation_step(Energy, x, hh12);
+        x += h;
+        n += countNegativeDiagonalElements();
+    }
+    return n;
+}
+
+
+void Equations::propagateForwardFull( const double Energy, const double a, const double h,
+        std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
+{
+    //std::cout << "(propagateForwardFull) Energy: " << Energy*constants::HTOCM << std::endl;
     double hh12 = h * h / 12.0;
     double x = a + h;
 
     Rinv = Eigen::MatrixXd::Zero(channels, channels);
 
     int counter = 0;
-    for ( unsigned int i = 1; i < NPoints - 1; ++i )
-    {
+
+    for (unsigned int i = 1; i < NPoints - 1; ++i) {
         propagation_step(Energy, x, hh12);
         x += h;
 
-        if ((i % step == 0) && (i != 0))
-        {
+        if ((i % step == 0) && (i != 0)) {
             Rm_vector[counter] = R;
             ++counter;
         }
     }
 }
 
-/*
-void Equations::propagateForwardFull( const double Energy, const double a, const double h,
-        std::vector<Eigen::MatrixXd> & Rm_vector, const int step )
-{
-    double hh12 = h * h / 12.0;
-    double x = a + h;
-
-    Rinv = Eigen::MatrixXd::Zero( channels, channels );
-
-    int counter = 0;
-    for ( unsigned int i = 1; i < NPoints - 1; i++ )
-    {
-        fill_V( x );
-
-		Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
-		U = 12.0 * Wmat.inverse() - 10.0 * I;
-		R = U - Rinv;
-		Rinv = R.inverse();
-    
-        if ( (i % step == 0) && (i != 0) )
-        {
-            //std::cout << "(propagateForwardFull) i: " << i << std::endl;
-            Rm_vector[counter] = R;
-            ++counter;
-        }
-
-        x += h;
-    } 
-} 
-*/
-
-void Equations::propagateBackwardFull( const double Energy, const double b, const double h,
-        std::vector<Eigen::MatrixXd> & Rmp1_vector, const int step )
-{
-    //std::cout << "(propagateBackwardFull) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
-    
-    double hh12 = h * h / 12.0;
-    double x = b - h;
-
-    Rinv = Eigen::MatrixXd::Zero( channels, channels );
-
-    size_t size_ = Rmp1_vector.size() - 1;
-    int counter = 0; 
-    for ( int i = NPoints - 2; i > 0; i-- )
-    {
-        fill_V( x );
-
-        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
-        U = 12.0 * Wmat.inverse() - 10.0 * I;
-        R = U - Rinv;
-        Rinv = R.inverse();
-        
-        if ( ((i - 1) % step == 0) && (i - 1 != 0) ) 
-        {
-            //std::cout << "(propagateBackwardFull) i: " << i << std::endl;
-            Rmp1_vector[size_ - counter] = Rinv;
-            ++counter;
-        }
-
-        x -= h;
-    }	
-}
-
-void Equations::propagateForward( const double Energy, const double a, const double h, const int i_match,
-        Eigen::MatrixXd & resRm, bool save )
+void Equations::propagateForwardToMatch( const double Energy, const double a, const double h, const int i_match,
+                                  Eigen::MatrixXd & resRm, bool save )
 {
     double hh12 = h * h / 12.0;
     double x = a + h;
@@ -235,34 +189,49 @@ void Equations::propagateForward( const double Energy, const double a, const dou
 
     for ( int i = 1; i <= i_match; i++ )
     {
-        //std::cout << "(propagateForward) i: " << i << "; x: " << x << std::endl; 
-        fill_V( x );
-
-        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
-        U = 12.0 * Wmat.inverse() - 10.0 * I;
-        R = U - Rinv;
-        Rinv = R.inverse();
-
-        //std::cout << "(propagateForward) Rinv: " << std::endl << Rinv << std::endl;
+        propagation_step(Energy, x, hh12);
+        x += h;
 
         if ( save )
         {
             Rinv_vector[i] = Rinv;
             Winv_vector[i] = Wmat.inverse();
         }
-
-        x += h;
     }
 
     resRm = R;
 }
 
 
-void Equations::propagateBackward( const double Energy, const double b, const double h, const int i_match, Eigen::MatrixXd & resRmp1, bool save )
+void Equations::propagateBackwardFull( const double Energy, const double b, const double h,
+                                       std::vector<Eigen::MatrixXd> & Rmp1_vector, const int step )
+{
+    //std::cout << "(propagateBackwardFull) Energy: " << Energy*constants::HTOCM << std::endl;
+    double hh12 = h * h / 12.0;
+    double x = b - h;
+
+    Rinv = Eigen::MatrixXd::Zero(channels, channels);
+
+    size_t size_ = Rmp1_vector.size() - 1;
+    int counter = 0;
+
+    for ( int i = NPoints - 2; i > 0; i-- )
+    {
+        propagation_step(Energy, x, hh12);
+        x -= h;
+
+        if ( (i - 1) % step == 0 && (i - 1 != 0) )
+        {
+            Rmp1_vector[size_ - counter] = Rinv;
+            ++counter;
+        }
+    }
+}
+
+void Equations::propagateBackwardToMatch( const double Energy, const double b, const double h, const int i_match,
+        Eigen::MatrixXd & resRmp1, bool save )
 // resRmp1 = R_{m + 1}
 {
-    //std::cout << "(propagateBackward) Energy: " << Energy << "; b: " << b << "; h: " << h << std::endl;
-
     double hh12 = h * h / 12.0;
     double x = b - h;
 
@@ -270,50 +239,17 @@ void Equations::propagateBackward( const double Energy, const double b, const do
 
     for ( int i = NPoints - 2; i > i_match; i-- )
     {
-        //std::cout << "(propagateBackward) i: " << i << "; x: " << x << std::endl;
-        fill_V( x );
-
-        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar; 
-        U = 12.0 * Wmat.inverse() - 10.0 * I;
-        R = U - Rinv;
-        Rinv = R.inverse();
+        propagation_step(Energy, x, hh12);
+        x -= h;
 
         if ( save )
         {
             Rinv_vector[i] = Rinv;
             Winv_vector[i] = Wmat.inverse();
         }
-
-        x -= h;
-    }	
-
-    resRmp1 = R;	
-}
-
-int Equations::countEigenvalues( const double Energy, const double a, const double b, const double h )
-{
-    (void)(b);
-    Rinv = Eigen::MatrixXd::Zero( channels, channels );
-
-    double hh12 = h * h / 12.0;
-
-    int n = 0;
-    double x = a + h;
-    for ( unsigned int i = 1; i < NPoints - 1; i++ )
-    {
-        fill_V( x );
-
-        Wmat = I + hh12 * (Energy * I - V) * 2.0 * mu / hbar / hbar;
-        U = 12.0 * Wmat.inverse() - 10.0 * I;
-        R = U - Rinv;
-
-        Rinv = R.inverse();
-
-        n += countNegativeDiagonalElements();
-        x += h;
     }
 
-    return n;
+    resRmp1 = R;	
 }
 
 int Equations::countNegativeDiagonalElements()
@@ -322,9 +258,11 @@ int Equations::countNegativeDiagonalElements()
     eigenvalues = es.eigenvalues();
 
     int counter = 0;
-    for ( unsigned int k = 0; k < channels; ++k )
-        if ( eigenvalues(k) < 0.0 )
+    for ( unsigned int k = 0; k < channels; ++k ) {
+        if ( eigenvalues(k) < 0.0 ) {
             ++counter;
+        }
+    }
 
     return counter;
 }
@@ -357,7 +295,7 @@ double Equations::brent( std::function<double(double)> f, double xb1, double xb2
     {
         iter++;
 
-        status = gsl_root_fsolver_iterate( s );
+        gsl_root_fsolver_iterate( s );
         r = gsl_root_fsolver_root( s );
 
         x_lo = gsl_root_fsolver_x_lower( s );
@@ -619,8 +557,8 @@ std::pair<double, double> Equations::interpolate( const double e, const std::map
 
 void Equations::calculate_boundaries( std::pair<double, double> const & tp, double * a, double * b, double * h )
 {
-    *a = tp.first - 1.5; 
-    *b = tp.second + 15.0; 
+    *a = 5.0; // tp.first - 1.5;
+    *b = 35.0; // tp.second + 15.0;
     *h = ( *b - *a ) / (NPoints - 1);
    //std::cout << "(boundaries) a: " << *a << "; b: " << *b << std::endl;
 } 

@@ -88,12 +88,6 @@
 		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp">
 			<Option target="solver_clion"/>
 		</Unit>
-		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.cpp">
-			<Option target="solver_clion"/>
-		</Unit>
-		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/parity.hpp">
-			<Option target="solver_clion"/>
-		</Unit>
 		<Unit filename="/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp">
 			<Option target="solver_clion"/>
 		</Unit>

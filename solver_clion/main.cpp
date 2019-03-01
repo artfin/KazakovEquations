@@ -17,11 +17,13 @@
 // TO DO LIST:
 // 1) discern parity of eigenvalues
 
+const int NPoints = 5000;
+
 void fixNodeCount( std::vector<Eigenvalue> & eigs );
 
 std::vector<Eigenvalue> calculate_eigenvalues( Equations & equations,
         std::map<double, std::pair<double, double>> const & energy_dict,
-        int NPoints, double E_min, double E_max,
+        int NPoints, const int channels, double E_min, double E_max,
         int i_match_intervals, double eps );
 
 std::vector<Eigen::VectorXd> calculate_eigenfunction( Equations & equations,
@@ -29,8 +31,6 @@ std::vector<Eigen::VectorXd> calculate_eigenfunction( Equations & equations,
 
 int main( int argc, char * argv[] )
 {
-    const int NPoints = 5000;
-
     std::vector<double> shift(3);
 
     int J, M, channels;
@@ -53,7 +53,7 @@ int main( int argc, char * argv[] )
 
     // energy interval to search eigenvalues in
     const double E_min = -150.0 / constants::HTOCM;
-    const double E_max = -100.0 / constants::HTOCM;
+    const double E_max = -130.0 / constants::HTOCM;
     const double eps = 1.0e-2; // relative precision of preliminary eigenvalue
 
     // interval to search turning points in  
@@ -73,9 +73,11 @@ int main( int argc, char * argv[] )
                                                                                            energy_intervals, x_lb, x_rb,
                                                                                            eps_tp);
 
+    std::cout << "Turning points corresponding to different energies: " << std::endl;
     bool all_tp_zero = true; // suppose turning point cannot be found
     for (auto it = energy_dict.begin(); it != energy_dict.end(); ++it) 
     {
+        std::cout << it->first*constants::HTOCM << " (cm-1); (" << it->second.first << ", " << it->second.second << ")" << std::endl;
         // check if there exists at least one pair of non-zero turning points
         if ((it->second.first != 0.0) && (it->second.second != 0.0))
             all_tp_zero = false;
@@ -86,7 +88,7 @@ int main( int argc, char * argv[] )
         exit( 1 );
     }
 
-    tmp = calculate_eigenvalues( equations, energy_dict, NPoints, E_min, E_max, i_match_intervals, eps );
+    tmp = calculate_eigenvalues( equations, energy_dict, NPoints, channels, E_min, E_max, i_match_intervals, eps );
     if ( !tmp.empty() && tmp[0].get_node_count_min() != 0 )
     {
         std::cerr << "Node count min for first eigenvalue is not zero! Exiting..." << std::endl;
@@ -104,12 +106,10 @@ int main( int argc, char * argv[] )
 }
 
 std::vector<Eigenvalue> calculate_eigenvalues( Equations & equations, std::map<double, std::pair<double, double>> const & energy_dict,
-        const int NPoints, const double E_min, const double E_max, const int i_match_intervals, const double eps  )
+        const int NPoints, const int channels, const double E_min, const double E_max, const int i_match_intervals, const double eps  )
 {
     std::vector<Eigenvalue> preigs;
-
     PreliminaryEigenvalueFinder pef( &equations, energy_dict );
-
     std::vector<Eigenvalue> eigs = pef.findEigenvalues( E_min, E_max );
 
     std::cout << "Preliminary eigenvalues: " << std::endl;
@@ -145,6 +145,14 @@ std::vector<Eigenvalue> calculate_eigenvalues( Equations & equations, std::map<d
                 NPoints, channels, a, b, h );
 
         std::ofstream ofs( "eifuncs/eifunc" + std::to_string(k) + ".txt" );
+        ofs << std::setprecision(16);
+        ofs << "# Energy: " << preigs.back().get_value() * constants::HTOCM << std::endl;
+        ofs << "# J: " << equations.get_J() << std::endl;
+        ofs << "# M: " << equations.get_M() << std::endl;
+        ofs << "# Lmin: " << equations.get_M_abs() << std::endl;
+        ofs << "# Lmax: " << equations.get_M_abs() + channels << std::endl;
+        ofs << "# grid size: " << NPoints << std::endl;
+        ofs << "# h: " << h << std::endl;
         for ( size_t i = 0; i < eifunc.size(); ++i )
         {
             ofs << a + i * h << " ";
@@ -173,8 +181,8 @@ std::vector<Eigen::VectorXd> calculate_eigenfunction( Equations & equations, con
     //equations.calculate_boundaries( tp, &a, &b, &h );
 
     std::cout << "(eigenfunction) a: " << a << "; b: " << b << "; i_match: " << i_match << std::endl;
-    equations.propagateForward( E, a, h, i_match, Rm, true );
-    equations.propagateBackward( E, b, h, i_match, Rmp1, true );
+    equations.propagateForwardToMatch( E, a, h, i_match, Rm, true );
+    equations.propagateBackwardToMatch( E, b, h, i_match, Rmp1, true );
     Eigen::MatrixXd diff = Rm - Rmp1.inverse();
 
     //std::cout << "diff: " << std::endl << diff << std::endl << std::endl;

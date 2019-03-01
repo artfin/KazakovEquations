@@ -9,7 +9,27 @@
 /home/artfin/Desktop/repos/KazakovEquations/normalize/channel.hpp
 iostream
 -
+cmath
+-
 vector
+-
+
+/home/artfin/Desktop/repos/KazakovEquations/normalize/filelister.hpp
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+algorithm
+-
+sys/types.h
+-
+dirent.h
+-
+errno.h
 -
 
 /home/artfin/Desktop/repos/KazakovEquations/normalize/main.cpp
@@ -33,6 +53,8 @@ gsl/gsl_sf_coupling.h
 -
 wavefunction.hpp
 /home/artfin/Desktop/repos/KazakovEquations/normalize/wavefunction.hpp
+filelister.hpp
+/home/artfin/Desktop/repos/KazakovEquations/normalize/filelister.hpp
 
 /home/artfin/Desktop/repos/KazakovEquations/normalize/wavefunction.hpp
 cmath
@@ -46,6 +68,8 @@ iostream
 vector
 -
 string
+-
+algorithm
 -
 channel.hpp
 /home/artfin/Desktop/repos/KazakovEquations/normalize/channel.hpp
