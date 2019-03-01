@@ -1,3 +1,0 @@
-/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/offdiag_coriolis/CMakeFiles/rebuild_cache.dir
-/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/offdiag_coriolis/CMakeFiles/normalize.dir
-/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/offdiag_coriolis/CMakeFiles/edit_cache.dir

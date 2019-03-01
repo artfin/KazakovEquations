@@ -6,40 +6,43 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 #include "channel.hpp"
 
 class Wavefunction
 {
 public:
-    Wavefunction( const int J, const int M, const int Lmax, const size_t grid_size ) :
-        J(J), M(M), Lmax(Lmax), grid_size(grid_size)
+    explicit Wavefunction( )
     {
-        Rgrid.reserve( grid_size );
-        for ( int k = std::abs(M); k < Lmax + std::abs(M); ++k )
-        {
-            channels.emplace_back(k, grid_size);
-        }
     }
+
+    std::vector<std::string> split(const std::string& s, char delimiter);
+    std::string strip_spaces( std::string str );
+    void parameter_parser( const std::vector<std::string>& parameter_lines );
+
+    void allocate_channels();
 
     void read( std::string const& filename );
     void push_back_channels( std::vector<double> v );
+
     void normalize();
-    
-    void set_h();
-    
-    double get_h() const { return h; }
-    double get_J() const { return J; }
-    double get_M() const { return M; }
 
     std::vector<double> const& get_grid() const { return Rgrid; }
-    Channel const& get_channel( int k ) const { return channels[k]; }
+    double get_h() const { return h; }
+    size_t get_grid_size() const { return grid_size; }
+    int get_J() const { return J; }
+    int get_M() const { return M; }
+    double get_energy() const { return Energy; }
 
     std::vector<Channel> const& get_channels() const { return channels; }
+    Channel const& get_channel( int k ) const { return channels[k]; }
 
 private:
+    double Energy;
     int J;
     int M;
+    int Lmin;
     int Lmax;
     size_t grid_size;
     double h;

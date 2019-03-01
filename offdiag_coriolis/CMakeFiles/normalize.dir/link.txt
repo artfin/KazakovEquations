@@ -1,1 +1,0 @@
-/home/artfin/psi4conda/bin/c++     CMakeFiles/normalize.dir/main.cpp.o CMakeFiles/normalize.dir/channel.cpp.o CMakeFiles/normalize.dir/wavefunction.cpp.o  -o normalize -Wl,-rpath,/usr/local/lib /usr/local/lib/libgslcblas.so /usr/local/lib/libgsl.so /usr/local/lib/libgslcblas.so 

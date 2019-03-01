@@ -48,10 +48,10 @@ RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/artfin/Desktop/repos/KazakovEquations/normalize
+CMAKE_SOURCE_DIR = /home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug
+CMAKE_BINARY_DIR = /home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles /home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles /home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/artfin/Desktop/repos/KazakovEquations/normalize/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named normalize
+# Target rules for targets named offdiag_coriolis
 
 # Build rule for target.
-normalize: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 normalize
-.PHONY : normalize
+offdiag_coriolis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offdiag_coriolis
+.PHONY : offdiag_coriolis
 
 # fast build rule for target.
-normalize/fast:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/build
-.PHONY : normalize/fast
+offdiag_coriolis/fast:
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/build
+.PHONY : offdiag_coriolis/fast
 
 channel.o: channel.cpp.o
 
@@ -129,7 +129,7 @@ channel.o: channel.cpp.o
 
 # target to build an object file
 channel.cpp.o:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/channel.cpp.o
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/channel.cpp.o
 .PHONY : channel.cpp.o
 
 channel.i: channel.cpp.i
@@ -138,7 +138,7 @@ channel.i: channel.cpp.i
 
 # target to preprocess a source file
 channel.cpp.i:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/channel.cpp.i
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/channel.cpp.i
 .PHONY : channel.cpp.i
 
 channel.s: channel.cpp.s
@@ -147,8 +147,35 @@ channel.s: channel.cpp.s
 
 # target to generate assembly for a file
 channel.cpp.s:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/channel.cpp.s
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/channel.cpp.s
 .PHONY : channel.cpp.s
+
+filelister.o: filelister.cpp.o
+
+.PHONY : filelister.o
+
+# target to build an object file
+filelister.cpp.o:
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/filelister.cpp.o
+.PHONY : filelister.cpp.o
+
+filelister.i: filelister.cpp.i
+
+.PHONY : filelister.i
+
+# target to preprocess a source file
+filelister.cpp.i:
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/filelister.cpp.i
+.PHONY : filelister.cpp.i
+
+filelister.s: filelister.cpp.s
+
+.PHONY : filelister.s
+
+# target to generate assembly for a file
+filelister.cpp.s:
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/filelister.cpp.s
+.PHONY : filelister.cpp.s
 
 main.o: main.cpp.o
 
@@ -156,7 +183,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +192,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +201,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 wavefunction.o: wavefunction.cpp.o
@@ -183,7 +210,7 @@ wavefunction.o: wavefunction.cpp.o
 
 # target to build an object file
 wavefunction.cpp.o:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/wavefunction.cpp.o
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/wavefunction.cpp.o
 .PHONY : wavefunction.cpp.o
 
 wavefunction.i: wavefunction.cpp.i
@@ -192,7 +219,7 @@ wavefunction.i: wavefunction.cpp.i
 
 # target to preprocess a source file
 wavefunction.cpp.i:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/wavefunction.cpp.i
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/wavefunction.cpp.i
 .PHONY : wavefunction.cpp.i
 
 wavefunction.s: wavefunction.cpp.s
@@ -201,7 +228,7 @@ wavefunction.s: wavefunction.cpp.s
 
 # target to generate assembly for a file
 wavefunction.cpp.s:
-	$(MAKE) -f CMakeFiles/normalize.dir/build.make CMakeFiles/normalize.dir/wavefunction.cpp.s
+	$(MAKE) -f CMakeFiles/offdiag_coriolis.dir/build.make CMakeFiles/offdiag_coriolis.dir/wavefunction.cpp.s
 .PHONY : wavefunction.cpp.s
 
 # Help Target
@@ -211,11 +238,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... normalize"
+	@echo "... offdiag_coriolis"
 	@echo "... edit_cache"
 	@echo "... channel.o"
 	@echo "... channel.i"
 	@echo "... channel.s"
+	@echo "... filelister.o"
+	@echo "... filelister.i"
+	@echo "... filelister.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/offdiag_coriolis.dir/main.cpp.o CMakeFiles/offdiag_coriolis.dir/channel.cpp.o CMakeFiles/offdiag_coriolis.dir/wavefunction.cpp.o CMakeFiles/offdiag_coriolis.dir/filelister.cpp.o  -o offdiag_coriolis /usr/lib/x86_64-linux-gnu/libgslcblas.so /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/x86_64-linux-gnu/libgslcblas.so 

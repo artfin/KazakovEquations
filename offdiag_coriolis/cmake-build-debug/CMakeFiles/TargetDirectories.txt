@@ -1,0 +1,3 @@
+/home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir
+/home/artfin/Desktop/repos/KazakovEquations/offdiag_coriolis/cmake-build-debug/CMakeFiles/edit_cache.dir

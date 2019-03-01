@@ -1,6 +1,6 @@
-    //
-    // Created by artfin on 25.02.19.
-    //
+//
+// Created by artfin on 25.02.19.
+//
 #include "channel.hpp"
 
 Channel operator*( Channel lhs, const Channel & rhs )
@@ -29,20 +29,18 @@ double integrate_simpson( std::vector<double> const& Rgrid, Channel const& ch )
     size_t size_ = ch.get_grid_size();
     std::vector<double> const& y = ch.get_data();
 
-    const double h = Rgrid[1] - Rgrid[0];
-
     for ( size_t k = 1; k < size_ - 1; ++k )
     {
         if ( k % 2 == 0 ) {
-            sum1 += y[k];// / std::pow(Rgrid[k], 2);
+            sum1 += y[k];
         }
         else {
-            sum2 += y[k];// / std::pow(Rgrid[k], 2);
+            sum2 += y[k];
         }
     }
 
     double res = y[0] + y.back() + 2.0*sum1 + 4.0*sum2;
-    return res * h / 3.0;
+    return res * ch.get_h() / 3.0;
 }
 
 double integrate_simpson_r2( std::vector<double> const& Rgrid, Channel const& ch )
@@ -51,17 +49,17 @@ double integrate_simpson_r2( std::vector<double> const& Rgrid, Channel const& ch
     size_t size_ = ch.get_grid_size();
     std::vector<double> const& y = ch.get_data();
 
-    const double h = Rgrid[1] - Rgrid[0];
-
     for ( size_t k = 1; k < size_ - 1; ++k )
     {
         if ( k % 2 == 0 ) {
             sum1 += y[k] / std::pow(Rgrid[k], 2);
-        } else {
+        }
+        else {
             sum2 += y[k] / std::pow(Rgrid[k], 2);
         }
     }
 
     double res = y[0] + y.back() + 2.0*sum1 + 4.0*sum2;
-    return res * h / 3.0;
+    return res * ch.get_h() / 3.0;
 }
+
