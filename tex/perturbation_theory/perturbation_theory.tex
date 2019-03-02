@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{bbm}
+
+\usepackage{array}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\rhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage }}
+
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\itshape\bfseries}{\thesubsection.}{0.5em}{}
+
+\newcommand{\HO}{H^{(0)}}
+
+\newcommand{\lc}{\left\{}
+\newcommand{\rc}{\right\}}
+
+\begin{document}
+
+\section{Теория возмущений стационарных вырожденных состояний}
+
+Рассмотрим возмущенный гамильтониан
+\begin{gather}
+    H(\lambda) = \HO + \lambda \delta H,
+\end{gather}
+где спектр собственных значений и соответствующих собственных функций невозмущенного оператора $\HO$ известен. Рассмотрим подпространство вырожденных собственных значений размерности $N > 1$, то есть, пространство, образующими которого являются $N$ линейно независимых собственных функций с равными собственными значениями. В базисе собственных функций матрица невозмущенного гамильтониана $\HO$ имеет диагональный вид
+\begin{gather}
+    \HO = diag \lc E_1^{(0)} \rc
+\end{gather}
+
+\end{document}
