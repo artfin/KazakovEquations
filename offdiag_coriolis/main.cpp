@@ -10,6 +10,9 @@
 #include "wavefunction.hpp"
 #include "filelister.hpp"
 
+#include <Eigen/Dense>
+#include <Eigen/Eigenvalues>
+
 // taken from Manolopoulos Thesis
 const double MU = 34505.15; 
 // Hartree to inverse cm
@@ -216,6 +219,56 @@ double timer( std::function<double(std::vector<Wavefunction> const&, const int)>
     return std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
 }
 
+double calculate_m2_element( std::vector<Wavefunction> const& wavefunctions, const Wavefunction & wf1, const Wavefunction & wf2 )
+// wavefunctions -- wavefunctions spanning non-degenerate subspace
+// wf1, wf2 -- functions with
+{
+    double element = 0.0;
+    double n1p, pn2;
+    double E_n = wf1.get_energy(); // energy of wf2 is the same
+
+    size_t size_ = wavefunctions.size();
+    for ( size_t p = 0; p < size_; ++p )
+    {
+        n1p = wf_coriolis_matrix_element(wf1, wavefunctions[p]);
+        pn2 = wf_coriolis_matrix_element(wavefunctions[p], wf2);
+        element += n1p * pn2 / (E_n - wavefunctions[p].get_energy());
+        //std::cout << "p: " << p << "; En - Ep: " << E_n - wavefunctions[p].get_energy() << std::endl;
+    }
+
+    return element;
+}
+
+double degenerate_second_order( std::vector<Wavefunction> const& wavefunctions, const int n1, const int n2 )
+{
+    //std::cout << "For second-order degenerate perturbation theory selected a pair of levels " << n1 << ", " << n2 << std::endl;
+    //std::cout << "E1: " << wavefunctions[n1].get_energy() << "; E2: " << wavefunctions[n2].get_energy() << std::endl;
+    //std::cout << "M1: " << wavefunctions[n1].get_M() << "; M2: " << wavefunctions[n2].get_M() << std::endl;
+
+    // second-order 'mass' matrix (?)
+    Eigen::Matrix2d M2 = Eigen::Matrix2d::Zero(2, 2);
+
+    // vector of wavefunctions spanning non-degenerate subspace
+    std::vector<Wavefunction> nd_wavefunctions = wavefunctions;
+    nd_wavefunctions.erase(nd_wavefunctions.begin() + n1);
+    nd_wavefunctions.erase(nd_wavefunctions.begin() + n2 - 1); // index is moving when we erase n1-th element...
+
+    M2(0, 0) = calculate_m2_element(nd_wavefunctions, wavefunctions[n1], wavefunctions[n1]);
+    M2(0, 1) = calculate_m2_element(nd_wavefunctions, wavefunctions[n1], wavefunctions[n2]);
+    M2(1, 0) = calculate_m2_element(nd_wavefunctions, wavefunctions[n2], wavefunctions[n1]);
+    M2(1, 1) = calculate_m2_element(nd_wavefunctions, wavefunctions[n2], wavefunctions[n2]);
+
+    //std::cout << "M2 matrix: " << std::endl << M2 << std::endl;
+
+    Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> es;
+    es.compute( M2 );
+    Eigen::Vector2d eigs = es.eigenvalues();
+
+    if ( eigs(0) != 0.0 ) return eigs(0);
+    return eigs(1);
+
+}
+
 int main()
 {
     std::cout << std::fixed << std::setprecision(15);
@@ -247,8 +300,23 @@ int main()
     std::cout << "Total number of wavefunctions: " << wavefunctions.size() << std::endl;
     std::cout << "-----------------------------------------------------" << std::endl << std::endl;
 
-
     /*
+     * Degenerate second order perturbation theory
+    std::cout << std::setprecision(4);
+    for ( int k = static_cast<int>(count(0)); k < static_cast<int>(count(0) + count(1)); ++k )
+    {
+        int n1 = k;
+        int n2 = k + static_cast<int>(count(1));
+        //std::cout << "n1: " << n1 << "; n2: " << n2 << std::endl;
+
+        double p2 = degenerate_second_order(wavefunctions, n1, n2);
+        double E_n = wavefunctions[n1].get_energy();
+
+        std::cout << "E_n(1): " << E_n << "; E_n(2): " << E_n + p2 << std::endl;
+    }
+     */
+
+   /*
     int n = 1; // level we are correcting
     double E0 = wavefunctions[n].get_energy();
     std::cout << "Correcting level: " << n << "; E: " << E0 << "; J: " << wavefunctions[n].get_J() <<
@@ -285,7 +353,6 @@ int main()
         double p4 = fourth_order(wavefunctions, n);
         std::cout << n << " " << E0 << " " << E0 + p2 << " " << E0 + p2 + p4 << std::endl;
     }
-
 
     return 0;
 }

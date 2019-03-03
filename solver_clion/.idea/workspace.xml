@@ -14,50 +14,52 @@
     <list default="true" id="8bc2fef8-14c1-407c-8384-ea8d6d75b3ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1/eifunc8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc17.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0/eifunc9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1/eifunc8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc8.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/.equations.cpp.swp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/constants.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/equations.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/equations.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/equations.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solver_clion" beforeDir="false" afterPath="$PROJECT_DIR$/solver_clion" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -97,8 +99,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="240">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equations.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="556" selection-start-line="556" selection-end-line="556" />
+            <state relative-caret-position="191">
+              <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -124,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equations.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="1260">
               <caret line="84" column="83" selection-start-line="84" selection-start-column="83" selection-end-line="84" selection-end-column="83" />
               <folding>
                 <element signature="e#14#33#0" expanded="true" />
@@ -237,11 +242,13 @@
       <workItem from="1551363290930" duration="12420000" />
       <workItem from="1551434868026" duration="11000" />
       <workItem from="1551446422875" duration="6540000" />
+      <workItem from="1551535366812" duration="16000" />
+      <workItem from="1551646506714" duration="1050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43902000" />
+    <option name="totallyTimeSpent" value="44968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,10 +261,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1213" height="999" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.27249357" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.28277636" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32988507" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32988507" />
@@ -279,9 +285,9 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.27249357" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28277636" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Messages" order="0" visible="true" weight="0.32988507" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32988507" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32988507" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
@@ -289,7 +295,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32988507" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.44827586" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.44827586" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -380,13 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preliminary_eigenvalue_finder.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
@@ -394,20 +393,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equations.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="556" selection-start-line="556" selection-end-line="556" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/equations.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="84" column="83" selection-start-line="84" selection-start-column="83" selection-end-line="84" selection-end-column="83" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -418,10 +407,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/equations.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="83" selection-start-line="84" selection-start-column="83" selection-end-line="84" selection-end-column="83" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/equations.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="240">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

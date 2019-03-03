@@ -125,7 +125,7 @@ void Equations::fill_V( const double r )
         for ( int j = 0; j < V.cols(); j++, Lprime++ )
         {
             //std::cout << "i: " << j << "; j: " << j << "; P: " << P << "; Lprime: " << Lprime << std::endl;
-            V(i, j) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1)));
+            V(i, j) = compute_W_sum( P, Lprime ) + delta(P, Lprime) * (hbar*hbar*P*(P+1)/2.0/Inten + hbar*hbar/2.0/mu/r/r*(J*(J+1) + P*(P+1) - 2.0*M*M));
         }
     }
 }

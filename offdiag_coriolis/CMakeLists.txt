@@ -16,7 +16,5 @@ add_executable(offdiag_coriolis
                filelister.cpp
                filelister.hpp)
 
-target_link_libraries(offdiag_coriolis ${EIGEN_DIR})
-
 find_package(GSL REQUIRED)
 target_link_libraries(offdiag_coriolis GSL::gslcblas GSL::gsl)

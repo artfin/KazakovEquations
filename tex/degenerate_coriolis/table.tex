@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{booktabs} % toprule/bottomrule
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% blackboar lettering
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\rhead{\fancyplain{}{\rightmark }}
+\cfoot{\fancyplain{}{\thepage }}
+
+\newcommand{\lb}{\left(}
+\newcommand{\rb}{\right)}
+\newcommand{\lsq}{\left[}
+\newcommand{\rsq}{\right]}
+
+\newcommand{\rred}{\color{red}}
+
+\begin{document}
+
+\begin{table}[H]
+    \centering
+    \caption{J = 1, M = 1, channels = 12, grid size = 8000, 9 levels total}
+    \begin{tabular}{ccccc}
+        \toprule
+        $n$ & $E_n^{(0)}(HD)$ & $E_n^{(2)}(PT)$ & $E_n^1(CC)$ & $E_n^2(CC)$ \\ 
+        \midrule
+        $1$ & $-113.6391$ & $-113.6418$ & $-113.6393$ & $-113.6419$ \\ 
+        $2$ & $-86.5613 $ & $-86.6189 $ & $-86.5615$  & $-86.5974$  \\
+        $3$ & $-61.9719 $ & $-61.9658 $ & $-61.9722$  & $-61.9662$  \\
+        $4$ & $-57.4279 $ & $-57.4414 $ & $-57.4283$  & $-57.4417$  \\
+        $5$ & $-40.2218 $ & $-40.2175 $ & $-40.2221$  & $-40.2179$  \\
+        $6$ & $-29.6060 $ & $-29.6132 $ & $-29.6064$  & $-29.6138$  \\
+        $7$ & $-22.1631 $ & $-22.1592 $ & $-22.1634$  & $-22.1598$  \\
+        $8$ & $-7.9996  $ & $-7.9978  $ & $-7.9999 $  & $-7.9986 $  \\
+        $9$ & $-6.2521  $ & $-6.2440  $ & $-6.2526 $  & $-6.2462 $  \\
+       \bottomrule
+    \end{tabular}
+\end{table}
+
+\end{document}
