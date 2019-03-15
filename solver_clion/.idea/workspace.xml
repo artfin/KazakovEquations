@@ -12,14 +12,176 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bc2fef8-14c1-407c-8384-ea8d6d75b3ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j1/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j1/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j1/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j1/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j1/csj0-10_nch10.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j1/csj0-10_nch10.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j1/tex/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j1/tex/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j1/tex/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j1/tex/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j14/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j14/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j14/cc.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j14/cc.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j14/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j14/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j14/tex/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j14/tex/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j14/tex/table_j14.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j14/tex/table_j14.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j2/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j2/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j2/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j2/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j2/csj0-10_nch15.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j2/csj0-10_nch15.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j2/tex/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j2/tex/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j2/tex/table_j2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j2/tex/table_j2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j3/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j3/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j3/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j3/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j3/csj0-10_nch15.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j3/csj0-10_nch15.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j3/tex/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j3/tex/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j3/tex/table_j3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j3/tex/table_j3.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j4/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j4/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j4/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j4/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j4/csj0-10_nch15.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j4/csj0-10_nch15.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j4/tex/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j4/tex/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cc_vs_hd_j4/tex/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../cc_vs_hd_j4/tex/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/BOUND.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/BOUND.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/JOHNSON_WCOR.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/JOHNSON_WCOR.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/all_nch15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/all_nch15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/bound_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/bound_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/database_w_diagcor.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/database_w_diagcor.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/johnson_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/johnson_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../comp_with_bound/johnson_wout_diagcor/database.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../comp_with_bound/johnson_wout_diagcor/database.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/constants.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/main" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/1st_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/1st_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/2nd_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/2nd_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/3rd_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/3rd_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/4th_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/4th_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/5th_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/5th_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/6th_eigenvalue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/6th_eigenvalue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenfunctions/test_results/eigenfunc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenfunctions/test_results/eigenfunc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenvalues_bisection/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenvalues_bisection/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenvalues_bisection/main" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenvalues_bisection/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenvalues_bisection/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenvalues_bisection/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eigenvalues_bisection/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../eigenvalues_bisection/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/Rrotor.mw" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/Rrotor.mw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/cc_total.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/cc_total.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/filtered.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/filtered.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/j1_even.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/j1_even.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/j1_odd.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/j1_odd.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/j2_even.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/j2_even.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/j2_odd.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/j2_odd.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/levels.mw" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/levels.mw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/lowest.lvl" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/lowest.lvl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../level_structure/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../level_structure/parse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/dictionaries/artfin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/dictionaries/artfin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/normalize.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/normalize.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/channel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/channel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/channel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/channel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/normalize.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/cmake-build-debug/normalize.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/cmake-build-debug/normalize.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m0/eifunc9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eifuncs_j1m1/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/eigenfuncs.mw" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/eigenfuncs.mw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/filelister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/filelister.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/filelister.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/filelister.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/wavefunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/wavefunction.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normalize/wavefunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normalize/wavefunction.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/dictionaries/artfin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/dictionaries/artfin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/normalize.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/normalize.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/atom_linear_coriolis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/atom_linear_coriolis.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/atom_linear_coriolis_matrix_element.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/atom_linear_coriolis_matrix_element.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/channel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/channel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/channel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/channel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/offdiag_coriolis.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/cmake-build-debug/offdiag_coriolis.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc2.txt" afterDir="false" />
@@ -29,15 +191,44 @@
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc6.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc7.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/eifunc8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch8/eifunc8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/reverse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m-1_nch12/reverse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch12/eifunc9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m0_nch8/eifunc9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc2.txt" afterDir="false" />
@@ -47,20 +238,171 @@
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc6.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc7.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch12/eifunc8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/eifuncs_j1m1_nch8/eifunc8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/filelister.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/filelister.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/filelister.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solver/.equations.cpp.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/normalize" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/normalize" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../offdiag_coriolis/wavefunction.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/Ar-HCl_pes_coefs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/Ar-HCl_pes_coefs.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/Ar-HCl_pes_coefs.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/Ar-HCl_pes_coefs.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/coeffs/Hutson_Ar_HCl_pes_coefs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/coeffs/Hutson_Ar_HCl_pes_coefs.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/coeffs/Hutson_Ar_HCl_pes_coefs.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/coeffs/Hutson_Ar_HCl_pes_coefs.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/constants.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/database/database_w_diagcor.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/database/database_w_diagcor.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/database_wout_dcor/database.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/database_wout_dcor/database.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/dunkerJ1M0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/dunkerJ1M0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/dunkerJ1M1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/dunkerJ1M1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/dunker_10_bound.gen" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/dunker_10_bound.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/dunker_11_bound.gen" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/dunker_11_bound.gen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/eif.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/eif.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/eigenvalue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/eigenvalue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/eigenvalue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/eigenvalue.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/eigenvalue_database.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/eigenvalue_database.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/eigenvalue_database.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/eigenvalue_database.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/equations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/equations.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/equations.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/main" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/other/eigenfunction_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/other/eigenfunction_finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/other/eigenfunction_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/other/eigenfunction_finder.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/parity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/parity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/parity.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/parity.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/precise_eigenvalue_finder.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/preliminary_eigenvalue_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/preliminary_eigenvalue_finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solver/preliminary_eigenvalue_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solver/preliminary_eigenvalue_finder.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/artfin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/artfin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/solver_clion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/solver_clion.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/solver_clion.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FindEigen3.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/FindEigen3.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/solver_clion.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/eifuncs/eifunc9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/solver_clion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/solver_clion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/constants.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eigenvalue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/eigenvalue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eigenvalue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/eigenvalue.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equations.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/equations.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/equations.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/equations.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potperturblogs/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/potperturblogs/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potperturblogs/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/potperturblogs/summary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/precise_eigenvalue_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/precise_eigenvalue_finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/precise_eigenvalue_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/precise_eigenvalue_finder.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preliminary_eigenvalue_finder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/preliminary_eigenvalue_finder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preliminary_eigenvalue_finder.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/preliminary_eigenvalue_finder.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solver_clion" beforeDir="false" afterPath="$PROJECT_DIR$/solver_clion" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver_clion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/solver_clion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/adiabatic_potential/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/adiabatic_potential/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/bracketing_algorithms_for_eigenvalue/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/database/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/database/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/database/eigenvalues.db" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/database/eigenvalues.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/database/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/database/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/database/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/database/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/decomposition/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/decomposition/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/decomposition/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/decomposition/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/decomposition/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/decomposition/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/decomposition/negElements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/decomposition/negElements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/eigen_linear_system/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/eigen_linear_system/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/eigen_linear_system/main" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/eigen_linear_system/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/eigen_linear_system/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/eigen_linear_system/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/parity/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/parity/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/parity/db.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/parity/db.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/parity/parity" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/parity/parity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/parity/parity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/parity/parity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/ar_hcl_dunker_table/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/ar_hcl_dunker_table/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/ar_hcl_dunker_table/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/ar_hcl_dunker_table/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/ar_hcl_initial_table/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/ar_hcl_initial_table/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/ar_hcl_initial_table/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/ar_hcl_initial_table/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/degenerate_coriolis/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/degenerate_coriolis/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/degenerate_coriolis/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/degenerate_coriolis/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/delta.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/delta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/table.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/table.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/table.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/nondegenerate_coriolis/table.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/perturbation_theory/perturbation_theory.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/perturbation_theory/perturbation_theory.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/perturbation_theory/perturbation_theory.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/perturbation_theory/perturbation_theory.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/potential_perturbation/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/potential_perturbation/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tex/potential_perturbation/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../tex/potential_perturbation/main.tex" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -96,13 +438,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="221">
               <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#5704#6753#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +460,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/equations.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
+            <state relative-caret-position="-6117">
               <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
             </state>
           </provider>
@@ -192,6 +535,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CMake" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -244,11 +588,12 @@
       <workItem from="1551446422875" duration="6540000" />
       <workItem from="1551535366812" duration="16000" />
       <workItem from="1551646506714" duration="1050000" />
+      <workItem from="1552419064650" duration="967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44968000" />
+    <option name="totallyTimeSpent" value="45935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,11 +606,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1213" height="999" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.28277636" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32988507" />
+      <window_info active="true" anchor="bottom" id="Messages" order="0" visible="true" weight="0.32988507" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32988507" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
@@ -417,20 +763,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equations.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="221">
           <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#5704#6753#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/equations.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6117">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./constants.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./eigenvalue.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./eigenvalue.hpp
 iostream
 -
 iomanip
@@ -18,9 +18,9 @@ fstream
 string
 -
 ./constants.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/././constants.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./equations.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./equations.hpp
 iostream
 -
 vector
@@ -42,11 +42,11 @@ gsl/gsl_math.h
 gsl/gsl_errno.h
 -
 ./constants.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/././constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/././constants.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/constants.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/equations.hpp
 iostream
 -
 vector
@@ -68,9 +68,9 @@ gsl/gsl_math.h
 gsl/gsl_errno.h
 -
 ./constants.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./constants.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/main.cpp
 iostream
 -
 iomanip
@@ -86,15 +86,15 @@ map
 gsl/gsl_sf_legendre.h
 -
 constants.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/constants.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/constants.hpp
 equations.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/equations.hpp
 preliminary_eigenvalue_finder.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp
 precise_eigenvalue_finder.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/precise_eigenvalue_finder.hpp
 iostream
 -
 vector
@@ -114,9 +114,9 @@ gsl/gsl_math.h
 gsl/gsl_roots.h
 -
 ./equations.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./equations.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./equations.hpp
 
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.hpp
 iostream
 -
 iomanip
@@ -132,9 +132,9 @@ map
 Eigen/Dense
 -
 ./eigenvalue.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./eigenvalue.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./eigenvalue.hpp
 ./equations.hpp
-/home/artfin/Desktop/repos/KazakovEquations/solver_clion/./equations.hpp
+/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/./equations.hpp
 
 /usr/local/include/eigen3/Eigen/Cholesky
 Core

@@ -1,4 +1,4 @@
-# Install script for directory: /home/artfin/Desktop/repos/KazakovEquations/solver_clion
+# Install script for directory: /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/artfin/Desktop/repos/KazakovEquations/solver_clion/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

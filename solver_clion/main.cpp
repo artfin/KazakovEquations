@@ -12,7 +12,7 @@
 #include "precise_eigenvalue_finder.hpp"
 
 #define ENABLE_WAVEFUNCTION_CALCULATION
-//#undef ENABLE_WAVEFUNCTION_CALCULATION
+#undef ENABLE_WAVEFUNCTION_CALCULATION
 
 const int NPoints = 8000;
 
@@ -50,7 +50,7 @@ int main( int argc, char * argv[] )
 
     // energy interval to search eigenvalues in
     const double E_min = -150.0 / constants::HTOCM;
-    const double E_max = -0.1 / constants::HTOCM;
+    const double E_max = -0.01 / constants::HTOCM;
     const double eps = 1.0e-2; // relative precision of preliminary eigenvalue
 
     // interval to search turning points in  

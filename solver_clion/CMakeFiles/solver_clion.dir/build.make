@@ -43,10 +43,10 @@ RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/artfin/Desktop/repos/KazakovEquations/solver_clion
+CMAKE_SOURCE_DIR = /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/artfin/Desktop/repos/KazakovEquations/solver_clion
+CMAKE_BINARY_DIR = /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion
 
 # Include any dependencies generated for this target.
 include CMakeFiles/solver_clion.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/solver_clion.dir/flags.make
 
 CMakeFiles/solver_clion.dir/main.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solver_clion.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/main.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solver_clion.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/main.cpp.o -c /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/main.cpp
 
 CMakeFiles/solver_clion.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp > CMakeFiles/solver_clion.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/main.cpp > CMakeFiles/solver_clion.dir/main.cpp.i
 
 CMakeFiles/solver_clion.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/main.cpp -o CMakeFiles/solver_clion.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/main.cpp -o CMakeFiles/solver_clion.dir/main.cpp.s
 
 CMakeFiles/solver_clion.dir/equations.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/equations.cpp.o: equations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/solver_clion.dir/equations.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/equations.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/solver_clion.dir/equations.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/equations.cpp.o -c /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/equations.cpp
 
 CMakeFiles/solver_clion.dir/equations.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/equations.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp > CMakeFiles/solver_clion.dir/equations.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/equations.cpp > CMakeFiles/solver_clion.dir/equations.cpp.i
 
 CMakeFiles/solver_clion.dir/equations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/equations.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/equations.cpp -o CMakeFiles/solver_clion.dir/equations.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/equations.cpp -o CMakeFiles/solver_clion.dir/equations.cpp.s
 
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.o: eigenvalue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/eigenvalue.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/solver_clion.dir/eigenvalue.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/eigenvalue.cpp.o -c /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/eigenvalue.cpp
 
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/eigenvalue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp > CMakeFiles/solver_clion.dir/eigenvalue.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/eigenvalue.cpp > CMakeFiles/solver_clion.dir/eigenvalue.cpp.i
 
 CMakeFiles/solver_clion.dir/eigenvalue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/eigenvalue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/eigenvalue.cpp -o CMakeFiles/solver_clion.dir/eigenvalue.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/eigenvalue.cpp -o CMakeFiles/solver_clion.dir/eigenvalue.cpp.s
 
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o: precise_eigenvalue_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp
 
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp > CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp > CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.i
 
 CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp -o CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/precise_eigenvalue_finder.cpp -o CMakeFiles/solver_clion.dir/precise_eigenvalue_finder.cpp.s
 
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o: CMakeFiles/solver_clion.dir/flags.make
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o: preliminary_eigenvalue_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.o -c /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp
 
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp > CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp > CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.i
 
 CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp -o CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/preliminary_eigenvalue_finder.cpp -o CMakeFiles/solver_clion.dir/preliminary_eigenvalue_finder.cpp.s
 
 # Object files for target solver_clion
 solver_clion_OBJECTS = \
@@ -142,7 +142,7 @@ solver_clion: CMakeFiles/solver_clion.dir/build.make
 solver_clion: /usr/lib/x86_64-linux-gnu/libgsl.so
 solver_clion: /usr/lib/x86_64-linux-gnu/libgslcblas.so
 solver_clion: CMakeFiles/solver_clion.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable solver_clion"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable solver_clion"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solver_clion.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -155,6 +155,6 @@ CMakeFiles/solver_clion.dir/clean:
 .PHONY : CMakeFiles/solver_clion.dir/clean
 
 CMakeFiles/solver_clion.dir/depend:
-	cd /home/artfin/Desktop/repos/KazakovEquations/solver_clion && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/artfin/Desktop/repos/KazakovEquations/solver_clion /home/artfin/Desktop/repos/KazakovEquations/solver_clion /home/artfin/Desktop/repos/KazakovEquations/solver_clion /home/artfin/Desktop/repos/KazakovEquations/solver_clion /home/artfin/Desktop/repos/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion /home/artfin/Desktop/repos/HarmonicOscillator/KazakovEquations/solver_clion/CMakeFiles/solver_clion.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/solver_clion.dir/depend
 
